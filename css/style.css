@@ -14,10 +14,10 @@ body {
 header {
     margin: .5em;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
 header .name_logo {
     font-size: 25pt;
-    font-family: merriweather, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Oleo Script', cursive;
     font-weight: 600;
     display: flex;
     flex-direction: column;
@@ -25,6 +25,7 @@ header .name_logo {
 
 header .name_logo .last_name {
     margin-left: 1.8em;
+    
 }
 
 nav {
