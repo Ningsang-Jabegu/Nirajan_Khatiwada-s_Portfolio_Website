@@ -6,8 +6,6 @@
 
 body {
    /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) no-repeat;*/
-   background: #ffffff;
-   background-image: linear-gradient(155deg, #7f94ab9d 0%, #7c98ab9d 50%, #7fbdbc9d 100%);
     background-size: 100%;
 }
 
@@ -17,10 +15,11 @@ header {
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
 header .name_logo {
     font-size: 25pt;
-    font-family: 'Oleo Script', cursive;
+    font-family: Merriweather;
     font-weight: 600;
     display: flex;
     flex-direction: column;
+    line-height:1.2;
 }
 
 header .name_logo .last_name {
@@ -62,7 +61,6 @@ nav .nav_item_container li:hover {
 
 main {
     display: flex;
-    flex-wrap: wrap;
     height: max-content;
     width: auto;
     justify-content: space-evenly;
@@ -70,30 +68,20 @@ main {
     margin: .8em;
 }
 
-main .my_profile_picture,
+
 main .introduction_myself {
-    width: 48%;
+    width: 60%;
+}
+main .my_profile_picture {
+    height: 17em;
 }
 main .my_profile_picture {
     position: relative;
-    border-radius: 50%;
     overflow: hidden;
-    margin: 50px auto;
-  }
-  .my_profile_picture::before {
-    content: "";
-    position: absolute;
-    bottom: -50px;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background-image: url(https://yourwebsite.com/wave.png);
-    background-repeat: repeat-x;
-    background-size: cover;
-    transform: skewY(-2deg);
+    margin: 20px;
   }
 .my_profile_picture img {
-    width: 100%;
+    width: auto;
     height: 100%;
     object-fit: cover;
 }
@@ -102,31 +90,48 @@ main .introduction_myself {
     font-family: Arial, sans-serif;
     font-size: 18px;
     text-align: justify;
-    margin: 50px auto;
+    margin: 20px;
     padding: 20px;
     max-width: 100%;
-    box-shadow: 0px 0px 10px #052c3c73;
+    height: max-content;
+    box-shadow: 0px 0px 10px #03263459;
     border-radius: 10px;
     font-family: 'poppins';
-    background-color: #8b969d69;
+    background-color: #cdd2d508;
 }
 .introduction_myself p {
     margin: .8em 0;
 }
-.introduction_myself .mission_intro {
-    font-style: italic;
-    margin-bottom: 20px;
-  }
 .introduction_myself .name_intro {
-    font-size: 19pt;
     color: #0e6296;
     font-weight: 600;
-    font-family: merriweather,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: poppins;
 
 }
 .introduction_myself .org_intro {
     color: #0e6296;
     font-weight: 600;
     font-family: nato-devanagari;
-
+}
+photos h2 {
+    text-align: center;
+    width: 100%;
+    font-family: Cambria;
+}
+.photo_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+    margin: .4em .5em;
+    justify-content: center;
+}
+photos .photo_container .photo {
+    height: 25em;
+    width: auto;
+    
+}
+.photo img {
+    height: 100%;
+    width: 100%;
+    border-radius: .5em;
 }
