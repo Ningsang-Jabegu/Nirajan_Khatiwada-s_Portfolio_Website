@@ -65,16 +65,13 @@ nav .nav_item_container li:hover {
 
 main {
     display: flex;
+	flex-wrap: wrap;
     height: max-content;
     width: auto;
     justify-content: space-evenly;
     margin: .8em;
 }
 
-
-main .introduction_myself {
-    width: 60%;
-}
 main .my_profile_picture {
     height: 17em;
 }
@@ -174,7 +171,7 @@ footer{
  
 .footer-distributed h3{
 	color:  #ffffff;
-	font: normal 36px 'Cookie', cursive;
+	font-family: Segoe UI;
 	margin: 0;
 }
  
@@ -303,6 +300,20 @@ footer{
  
 	.footer-distributed .footer-center i{
 		margin-left: 0;
+	}
+}
+@media (min-width:996px) {
+	main .introduction_myself {
+		width: 60%;
+	}
+}
+@media (max-width:995px) {
+	.introduction_myself {
+		order: 2;
+		width: 100%;
+	}
+	.my_profile_picture {
+		order: 1;
 	}
 
 }
