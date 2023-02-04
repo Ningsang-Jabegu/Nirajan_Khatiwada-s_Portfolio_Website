@@ -65,11 +65,14 @@ nav .nav_item_container li:hover {
 
 main {
     display: flex;
-	flex-wrap: wrap;
     height: max-content;
-    width: auto;
+    width: auto; /*Because of the margin*/
     justify-content: space-evenly;
     margin: .8em;
+	box-shadow: 0px 0px 10px #03263459;
+    border-radius: 10px;
+	background-image: linear-gradient(to right, #e5e2e2, #ebe9ea, #f2f0f1, #f8f8f8, #ffffff);
+	border: 1px solid #d2d0d0;
 }
 
 main .my_profile_picture {
@@ -78,7 +81,6 @@ main .my_profile_picture {
 main .my_profile_picture {
     position: relative;
     overflow: hidden;
-    margin: 20px;
   }
 .my_profile_picture img {
     width: auto;
@@ -90,12 +92,10 @@ main .introduction_myself {
     font-family: Arial, sans-serif;
     font-size: 18px;
     text-align: justify;
-    margin: 20px;
     padding: 20px;
-    max-width: 100%;
+    max-width: 70%;
+	min-width: 20%;
     height: max-content;
-    box-shadow: 0px 0px 10px #03263459;
-    border-radius: 10px;
     font-family: 'poppins';
     background-color: #cdd2d508;
 }
@@ -124,12 +124,14 @@ photos h2 {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height:auto;
-    margin: 20px auto;
+    height:max-content;
+	padding: 1.3em;
+    margin: 0.8em;
     border: 1px solid #ddd;
     border-radius: 10px;
     gap: 1.3em;
-    padding: .5em auto;
+	box-shadow: 0px 0px 10px #03263459;
+    border-radius: 10px;
 }
 photos .photo_container .photo {
     height: 293px;
@@ -147,7 +149,7 @@ footer{
 	bottom: 0;
 }
 .footer-distributed{
-	background-color: #292c2f;
+	background-color: #33383b;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
@@ -159,14 +161,18 @@ footer{
 }
  
 .footer-distributed .footer-left,
-.footer-distributed .footer-center,
 .footer-distributed .footer-right{
 	display: inline-block;
 	vertical-align: top;
 }
+.footer-distributed .footer-r_l-center{
+	display: flex;
+	vertical-align: top;
+	justify-content: center;
+}
  
 .footer-distributed .footer-left{
-	width: 40%;
+	width: 50%;
 }
  
 .footer-distributed h3{
@@ -201,11 +207,11 @@ footer{
 }
  
  
-.footer-distributed .footer-center{
-	width: 35%;
+.footer-distributed .footer-right{
+	width: 45%;
 }
  
-.footer-distributed .footer-center i{
+.footer-distributed .footer-right i{
 	background-color:  #33383b;
 	color: #ffffff;
 	font-size: 25px;
@@ -218,32 +224,32 @@ footer{
 	vertical-align: middle;
 }
  
-.footer-distributed .footer-center i.fa-envelope{
+.footer-distributed .footer-right i.fa-envelope{
 	font-size: 17px;
 	line-height: 38px;
 }
  
-.footer-distributed .footer-center p{
+.footer-distributed .footer-right p{
 	display: inline-block;
 	color: #ffffff;
 	vertical-align: middle;
 	margin:0;
 }
  
-.footer-distributed .footer-center p span{
+.footer-distributed .footer-right p span{
 	display:block;
 	font-weight: normal;
 	font-size:14px;
 	line-height:2;
 }
  
-.footer-distributed .footer-center p a{
+.footer-distributed .footer-right p a{
 	color:  #5383d3;
 	text-decoration: none;;
 }
  
-.footer-distributed .footer-right{
-	width: 20%;
+.footer-distributed .footer-r_l-center{
+	width: 100%;
 }
  
 .footer-distributed .footer-company-about{
@@ -290,30 +296,15 @@ footer{
 	}
  
 	.footer-distributed .footer-left,
-	.footer-distributed .footer-center,
-	.footer-distributed .footer-right{
+	.footer-distributed .footer-right,
+	.footer-distributed .footer-r_l-center{
 		display: block;
 		width: 100%;
 		margin-bottom: 40px;
 		text-align: center;
 	}
  
-	.footer-distributed .footer-center i{
+	.footer-distributed .footer-right i{
 		margin-left: 0;
 	}
-}
-@media (min-width:996px) {
-	main .introduction_myself {
-		width: 60%;
-	}
-}
-@media (max-width:995px) {
-	.introduction_myself {
-		order: 2;
-		width: 100%;
-	}
-	.my_profile_picture {
-		order: 1;
-	}
-
 }
