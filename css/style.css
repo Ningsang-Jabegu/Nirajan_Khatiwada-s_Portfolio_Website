@@ -113,7 +113,8 @@ main .introduction_myself {
     font-weight: 600;
     font-family: nato-devanagari;
 }
-photos h2 {
+
+#photos h2 {
     text-align: center;
     width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -133,6 +134,7 @@ photos h2 {
 	box-shadow: 0px 0px 10px #03263459;
     border-radius: 10px;
 	position: relative;
+	background-image: linear-gradient(to right, #e5e2e2, #ebe9ea, #f2f0f1, #f8f8f8, #ffffff);
 }
 .see_more_0 {
 	position: absolute;
@@ -156,11 +158,14 @@ photos h2 {
 .see_more_0:hover,.see_less_0:hover {
 	color: #0e6296;
 }
-photos .photo_container .photo,
-photos .photo_container .photo_unhide_0 {
+#photos .photo_container .photo,
+#photos .photo_container .photo_unhide_0 {
     height: 293px;
     width:293px;
     
+}
+#hide_unhide_img {
+	transition: 200ms 200ms ease-out;
 }
 .photo img,.photo_unhide_0 img {
     width: 100%;
@@ -330,5 +335,10 @@ footer{
  
 	.footer-distributed .footer-right i{
 		margin-left: 0;
+	}
+}
+@media (max-width:857px) {
+	main .introduction_myself {
+		width: 50%;
 	}
 }
