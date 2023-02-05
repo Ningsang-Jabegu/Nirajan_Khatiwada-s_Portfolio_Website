@@ -34,11 +34,11 @@ nav {
     background: #3a92c2d7;
     height: max-content;
     width: 100%;
-    padding: 1em;
     font-size: 12pt;
     font-family: poppins, Georgia, 'Times New Roman', Times, serif;
     display: flex;
     justify-content: flex-end;
+	position: sticky;
 }
 
 nav .nav_item_container {
@@ -53,13 +53,18 @@ nav .nav_item_container .hamburger_icon {
     width: auto;
     margin-bottom: -.2em;
 }
-
+nav .nav_item_container .selected{
+	border-bottom: 2px solid #03103e;
+	background: #e7e4e582;
+}
 nav .nav_item_container li {
     cursor: pointer;
     text-decoration: none;
+	padding: .8em;
 }
 nav .nav_item_container li a{
     text-decoration: none;
+	color: inherit;
 }
 
 nav .nav_item_container li:hover {
@@ -161,7 +166,7 @@ main .introduction_myself {
 	font-weight: 600;
 	display: none;
 }
-.see_more_0:hover,.see_less_0:hover {
+.see_more_less:hover {
 	color: #0e6296;
 }
 #photos .photo_container .photo,
@@ -190,9 +195,11 @@ footer{
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
- 
-	padding: 55px 50px;
+	padding: 1.5em;
 	margin-top: 80px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
  
 .footer-distributed .footer-left,
