@@ -44,7 +44,6 @@ nav {
 nav .nav_item_container {
     list-style-type: none;
     display: flex;
-    gap: 2.5em;
     align-items: center;
 }
 
@@ -370,5 +369,25 @@ footer{
 @media (max-width:857px) {
 	main .introduction_myself {
 		width: 50%;
+	}
+}
+@media (min-width:500px) {
+	nav .nav_item_container {
+		justify-content: space-evenly;
+		gap: 2.5em;
+	}
+}
+@media (max-width:500px) and (min-width:400px) {
+	nav .nav_item_container {
+		justify-content: space-evenly;
+		gap: .8em;
+		width: 100%;
+	}
+}
+@media (max-width:400px){
+	nav .nav_item_container {
+		justify-content: space-evenly;
+		gap: 0;
+		width: 100%;
 	}
 }
