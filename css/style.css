@@ -391,3 +391,29 @@ footer{
 		width: 100%;
 	}
 }
+/*Page construction*/
+.under_construction {
+	font-family: sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+  }
+  
+  .under_construction  h1 {
+	font-size: 36px;
+	margin-bottom: 20px;
+  }
+  
+  .under_construction  svg {
+	width: 50%;
+	height: auto;
+	fill: #3f3f3f;
+  }
+  
+  @media (max-width: 767px) {
+	.under_construction	svg {
+	  width: 70%;
+	}
+  }
