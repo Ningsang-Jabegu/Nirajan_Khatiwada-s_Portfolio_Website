@@ -39,7 +39,9 @@
         <div class="introduction_myself">
             <p>I am <span class="name_intro">Nirajan Khatiwada</span>, the founder of <span class="org_intro">नेपाली
                     हाँस्यचित्र संस्थान</span>. </p>
-                    <p>I am pursuing a Bachelor of Science in Computer Science and Information Technology. My goal is to digitalize happiness and bring my dream world to life through my graphic design skills. I have over 3 years experience in social media handling and IT sector and my passion is graphic design.</p>
+            <p>I am pursuing a Bachelor of Science in Computer Science and Information Technology. My goal is to
+                digitalize happiness and bring my dream world to life through my graphic design skills. I have over 3
+                years experience in social media handling and IT sector and my passion is graphic design.</p>
 
         </div>
         <div class="my_profile_picture">
@@ -85,8 +87,8 @@
                     alt="my photos"></span>
 
             <div class="photo_container_hide_0">
-                <span class="see_less_0 see_more_less">See Less</span>
-                <span class="see_more_0 see_more_less">See More</span>
+                <span class="see_less_0 see_less see_more_less">See Less</span>
+                <span class="see_more_0 see_more see_more_less">See More</span>
             </div>
         </div>
         <script>
@@ -106,13 +108,14 @@
                     "https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/297952535_171446625410864_5661698994782519079_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=4Jd2t5YA_b8AX-sGO_w&_nc_ht=scontent.fktm8-1.fna&oh=00_AfCtK0HkpJT7XYkKq284xSvgWcuO0mVgGChFH4ybE97x9A&oe=63E32483",
                     "https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/297952535_171446625410864_5661698994782519079_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=4Jd2t5YA_b8AX-sGO_w&_nc_ht=scontent.fktm8-1.fna&oh=00_AfCtK0HkpJT7XYkKq284xSvgWcuO0mVgGChFH4ybE97x9A&oe=63E32483"
                 ];
+
                 for (const source of hidden_images_0) {
                     const img = document.createElement("img");
                     const span = document.createElement("span");
                     let referenceNode_0 = photo_container.children[photo_container.children.length - 1];
                     span.classList.add("photo_unhide_0");
                     span.id = "hide_unhide_img";
-                    span.title = "Hidden Images 1";
+                    span.title = "Hidden Images 0";
                     img.src = source;
                     img.alt = "my photo";
                     span.appendChild(img);
@@ -122,22 +125,74 @@
                 see_more_0.style.display = "none";
                 see_less_0.style.display = "block";
                 const see_more_1_span = document.createElement("span");
-                see_more_1_span.classList.add("see_more_1 see_more_less");
+                see_more_1_span.classList.add("see_more_1", "see_more_less", "see_more");
                 see_more_1_span.innerHTML = "See More (1)";
                 const see_container = document.querySelector(".photo_container_hide_0");
                 see_container.appendChild(see_more_1_span);
-                /*<span class="see_more_0 see_more_less">See More</span>*/
             });
+            /*For another photos*/
+            const see_more_1 = document.querySelector(".see_more_1");
             const photo_0 = document.querySelector("#hide_unhide_img");
-            const image_0 = document.querySelector(".image_homepage")
+            const image_0 = document.querySelector(".image_homepage");
             see_less_0.addEventListener("click", function () {
-                const spans_0 = document.querySelectorAll(".photo_container .photo_unhide_0");
-                for (const span of spans_0) {
-                    span.style.display = "none";
-                }
+                const photo_unhide_0 = document.querySelectorAll(".photo_unhide_0");
+                const see_more_1_txt_container = document.querySelectorAll(".see_more_1");
+                const parent = document.querySelector(".photo_container");
+                const parent_1 = document.querySelector(".photo_container_hide_0");
+                photo_unhide_0.forEach(function (span) {
+                    parent.removeChild(span);
+                });
+                see_more_1_txt_container.forEach(function (span_1) {
+                    parent_1.removeChild(span_1);
+                });
                 see_more_0.style.display = "block";
                 see_less_0.style.display = "none";
             });
+            see_more_1.addEventListener("click", function () {
+                const hidden_images_1 = [
+                    "https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/296161967_1707775469582807_5795551832325615440_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=lqcENoJdZQAAX9aSVNu&_nc_ht=scontent.fktm8-1.fna&oh=00_AfBG6Qf09UgTFjdTqduJtSH2ANdk__QIzQr4xlKhgYQ0rw&oe=63E4DEA9",
+                    "https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/296161967_1707775469582807_5795551832325615440_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=lqcENoJdZQAAX9aSVNu&_nc_ht=scontent.fktm8-1.fna&oh=00_AfBG6Qf09UgTFjdTqduJtSH2ANdk__QIzQr4xlKhgYQ0rw&oe=63E4DEA9",
+                    "https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/296161967_1707775469582807_5795551832325615440_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=lqcENoJdZQAAX9aSVNu&_nc_ht=scontent.fktm8-1.fna&oh=00_AfBG6Qf09UgTFjdTqduJtSH2ANdk__QIzQr4xlKhgYQ0rw&oe=63E4DEA9",
+                    "https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/296161967_1707775469582807_5795551832325615440_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=lqcENoJdZQAAX9aSVNu&_nc_ht=scontent.fktm8-1.fna&oh=00_AfBG6Qf09UgTFjdTqduJtSH2ANdk__QIzQr4xlKhgYQ0rw&oe=63E4DEA9",
+                    "https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/296161967_1707775469582807_5795551832325615440_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=lqcENoJdZQAAX9aSVNu&_nc_ht=scontent.fktm8-1.fna&oh=00_AfBG6Qf09UgTFjdTqduJtSH2ANdk__QIzQr4xlKhgYQ0rw&oe=63E4DEA9",
+                    "https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/296161967_1707775469582807_5795551832325615440_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=lqcENoJdZQAAX9aSVNu&_nc_ht=scontent.fktm8-1.fna&oh=00_AfBG6Qf09UgTFjdTqduJtSH2ANdk__QIzQr4xlKhgYQ0rw&oe=63E4DEA9",
+                    "https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/296161967_1707775469582807_5795551832325615440_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=lqcENoJdZQAAX9aSVNu&_nc_ht=scontent.fktm8-1.fna&oh=00_AfBG6Qf09UgTFjdTqduJtSH2ANdk__QIzQr4xlKhgYQ0rw&oe=63E4DEA9",
+                    "https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/296161967_1707775469582807_5795551832325615440_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=lqcENoJdZQAAX9aSVNu&_nc_ht=scontent.fktm8-1.fna&oh=00_AfBG6Qf09UgTFjdTqduJtSH2ANdk__QIzQr4xlKhgYQ0rw&oe=63E4DEA9",
+                    "https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/296161967_1707775469582807_5795551832325615440_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=lqcENoJdZQAAX9aSVNu&_nc_ht=scontent.fktm8-1.fna&oh=00_AfBG6Qf09UgTFjdTqduJtSH2ANdk__QIzQr4xlKhgYQ0rw&oe=63E4DEA9",
+                    "https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/296161967_1707775469582807_5795551832325615440_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=lqcENoJdZQAAX9aSVNu&_nc_ht=scontent.fktm8-1.fna&oh=00_AfBG6Qf09UgTFjdTqduJtSH2ANdk__QIzQr4xlKhgYQ0rw&oe=63E4DEA9"
+                ];
+                for (const source of hidden_images_1) {
+                    const img = document.createElement("img");
+                    const span = document.createElement("span");
+                    let referenceNode_1 = photo_container.children[photo_container.children.length - 1];
+                    span.classList.add("photo_unhide_1");
+                    span.id = "hide_unhide_img";
+                    span.title = "Hidden Images 0";
+                    img.src = source;
+                    img.alt = "my photo";
+                    span.appendChild(img);
+                    let img_0 = photo_container.appendChild(span);
+                    photo_container.insertBefore(img_0, referenceNode_1);
+                }
+                see_more_1.style.display = "none";
+                see_less_1.style.display = "block";
+                const see_more_2_span = document.createElement("span");
+                see_more_2_span.classList.add("see_more_2", "see_more_less", "see_more");
+                see_more_2_span.innerHTML = "See More (2)";
+                const see_container = document.querySelector(".photo_container_hide_0");
+                see_container.appendChild(see_more_2_span);
+                /*<span class="see_more_0 see_more_less">See More</span>*/
+            })
+            see_less_1.addEventListener("click", function () {
+                const spans_1 = document.querySelectorAll(".photo_container .photo_unhide_1");
+                for (const span of spans_1) {
+                    span.style.display = "none";
+                }
+                see_more_1.style.display = "block";
+                see_less_1.style.display = "block";
+                see_more_2.style.display = "none";
+                see_less_2.style.display = "none";
+            })
         </script>
     </div id="photos">
     <footer class="footer-distributed">
@@ -192,13 +247,15 @@
         </div>
         <script>
             const footer = document.querySelector(".footer-distributed");
-            const new_element = document.createElement("div");
-            const date = new Date();
-            const year = date.getFullYear();
-            document.querySelector("#this_year").innerHTML = year;
-            new_element.classList.add("web_coded");
-            new_element.innerHTML= ("<p>Coded by <a href='https://ningsangjabegu.com.np/'>Ningsang Jabegu</a></p>");
-            footer.appendChild(new_element);
+            if (footer) {
+                const new_element = document.createElement("div");
+                const date = new Date();
+                const year = date.getFullYear();
+                document.querySelector("#this_year").innerHTML = year;
+                new_element.classList.add("web_coded");
+                new_element.innerHTML = ("<p>Coded by <a href='https://ningsangjabegu.com.np/'>Ningsang Jabegu</a></p>");
+                footer.appendChild(new_element);
+            }
         </script>
     </footer>
 </body>

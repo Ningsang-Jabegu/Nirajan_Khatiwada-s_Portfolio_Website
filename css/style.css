@@ -148,13 +148,15 @@ main .introduction_myself {
 	display: block;
 }
 .see_more_0 {
-	position: absolute;
-	bottom: 1.3em;
-	right: 1.3em;
 	font-family: Arial;
 	font-size: 10pt;
 	cursor: pointer;
-	font-weight: 600;
+	
+}
+.see_more {
+	position: absolute;
+	bottom: 1.3em;
+	right: 1.3em;
 }
 .see_less_0 {
 	position: absolute;
@@ -162,12 +164,16 @@ main .introduction_myself {
 	left: 1.3em;
 	font-family: Arial;
 	font-size: 10pt;
-	cursor: pointer;
-	font-weight: 600;
+	
+	
 	display: none;
 }
 .see_more_less:hover {
 	color: #0e6296;
+}
+.see_more_less {
+	font-weight: 600;
+	cursor: pointer;
 }
 #photos .photo_container .photo,
 #photos .photo_container .photo_unhide_0 {
