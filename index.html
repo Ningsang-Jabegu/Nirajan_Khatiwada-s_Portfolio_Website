@@ -151,31 +151,18 @@
                 const image_0 = document.querySelector(".image_homepage");
                 /*When the user clicks on see less text after see more test is clicked*/
                 child_0_l.addEventListener("click", function () {
-                    /*const child_0_hidden_span = document.querySelectorAll(".photo_unhide_0");
-                    parent_1.removeChild(child_1_m);
-                    parent_1.removeChild(child_0_l);
-                    child_0_m.style.display = "block";
+                    /*selects all the elements of the particular class with querySelectorAll and querySelector only selects first child*/
+                    const child_0_hidden_span = document.querySelectorAll(".photo_unhide_0"); /*Don't remove this line*/
+                    const child_1_m_all = document.querySelectorAll(".see_more_1"); /*Don't remove this line*/
                     child_0_hidden_span.forEach(function (span) {
                         parent.removeChild(span);
                     });
-                    child_1_m.forEach(function (span) {
-                        parent_1.removeChild(span);
-                    });
-                    child_0_m.style.display = "block";
-                    child_0_l.style.display = "none";*/
-                    const photo_unhide_0 = document.querySelectorAll(".photo_unhide_0");
-                    const see_more_1_txt_container = document.querySelectorAll(".see_more_1");
-                    const parent = document.querySelector(".photo_container");
-                    const parent_1 = document.querySelector(".photo_container_hide_0");
-                    photo_unhide_0.forEach(function (span) {
-                        parent.removeChild(span);
-                    });
-                    see_more_1_txt_container.forEach(function (span) {
+                    child_1_m_all.forEach(function (span) {
                         parent_1.removeChild(span);
                     });
                     child_0_m.style.display = "block";
                     child_0_l.style.display = "none";
-                    
+
                 });
                 /*When the user clicks see more text and again see more (1) text*/
                 child_1_m.addEventListener("click", function () {
