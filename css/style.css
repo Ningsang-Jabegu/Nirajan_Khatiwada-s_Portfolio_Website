@@ -417,3 +417,22 @@ footer{
 	  width: 70%;
 	}
   }
+/*Songs page*/
+.youtube_videos {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+	justify-content: center;
+	margin: .8em;
+}
+.youtube_videos iframe{
+	border-radius: 1em;
+	width: 500px;
+	height: 450px;
+}
+@media (max-width:533px) {
+	.youtube_videos iframe{
+		width: 100%;
+		height: 450px;
+	}
+}
