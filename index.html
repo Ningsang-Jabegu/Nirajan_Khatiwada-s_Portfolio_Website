@@ -167,7 +167,7 @@
                 /*When the user clicks see more text and again see more (1) text*/
                 child_1_m.addEventListener("click", function () {
                     alert("HI");
-                    const hidden_images_1 = [
+                    const child_1_images = [
                         "https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/296161967_1707775469582807_5795551832325615440_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=lqcENoJdZQAAX9aSVNu&_nc_ht=scontent.fktm8-1.fna&oh=00_AfBG6Qf09UgTFjdTqduJtSH2ANdk__QIzQr4xlKhgYQ0rw&oe=63E4DEA9",
                         "https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/296161967_1707775469582807_5795551832325615440_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=lqcENoJdZQAAX9aSVNu&_nc_ht=scontent.fktm8-1.fna&oh=00_AfBG6Qf09UgTFjdTqduJtSH2ANdk__QIzQr4xlKhgYQ0rw&oe=63E4DEA9",
                         "https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/296161967_1707775469582807_5795551832325615440_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=lqcENoJdZQAAX9aSVNu&_nc_ht=scontent.fktm8-1.fna&oh=00_AfBG6Qf09UgTFjdTqduJtSH2ANdk__QIzQr4xlKhgYQ0rw&oe=63E4DEA9",
@@ -180,37 +180,53 @@
                         "https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/296161967_1707775469582807_5795551832325615440_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=lqcENoJdZQAAX9aSVNu&_nc_ht=scontent.fktm8-1.fna&oh=00_AfBG6Qf09UgTFjdTqduJtSH2ANdk__QIzQr4xlKhgYQ0rw&oe=63E4DEA9"
                     ];
 
-                    for (const source of hidden_images_1) {
-                        const img = document.createElement("img");
-                        const span = document.createElement("span");
-                        let referenceNode_1 = parent.children[parent.children.length - 1];
-                        span.classList.add("photo_unhide_1");
-                        span.id = "hide_unhide_img";
-                        span.title = "Hidden Images 1";
-                        img.src = source;
-                        img.alt = "my photo";
-                        span.appendChild(img);
-                        let img_1 = parent.appendChild(span);
-                        parent.insertBefore(img_1, referenceNode_1);
+                    for (const source of child_1_images) {
+                        const child_1_create_img = document.createElement("img");
+                        const child_1_create_span = document.createElement("span");
+                        let child_1_in_second_last_position = parent.children[parent.children.length - 1];
+                        spanchild_1_create_span.classList.add("photo_unhide_1");
+                        spanchild_1_create_span.id = "hide_unhide_img";
+                        spanchild_1_create_span.title = "Hidden Images 1";
+                        child_1_create_img.src = source;
+                        child_1_create_img.alt = "my photo";
+                        spanchild_1_create_span.appendChild(child_1_create_img);
+                        let child_1_add_to_parent = parent.appendChild(spanchild_1_create_span);
+                        parent.insertBefore(child_1_add_to_parent, child_1_in_second_last_position);
                     }
                     child_1_m.style.display = "none";
-                    child_0_l.style.display = "block";
-                    const see_more_2_span = document.createElement("span");
-                    see_more_2_span.classList.add("see_more_2", "see_more_less", "see_more");
-                    see_more_2_span.innerHTML = "See More (2)";
-                    const see_container = document.querySelector(".photo_container_hide_0");
-                    see_container.appendChild(see_more_2_span);
-                    /*<span class="see_more_0 see_more_less">See More</span>*/
-                })
-                see_less_1.addEventListener("click", function () {
-                    const spans_1 = document.querySelectorAll(".photo_container .photo_unhide_1");
-                    for (const span of spans_1) {
-                        span.style.display = "none";
+                    /*This checks that there is a span tag having class "see_less_1" or not*/
+                    child_1_l_search_span = parent_1.getElementsByTagName("span");
+                    for (let i=0; i< child_1_l_search_span.length; i++) {
+                        if(child_1_l_search_span[i].classList.contains("see_less_1")) {
+                            break;
+                        } else {
+                            see_less_1_span = document.createElement("span");
+                            see_less_1_span.classList.add("see_less_1", "see_more_less", "see_less");
+                            see_less_1_span.innerHTML = "See Less (1)";
+                            parent_1.appendChild(see_less_1_span);
+                        }
                     }
+                    child_1_l.style.display = "block";
+                    const child_2_create_span = document.createElement("span");
+                    child_2_create_span.classList.add("see_more_2", "see_more_less", "see_more");
+                    child_2_create_span.innerHTML = "See More (2)";
+                    parent_1.appendChild(child_2_create_span);
+                    /*<span class="see_more_0 see_more_less">See More</span>*/
+                });
+                /*When the user clicks on see less (1) text after see more(1) test is clicked*/
+                see_less_1.addEventListener("click", function () {
+                    const child_1_hidden_span = document.querySelectorAll(".photo_unhide_1"); /*Don't remove this line*/
+                    const child_2_m_all = document.querySelectorAll(".see_more_2"); /*Don't remove this line*/
+                    child_1_hidden_span.forEach(function (span) {
+                        parent.removeChild(span);
+                    })
+                    child_2_m_all.forEach(function (span) {
+                        parent_1.removeChild(span);
+                    })
+                    child_0_m.style.display = "none";
+                    child_0_l.style.display = "none";
+                    child_1_l.style.display = "none";
                     child_1_m.style.display = "block";
-                    see_less_1.style.display = "block";
-                    see_more_2.style.display = "none";
-                    see_less_2.style.display = "none";
                 })
             }
         </script>
