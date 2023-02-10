@@ -84,12 +84,24 @@
                     <p class="video_view_time"><span class="views"></span><span class="time"></span></p>
                 </div>
             </div>
-            
-            <!--<iframe
+            <div class="youtube_video">
+                <iframe
                 src="https://www.youtube.com/embed/WEL1lEgC3s4?list=PL7O3yVDSiwFNKDwZO-Dvi0XuWvsmtrNQu"
                 title="Shree 4 - Ji-One | Prod. Sedivi | NK Rajan" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
+                <div class="youtube_video_discription">
+                    <h3 class="video_title"></h3>
+                    <p class="video_view_time"><span class="views"></span><span class="time"></span></p>
+                </div>
+            </div>
+            <script>
+                const youtube_iframe = document.querySelector(".youtube_video iframe");
+                const youtube_title = youtube_iframe.title;
+                const youtube_discription_title = document.querySelector(".youtube_video_discription .video_title");
+                youtube_discription_title.innerHTML = youtube_title;
+            </script>
+            <!--
             <iframe
                 src="https://www.youtube.com/embed/hPBOl9Fxoow?list=PL7O3yVDSiwFNKDwZO-Dvi0XuWvsmtrNQu"
                 title="Shree 4 - Yaad | Ft. Sudeep Bidari | Prod. Vino Ramaldo | Mr. NK Rajan" frameborder="0"

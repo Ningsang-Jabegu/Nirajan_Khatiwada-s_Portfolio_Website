@@ -536,9 +536,22 @@ footer {
 	gap: 1em;
 	justify-content: center;
 	margin: .8em;
+	
 }
 #songs .youtube_video {
+	background: #404041;
+	width: 100%;
 	display: flex;
+	flex-wrap: wrap;
+	padding: .8em;
+	gap: .8em;
+}
+.youtube_video_discription .video_title {
+	margin-bottom: 8px;
+    font-family: "Roboto","Arial",sans-serif;
+    font-size: 1.3em;
+    font-weight: 500;
+	color: #f8f8f8;
 }
 /*#songs .youtube_videos iframe {
 	border-radius: 1em;
