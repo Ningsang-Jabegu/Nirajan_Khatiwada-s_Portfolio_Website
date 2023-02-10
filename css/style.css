@@ -490,6 +490,46 @@ footer {
 }
 
 /*Songs page*/
+#songs main {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#songs .songs_page_head {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: .8em auto;
+}
+#songs .songs_page_head .songs_profile_pic{
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	border: .1em solid grey;
+}
+#songs .songs_page_head h2,
+#songs .songs_page_head p{
+	line-height: 1.5;
+}
+#songs .songs_page_head nav{
+	background: rgb(23, 185, 158);
+}
+#songs .songs_page_head nav ul a li{
+	text-decoration: none;
+	list-style: none;
+	padding: .5em .8em;
+}
+#songs .songs_page_head nav ul{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+@media (min-width:600px) {
+	#songs .songs_page_head nav ul{
+		margin: 0 3em;
+	}
+}
 #songs .youtube_videos {
 	display: flex;
 	flex-wrap: wrap;
@@ -497,8 +537,10 @@ footer {
 	justify-content: center;
 	margin: .8em;
 }
-
-#songs .youtube_videos iframe {
+#songs .youtube_video {
+	display: flex;
+}
+/*#songs .youtube_videos iframe {
 	border-radius: 1em;
 	width: 500px;
 	height: 450px;
@@ -509,13 +551,14 @@ footer {
 		width: 100%;
 		height: 450px;
 	}
-}
+}*/
 /* Contact Us Page */
 #contact_us main {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	padding: 1em;
+	font-family: Arial, sans-serif;
 }
 #contact_us main h1 {
 	text-align: center;
