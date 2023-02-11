@@ -544,9 +544,9 @@ footer {
 	flex-wrap: wrap;
 	gap: 1em;
 	justify-content: center;
-	margin: .8em;
-	
+	margin: 2em auto;	
 }
+
 #songs .youtube_video {
 	width: 330px;
 	display: flex;
@@ -556,6 +556,7 @@ footer {
 	background-image: linear-gradient(to left, #e3e1e1, #e5e5e5, #e8e8e8, #f1efef, #ffffff);
 	box-shadow: 0px 0px 10px #03263459;
 	border-radius: .4em;
+	transition: all 400ms ease-in-out;
 }
 .youtube_video_discription {
 	display: flex;
@@ -594,6 +595,7 @@ footer {
 	width: 320px;
 	height: 180px;
 }
+
 #songs .youtube_videos .video_view_time {
 	display: flex;
 	gap: .1em;
