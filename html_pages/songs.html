@@ -37,9 +37,9 @@
             <li class="dropdown">
                 <img src="/images/Nav_Icon/hamburger_icon.png" alt="three line icon" class="hamburger_icon">
                 <div class="dropdown-content">
-                  <a href="/html_pages/contact_us.html">Contact us</a>
+                    <a href="/html_pages/contact_us.html">Contact us</a>
                 </div>
-              </li>
+            </li>
         </ul>
     </nav>
     <main>
@@ -60,35 +60,40 @@
               </svg>
         </div>-->
         <section class="songs_page_head">
-            <img src="https://i.ytimg.com/vi/1p6pHUieKQk/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLA1nEIfyJZgsQnJkFy4MNkMEikcPw" class="songs_profile_pic">
+            <img src="https://i.ytimg.com/vi/1p6pHUieKQk/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLA1nEIfyJZgsQnJkFy4MNkMEikcPw"
+                class="songs_profile_pic">
             <h2>Shree Chaar</h2>
             <p>Choose to listen SHREE CHAAR on</p>
             <nav>
                 <ul>
-                    <a href="#"><li>Youtube</li></a>
-                    <a href="#"><li>Spotify</li></a>
-                    <a href="#"><li>Apple Music</li></a>
+                    <a href="#">
+                        <li>Youtube</li>
+                    </a>
+                    <a href="#">
+                        <li>Spotify</li>
+                    </a>
+                    <a href="#">
+                        <li>Apple Music</li>
+                    </a>
                 </ul>
             </nav>
         </section>
         <div class="youtube_videos">
-            <div class="youtube_video">
-                <iframe
-                src="https://www.youtube.com/embed/1p6pHUieKQk?list=PL7O3yVDSiwFNKDwZO-Dvi0XuWvsmtrNQu"
-                title="Shree 4 - Dwonda | Prod. 6xbeats | [Kraanti] | NK Rajan" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+            <div class="youtube_video yt_video_1">
+                <iframe src="https://www.youtube.com/embed/1p6pHUieKQk?list=PL7O3yVDSiwFNKDwZO-Dvi0XuWvsmtrNQu"
+                    title="Shree 4 - Dwonda | Prod. 6xbeats | [Kraanti] | NK Rajan" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
                 <div class="youtube_video_discription">
                     <h3 class="video_title"></h3>
                     <p class="video_view_time"><span class="views"></span><span class="time"></span></p>
                 </div>
             </div>
-            <div class="youtube_video">
-                <iframe
-                src="https://www.youtube.com/embed/WEL1lEgC3s4?list=PL7O3yVDSiwFNKDwZO-Dvi0XuWvsmtrNQu"
-                title="Shree 4 - Ji-One | Prod. Sedivi | NK Rajan" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+            <div class="youtube_video yt_video_2">
+                <iframe src="https://www.youtube.com/embed/WEL1lEgC3s4?list=PL7O3yVDSiwFNKDwZO-Dvi0XuWvsmtrNQu"
+                    title="Shree 4 - Ji-One | Prod. Sedivi | NK Rajan" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
                 <div class="youtube_video_discription">
                     <h3 class="video_title"></h3>
                     <p class="video_view_time"><span class="views"></span><span class="time"></span></p>
@@ -96,9 +101,60 @@
             </div>
             <script>
                 const youtube_iframe = document.querySelector(".youtube_video iframe");
+                const youtube_video_divs = document.querySelectorAll(".youtube_video");
+                console.log(youtube_video_divs.length);
+                for(let i = 0; i<youtube_video_divs.length; i++) {
+                    youtube_video_div = youtube_video_divs[i];
+                    youtube_video_div_iframe = youtube_video_div.querySelector("iframe");
+                    const video_src = youtube_video_div_iframe.src;
+                    const video_id = video_src.split("/").pop().split("?")[0];
+                    const API_KEY = "AIzaSyA2Cu0XHp8z3fYpVFe6hYqffj8xr0ibhCE";
+                    const requestUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${video_id}&key=${API_KEY}`;
+                    fetch(requestUrl)
+                        .then(response => response.json())
+                        .then(data => {
+                            const videoTitle = data.items[0].snippet.title;
+                            const video_title_element = document.querySelector(".video_title");
+                            video_title_element.innerHTML = videoTitle;
+                        })
+                        .catch(error => {
+                            console.error(error);
+                        });
+                }
+
+                /*const youtube_iframe = document.querySelector(".youtube_video iframe");
                 const youtube_title = youtube_iframe.title;
                 const youtube_discription_title = document.querySelector(".youtube_video_discription .video_title");
                 youtube_discription_title.innerHTML = youtube_title;
+                const video_src = youtube_iframe.src;
+                const video_id = video_src.split("/").pop().split("?")[0];
+                const API_KEY = "AIzaSyA2Cu0XHp8z3fYpVFe6hYqffj8xr0ibhCE";
+                const videoId = video_id;
+                const requestUrl = `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${API_KEY}`;
+                fetch(requestUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data.items[0].statistics.viewCount);
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+
+                async function getTitle(videoLink) {
+                    const videoId = videoId;
+                    const apiKey = API_KEY;
+                    const response = await fetch(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&part=snippet&key=${apiKey}`);
+                    const data = await response.json();
+                    const title = data.items[0].snippet.title;
+                    return title;
+                }
+
+                function getVideoId(videoLink) {
+                    const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i;
+                    const match = videoLink.match(regex);
+                    return match[1];
+                }*/
+
             </script>
             <!--
             <iframe
