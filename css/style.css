@@ -112,7 +112,15 @@ nav .nav_item_container li:hover {
 .nav_item_container .dropdown:hover .dropdown-content a:hover{
 	background: #f8f8f8;
 }
-
+@media (max-width:600px) {
+	#index main {
+		align-items: flex-end;
+	}
+	main .introduction_myself {
+		font-size: clamp(8pt,1.1vw,15pt );/**/
+		padding: .3em;
+	}
+}
 main {
 	display: flex;
 	height: max-content;
@@ -143,7 +151,7 @@ main .my_profile_picture {
 
 main .introduction_myself {
 	font-family: Arial, sans-serif;
-	font-size: 18px;
+	font-size: clamp(10pt,1.1vw,15pt );/**/
 	text-align: justify;
 	padding: 20px;
 	max-width: 70%;
