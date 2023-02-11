@@ -101,9 +101,10 @@ nav .nav_item_container li:hover {
 	display: block;
 }
 .nav_item_container .dropdown:hover .dropdown-content a{
-	padding-left: .5em;
+	padding: .8em;
 	width: 100%;
 	display: block;
+	line-height: 1.8em;
 }
 .nav_item_container .dropdown:hover .dropdown-content a:last-child{
 	border-radius: 0 0 .3em .3em;
@@ -609,8 +610,8 @@ footer {
 	margin-bottom: 20px;
 	font-size: 16px;
 	border-radius: 5px;
-	border: none;
-	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	border: 1px solid #39393990;
+	box-shadow: 0 0 20px 0 #00000033, 0 5px 5px 0 #0000003d;
   }
   
  #contact_us main input[type="submit"] {
