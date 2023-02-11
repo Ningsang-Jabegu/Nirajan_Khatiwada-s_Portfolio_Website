@@ -497,7 +497,20 @@ footer {
 		width: 70%;
 	}
 }
-
+/*Posts Page*/
+.blogspot_iframe {
+	width: 100%;
+}
+@media (max-width:600px) {
+	.blogspot_iframe {
+		height: 480px;
+	}
+}
+@media (min-width:600px) {
+	.blogspot_iframe {
+		height: 575px;
+	}
+}
 /*Songs page*/
 #songs main {
 	display: block;
