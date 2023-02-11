@@ -86,7 +86,7 @@
                     allowfullscreen></iframe>
                 <div class="youtube_video_discription">
                     <h3 class="video_title"></h3>
-                    <p class="video_view_time"><span class="views"></span><span class="time"></span></p>
+                    <p class="video_view_time"><span class="views"></span><span class="upload_time"></span></p>
                 </div>
             </div>
             <div class="youtube_video">
@@ -96,7 +96,7 @@
                     allowfullscreen></iframe>
                 <div class="youtube_video_discription">
                     <h3 class="video_title"></h3>
-                    <p class="video_view_time"><span class="views"></span><span class="time"></span></p>
+                    <p class="video_view_time"><span class="views"></span><span class="upload_time"></span></p>
                 </div>
             </div>
             <div class="youtube_video">
@@ -107,7 +107,7 @@
                 allowfullscreen></iframe>
                 <div class="youtube_video_discription">
                     <h3 class="video_title"></h3>
-                    <p class="video_view_time"><span class="views"></span><span class="time"></span></p>
+                    <p class="video_view_time"><span class="views"></span><span class="upload_time"></span></p>
                 </div>
             </div>
             <div class="youtube_video">
@@ -118,7 +118,7 @@
                 allowfullscreen></iframe>
                 <div class="youtube_video_discription">
                     <h3 class="video_title"></h3>
-                    <p class="video_view_time"><span class="views"></span><span class="time"></span></p>
+                    <p class="video_view_time"><span class="views"></span><span class="upload_time"></span></p>
                 </div>
             </div>
             <div class="youtube_video">
@@ -129,7 +129,7 @@
                 allowfullscreen></iframe>
                 <div class="youtube_video_discription">
                     <h3 class="video_title"></h3>
-                    <p class="video_view_time"><span class="views"></span><span class="time"></span></p>
+                    <p class="video_view_time"><span class="views"></span><span class="upload_time"></span></p>
                 </div>
             </div>
             <div class="youtube_video">
@@ -140,7 +140,7 @@
                 allowfullscreen></iframe>
                 <div class="youtube_video_discription">
                     <h3 class="video_title"></h3>
-                    <p class="video_view_time"><span class="views"></span><span class="time"></span></p>
+                    <p class="video_view_time"><span class="views"></span><span class="upload_time"></span></p>
                 </div>
             </div>
 
@@ -152,7 +152,7 @@
                 allowfullscreen></iframe>
                 <div class="youtube_video_discription">
                     <h3 class="video_title"></h3>
-                    <p class="video_view_time"><span class="views"></span><span class="time"></span></p>
+                    <p class="video_view_time"><span class="views"></span><span class="upload_time"></span></p>
                 </div>
             </div>
             <div class="youtube_video">
@@ -163,7 +163,7 @@
                 allowfullscreen></iframe>
                 <div class="youtube_video_discription">
                     <h3 class="video_title"></h3>
-                    <p class="video_view_time"><span class="views"></span><span class="time"></span></p>
+                    <p class="video_view_time"><span class="views"></span><span class="upload_time"></span></p>
                 </div>
             </div>
             <div class="youtube_video">
@@ -174,7 +174,7 @@
                 allowfullscreen></iframe>
                 <div class="youtube_video_discription">
                     <h3 class="video_title"></h3>
-                    <p class="video_view_time"><span class="views"></span><span class="time"></span></p>
+                    <p class="video_view_time"><span class="views"></span><span class="upload_time"></span></p>
                 </div>
             </div>
             <div class="youtube_video">
@@ -185,7 +185,7 @@
                 allowfullscreen></iframe>
                 <div class="youtube_video_discription">
                     <h3 class="video_title"></h3>
-                    <p class="video_view_time"><span class="views"></span><span class="time"></span></p>
+                    <p class="video_view_time"><span class="views"></span><span class="upload_time"></span></p>
                 </div>
             </div>
             <div class="youtube_video">
@@ -196,7 +196,7 @@
                 allowfullscreen></iframe>
                 <div class="youtube_video_discription">
                     <h3 class="video_title"></h3>
-                    <p class="video_view_time"><span class="views"></span><span class="time"></span></p>
+                    <p class="video_view_time"><span class="views"></span><span class="upload_time"></span></p>
                 </div>
             </div>
             <div class="youtube_video">
@@ -207,7 +207,7 @@
                 allowfullscreen></iframe>
                 <div class="youtube_video_discription">
                     <h3 class="video_title"></h3>
-                    <p class="video_view_time"><span class="views"></span><span class="time"></span></p>
+                    <p class="video_view_time"><span class="views"></span> &nbsp;<span class="upload_time"> </span></p>
                 </div>
             </div>
             <script>
@@ -218,14 +218,24 @@
                     const youtube_video_div_iframe = youtube_video_div.querySelector("iframe");
                     const video_src = youtube_video_div_iframe.src;
                     const video_id = video_src.split("/").pop().split("?")[0];
+                    console.log(video_id);
                     const API_KEY = "AIzaSyA2Cu0XHp8z3fYpVFe6hYqffj8xr0ibhCE";
                     const requestUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${video_id}&key=${API_KEY}`;
                     fetch(requestUrl)
                         .then(response => response.json())
                         .then(data => {
                             const videoTitle = data.items[0].snippet.title;
+                            const viewCount = data.items[0].snippet.channelTitle;
+                            const uploadedTime = data.items[0].snippet.publishedAt;
+                            
+                            console.log(uploadedTime);
                             const video_title_element = youtube_video_div.querySelector(".video_title");
+                            const video_view_time = youtube_video_div.querySelector(".video_view_time");
+                            const video_view_element = video_view_time.querySelector(".views");
+                            const video_uplode_time_element = video_view_time.querySelector(".upload_time");
                             video_title_element.innerHTML = videoTitle;
+                            video_view_element.innerHTML = viewCount;
+                            video_uplode_time_element.innerHTML = uploadedTime;
                         })
                         .catch(error => {
                             console.error(error);
