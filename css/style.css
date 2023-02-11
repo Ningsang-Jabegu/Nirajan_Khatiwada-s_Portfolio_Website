@@ -568,8 +568,26 @@ footer {
     font-weight: 500;
 	color: #202020;
 }
+.youtube_video_discription {
+	position: relative;
+}
 .youtube_video_discription:hover {
 	cursor: pointer;
+}
+.yt_channel_name::before {
+	content: 'Mr. NK Rajan';
+	background: #272727c0;
+	color: #f2f0f1;
+	padding: .8em .5em;
+	position: absolute;
+	bottom: 4.8em;
+	font-weight: 400;
+	display: none;
+	border-radius: .3em;
+	font-size: 10pt;
+}
+ .yt_channel_name:hover::before{
+	display: block;
 }
 #songs .youtube_videos iframe {
 	border-radius: .7em;
