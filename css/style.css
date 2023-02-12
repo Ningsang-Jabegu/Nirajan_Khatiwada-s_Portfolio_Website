@@ -628,6 +628,10 @@ footer {
 		height: 202px;
 	}
 }
+.songs_nav_bar .selected {
+	background: #d1d1d1ad;
+	padding: .4em .8em;
+}
 
 /* Contact Us Page */
 #contact_us main {
