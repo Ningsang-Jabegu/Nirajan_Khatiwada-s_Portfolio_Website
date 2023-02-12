@@ -380,7 +380,8 @@
                 if (iframe_spotify) {
                     spotify_song.removeChild(iframe_spotify);
                 }
-                if (!document.querySelector(".apple_music")) {
+                const apple_music_iframe = document.querySelector(".apple_music");
+                if (!apple_music_iframe) {
                     addAppleMusicIframe();
                 }
 
@@ -416,12 +417,16 @@
                 create_iframe.setAttribute("allow", "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture");
                 create_iframe.setAttribute("loading", "lazy");
                 apple_song.appendChild(create_iframe);*/
+
                 const create_iframe = document.createElement("iframe");
+                create_iframe.classList.add("apple_music");
+                create_iframe.style.borderRadius = "12px";
                 create_iframe.src = "https://music.apple.com/np/artist/sajjan-raj-vaidya/1206974063";
-                create_iframe.style.width = "100%";
-                create_iframe.style.height = "500px";
+                create_iframe.setAttribute("width", "100%");
+                create_iframe.setAttribute("height", "352");
                 create_iframe.setAttribute("frameBorder", "0");
-                create_iframe.setAttribute("allow", "autoplay; encrypted-media; fullscreen");
+                create_iframe.setAttribute("allowfullscreen", "");
+                create_iframe.setAttribute("loading", "lazy");
                 apple_song.appendChild(create_iframe);
             }
             /*Play on hover*/
