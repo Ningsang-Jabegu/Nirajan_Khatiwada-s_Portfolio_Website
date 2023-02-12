@@ -275,7 +275,9 @@
         <div class="spotify_musics">
 
         </div>
-        <div class="apple_musics"></div>
+        <div class="apple_musics">
+            
+        </div>
     </main>
     <footer class="footer-distributed">
 
@@ -333,6 +335,7 @@
             const songs_nav_youtube = document.querySelector(".song_nav_youtube");
             const songs_nav_spotify = document.querySelector(".song_nav_spotify");
             const spotify_song = document.querySelector(".spotify_musics");
+            const apple_song =document.querySelector(".apple_musics");
             const spotify_song_iframe = spotify_song.querySelector("iframe")
             const songs_nav_apple_music = document.querySelector(".song_nav_apple_music");
             const songs_youtube_container = document.querySelector(".youtube_videos");
@@ -377,6 +380,10 @@
                 if (iframe_spotify) {
                     spotify_song.removeChild(iframe_spotify);
                 }
+                if (!document.querySelector(".apple_music")) {
+                    addAppleMusicIframe();
+                }
+                
             });
             songs_nav_youtube.addEventListener('click', () => {
                 songs_youtube_container.style.display = "flex";
@@ -394,9 +401,22 @@
                 }
             });
 
-            songs_nav_apple_music.addEventListener('click', () => {
-                songs_youtube_container.style.display = "none";
-            })
+
+            function addAppleMusicIframe() {
+                /*<iframe src="https://music.apple.com/np/artist/sajjan-raj-vaidya/1206974063" 
+                style="border:0px #ffffff none;" name="appleMusicIframe" scrolling="yes" frameborder="1" marginheight="0px" marginwidth="0px" height="552px" width="100%px" allowfullscreen></iframe>*/
+                const create_iframe = document.createElement("iframe");
+                create_iframe.classList.add(".apple_music");
+                create_iframe.style.borderRadius = "12px";
+                create_iframe.src = "https://music.apple.com/np/artist/sajjan-raj-vaidya/1206974063";
+                create_iframe.setAttribute("width", "100%");
+                create_iframe.setAttribute("height", "552");
+                create_iframe.setAttribute("frameBorder", "0");
+                create_iframe.setAttribute("allowfullscreen", "");
+                create_iframe.setAttribute("allow", "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture");
+                create_iframe.setAttribute("loading", "lazy");
+                apple_song.appendChild(create_iframe);
+            }
             /*Play on hover*/
             const youtubeVideos = document.querySelectorAll('.youtube_video');
 
