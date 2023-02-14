@@ -650,7 +650,7 @@ footer {
 	margin: .5em auto;
 	text-align: justify;
 }
-#apple_music_btn {
+#ancor_btn {
 	padding: .5em 1em;
 	width: max-content;
 	cursor: pointer;
@@ -658,8 +658,12 @@ footer {
 	background-color: #d4d4d4;
 	border-radius: .8em;
 }
-#apple_music_btn:hover {
+#ancor_btn:hover {
 	background-color: #c1c5c9d0;
+}
+.ancor_btn_logo {
+	vertical-align: middle; 
+	margin-right: 10px;
 }
 /* Contact Us Page */
 #contact_us main {

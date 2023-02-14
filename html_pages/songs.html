@@ -352,22 +352,48 @@
                         spotify_song.removeChild(iframe_spotify);
                         apple_song.style.display = "none";
                     } else if (button.classList.contains("song_nav_apple_music")) {
+                        window.open('https://music.apple.com/np/artist/sajjan-raj-vaidya/1206974063');
+                        apple_song.style.display = "block";
                         songs_youtube_container.style.display = "none";
                         spotify_song.removeChild(iframe_spotify);
-                        window.open('https://music.apple.com/np/artist/sajjan-raj-vaidya/1206974063');
+                        /*alert("Hi I reached to the end of js");
+                        const display_at = document.querySelector("apple_musics");
+                        const btn_txt = "Listen on Apple Music";
+                        const btn_src = "https://music.apple.com/np/artist/sajjan-raj-vaidya/1206974063";
+                        const btn_logo = `/images/Btn_Icon/apple_music.png`;
+                        const alt = "Apple Music Icon";
+                        addButton(display_at, btn_txt, btn_src, btn_logo, alt);*/  
                     }
                     else {
-                        if (iframe_spotify) {
-                            spotify_song.removeChild(iframe_spotify);
-                        }
+                        alert("Nothing to show");
                     }
                 });
             });
-
+            /*creates button*/
+            function addButton(display_at, btn_txt, btn_src, btn_logo, alt) {
+                const ancor_tag = document.createElement("a");
+                ancor_tag.setAttribute("href", btn_src);
+                const button = document.createElement("button");
+                button.id = "ancor_btn";
+                const img = document.createElement("img");
+                img.src = btn_logo;
+                img.setAttribute("alt", alt);
+                img.classList.add("ancor_btn_logo");
+                button.innerText = btn_txt;
+                button.appendChild(img);
+                ancor_tag.appendChild(button);
+                display_at.appendChild(ancor_tag);
+                if (!display_at) {
+                    console.error("The element to display the button at could not be found.");
+                    return;
+                }
+            }
+            /*creates iframe*/
             function addIframe(parent, className, src) {
                 const iframe = document.createElement("iframe");
                 iframe.classList.add(className);
                 iframe.style.borderRadius = "12px";
+                iframe.style.padding = "0.8em";
                 iframe.src = src;
                 iframe.setAttribute("width", "100%");
                 iframe.setAttribute("height", "552");
@@ -408,7 +434,6 @@
                 const youtube_video_div_iframe = youtube_video_div.querySelector("iframe");
                 const video_src = youtube_video_div_iframe.src;
                 const video_id = video_src.split("/").pop().split("?")[0];
-                console.log(video_id);
                 const API_KEY = "AIzaSyA2Cu0XHp8z3fYpVFe6hYqffj8xr0ibhCE";
                 const requestUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${video_id}&key=${API_KEY}`;
                 fetch(requestUrl)
