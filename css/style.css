@@ -17,6 +17,10 @@ body {
 header {
 	margin: .5em;
 }
+.name_logo {
+	height: auto;
+	width: 6em;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
 
