@@ -334,7 +334,8 @@
             const songs_youtube_container = document.querySelector(".youtube_videos");
             const nav_buttons = document.querySelectorAll(".songs_nav_bar a");
             const spotify_song = document.querySelector(".spotify_musics");
-
+            const youtube_song = document.querySelector(".youtube_videos");
+            const apple_song = document.querySelector(".apple_musics");
             nav_buttons.forEach(button => {
                 button.addEventListener('click', () => {
                     songs_youtube_container.style.display = "none";
@@ -343,9 +344,13 @@
                     const iframe_spotify = document.querySelector(".spotify_music");
                     if (button.classList.contains("song_nav_spotify")) {
                         addIframe(spotify_song, "spotify_music", "https://open.spotify.com/embed/playlist/37i9dQZF1DX9sIqqvKsjG8?utm_source=generator");
+                        songs_youtube_container.style.display = "none";
+                        apple_song.style.display = "none";
+
                     } else if (button.classList.contains("song_nav_youtube")) {
                         songs_youtube_container.style.display = "flex";
                         spotify_song.removeChild(iframe_spotify);
+                        apple_song.style.display = "none";
                     } else if (button.classList.contains("song_nav_apple_music")) {
                         songs_youtube_container.style.display = "none";
                         spotify_song.removeChild(iframe_spotify);
