@@ -330,104 +330,47 @@
 
         </div>
         <script>
-            /*songs body nav bar*/
             const songs_navigation = document.querySelector(".songs_nav_bar");
-            const songs_nav_youtube = document.querySelector(".song_nav_youtube");
-            const songs_nav_spotify = document.querySelector(".song_nav_spotify");
-            const spotify_song = document.querySelector(".spotify_musics");
-            const apple_song = document.querySelector(".apple_musics");
-            const spotify_song_iframe = spotify_song.querySelector("iframe")
-            const songs_nav_apple_music = document.querySelector(".song_nav_apple_music");
             const songs_youtube_container = document.querySelector(".youtube_videos");
-            songs_nav_spotify.addEventListener('click', () => {
-                songs_youtube_container.style.display = "none";
-                const songs_nav_ul = songs_navigation.querySelector("ul");
-                const remove_selected_background = songs_nav_ul.querySelectorAll(".songs_nav_bar ul a");
-                for (let i = 0; i < remove_selected_background.length; i++) {
-                    if (remove_selected_background[i].classList.contains("selected")) {
-                        remove_selected_background[i].classList.remove("selected");
-                        songs_nav_spotify.classList.add("selected");
-                    }
-                }
-                if (!document.querySelector(".spotify_music")) {
-                    addSpotifyIframe();
-                }
-            });
-            function addSpotifyIframe() {
-                const create_iframe = document.createElement("iframe");
-                create_iframe.classList.add("spotify_music");
-                create_iframe.style.borderRadius = "12px";
-                create_iframe.src = "https://open.spotify.com/embed/playlist/37i9dQZF1DX9sIqqvKsjG8?utm_source=generator";
-                create_iframe.setAttribute("width", "100%");
-                create_iframe.setAttribute("height", "552");
-                create_iframe.setAttribute("frameBorder", "0");
-                create_iframe.setAttribute("allowfullscreen", "");
-                create_iframe.setAttribute("allow", "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture");
-                create_iframe.setAttribute("loading", "lazy");
-                spotify_song.appendChild(create_iframe);
-            }
-            songs_nav_apple_music.addEventListener('click', () => {
-                songs_youtube_container.style.display = "none";
-                const songs_nav_ul = songs_navigation.querySelector("ul");
-                const remove_selected_background = songs_nav_ul.querySelectorAll(".songs_nav_bar ul a");
-                for (let i = 0; i < remove_selected_background.length; i++) {
-                    if (remove_selected_background[i].classList.contains("selected")) {
-                        remove_selected_background[i].classList.remove("selected");
-                        songs_nav_apple_music.classList.add("selected");
-                    }
-                }
-                const iframe_spotify = document.querySelector(".spotify_music");
-                if (iframe_spotify) {
-                    spotify_song.removeChild(iframe_spotify);
-                }
-                const apple_music_iframe = document.querySelector(".apple_music");
-                if (!apple_music_iframe) {
-                    addAppleMusicIframe();
-                }
+            const nav_buttons = document.querySelectorAll(".songs_nav_bar a");
+            const spotify_song = document.querySelector(".spotify_musics");
 
-            });
-            songs_nav_youtube.addEventListener('click', () => {
-                songs_youtube_container.style.display = "flex";
-                const songs_nav_ul = songs_navigation.querySelector("ul");
-                const remove_selected_background = songs_nav_ul.querySelectorAll(".songs_nav_bar ul a");
-                for (let i = 0; i < remove_selected_background.length; i++) {
-                    if (remove_selected_background[i].classList.contains("selected")) {
-                        remove_selected_background[i].classList.remove("selected");
-                        songs_nav_youtube.classList.add("selected");
+            nav_buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    songs_youtube_container.style.display = "none";
+                    nav_buttons.forEach(b => b.classList.remove("selected"));
+                    button.classList.add("selected");
+                    const iframe_spotify = document.querySelector(".spotify_music");
+                    if (button.classList.contains("song_nav_spotify")) {
+                        addIframe(spotify_song, "spotify_music", "https://open.spotify.com/embed/playlist/37i9dQZF1DX9sIqqvKsjG8?utm_source=generator");
+                    } else if (button.classList.contains("song_nav_youtube")) {
+                        songs_youtube_container.style.display = "flex";
+                        spotify_song.removeChild(iframe_spotify);
+                    } else if (button.classList.contains("song_nav_apple_music")) {
+                        songs_youtube_container.style.display = "none";
+                        spotify_song.removeChild(iframe_spotify);
+                        window.location.href = "https://music.apple.com/np/artist/sajjan-raj-vaidya/1206974063";
                     }
-                }
-                const iframe_spotify = document.querySelector(".spotify_music");
-                if (iframe_spotify) {
-                    spotify_song.removeChild(iframe_spotify);
-                }
+                    else {
+                        if (iframe_spotify) {
+                            spotify_song.removeChild(iframe_spotify);
+                        }
+                    }
+                });
             });
 
-
-            function addAppleMusicIframe() {
-                /*<iframe src="https://music.apple.com/np/artist/sajjan-raj-vaidya/1206974063" 
-                style="border:0px #ffffff none;" name="appleMusicIframe" scrolling="yes" frameborder="1" marginheight="0px" marginwidth="0px" height="552px" width="100%px" allowfullscreen></iframe>*/
-                /*const create_iframe = document.createElement("iframe");
-                create_iframe.classList.add(".apple_music");
-                create_iframe.style.borderRadius = "12px";
-                create_iframe.src = "https://music.apple.com/np/artist/sajjan-raj-vaidya/1206974063";
-                create_iframe.setAttribute("width", "100%");
-                create_iframe.setAttribute("height", "552");
-                create_iframe.setAttribute("frameBorder", "0");
-                create_iframe.setAttribute("allowfullscreen", "");
-                create_iframe.setAttribute("allow", "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture");
-                create_iframe.setAttribute("loading", "lazy");
-                apple_song.appendChild(create_iframe);*/
-
-                const create_iframe = document.createElement("iframe");
-                create_iframe.classList.add("apple_music");
-                create_iframe.style.borderRadius = "12px";
-                create_iframe.src = "https://music.apple.com/np/artist/sajjan-raj-vaidya/1206974063";
-                create_iframe.setAttribute("width", "100%");
-                create_iframe.setAttribute("height", "352");
-                create_iframe.setAttribute("frameBorder", "0");
-                create_iframe.setAttribute("allowfullscreen", "");
-                create_iframe.setAttribute("loading", "lazy");
-                apple_song.appendChild(create_iframe);
+            function addIframe(parent, className, src) {
+                const iframe = document.createElement("iframe");
+                iframe.classList.add(className);
+                iframe.style.borderRadius = "12px";
+                iframe.src = src;
+                iframe.setAttribute("width", "100%");
+                iframe.setAttribute("height", "552");
+                iframe.setAttribute("frameBorder", "0");
+                iframe.setAttribute("allowfullscreen", "");
+                iframe.setAttribute("allow", "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture");
+                iframe.setAttribute("loading", "lazy");
+                parent.appendChild(iframe);
             }
             /*Play on hover*/
             const youtubeVideos = document.querySelectorAll('.youtube_video');
@@ -460,6 +403,7 @@
                 const youtube_video_div_iframe = youtube_video_div.querySelector("iframe");
                 const video_src = youtube_video_div_iframe.src;
                 const video_id = video_src.split("/").pop().split("?")[0];
+                console.log(video_id);
                 const API_KEY = "AIzaSyA2Cu0XHp8z3fYpVFe6hYqffj8xr0ibhCE";
                 const requestUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${video_id}&key=${API_KEY}`;
                 fetch(requestUrl)
@@ -482,7 +426,6 @@
                         video_profile_pic_img.src = channelProfilePictureUrl;
                         video_title_element.setAttribute("title", past_as_title_for_title_txt);
                         video_profile_pic_img.setAttribute("title", channel_name);
-
                         /*This is for time upload formation*/
                         const uploadedTime_copy = uploadedTime;
                         const uploadDate = new Date(uploadedTime_copy);
