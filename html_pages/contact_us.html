@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Nirajan contact, Khatiwada contact, Nirajan Khatiwada contact, Nirajan Khatiwada work contact" />
+    <meta name="keywords"
+        content="Nirajan contact, Khatiwada contact, Nirajan Khatiwada contact, Nirajan Khatiwada work contact" />
     <meta property="og:type" content="website, personal website, portfolio website, contact to Nirajan Khatiwada" />
-    <meta property="og:title" content="Nirajan contact, Nirajan Khatiwada contact, Khatiwada Nirajan contact, Khatiwada contact" />
+    <meta property="og:title"
+        content="Nirajan contact, Nirajan Khatiwada contact, Khatiwada Nirajan contact, Khatiwada contact" />
     <meta property="og:description"
         content="This is the contact us page of Nirajan Khatiwada's portfolio website. You can contact to Nirajan Khatiwada from the information provided in this page.">
     <meta name='robots' content='max-image-preview:large' />
@@ -33,44 +35,54 @@
             <li><a href="/html_pages/posts.html">Posts</a></li>
             <li><a href="./songs.html">Songs</a></li>
             <li><a href="./projects.html">Projects</a></li>
-            <li class="dropdown selected" >
+            <li class="dropdown selected">
                 <img src="/images/Nav_Icon/hamburger_icon.png" alt="three line icon" class="hamburger_icon">
                 <div class="dropdown-content">
-                  <a href="#" class="selected">Contact us</a>
+                    <a href="#" class="selected">Contact us</a>
                 </div>
-              </li>
+            </li>
         </ul>
     </nav>
     <main>
-        <!--<div class="under_construction">
-            <h1>Contact Us Page Under Construction</h1>
-            <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-                <rect x="0" y="0" width="500" height="500" fill="#f2f2f2"/>
-                <rect x="100" y="100" width="300" height="300" fill="#fff"/>
-                <rect x="120" y="120" width="260" height="260" fill="#ddd"/>
-                <rect x="140" y="140" width="200" height="200" fill="#bbb"/>
-                <rect x="160" y="160" width="140" height="140" fill="#999"/>
-                <rect x="180" y="180" width="80" height="80" fill="#777"/>
-                <rect x="200" y="200" width="20" height="20" fill="#555"/>
-                <rect x="250" y="250" width="20" height="20" fill="#333"/>
-                <rect x="300" y="300" width="20" height="20" fill="#111"/>
-                <rect x="350" y="350" width="20" height="20" fill="#000"/>
-                <text x="250" y="450" font-size="30" text-anchor="middle" fill="#333">Contact Us Page Under Construction</text>
-              </svg>
-        </div>-->
+        <!--Google Script API-->
+        <script src="https://apis.google.com/js/api.js">
+            const form = document.getElementById('contact_us_form');
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                submitForm(form);
+            });
+
+            const spreadsheetUrl = 'https://docs.google.com/spreadsheets/d/18zp7CTeaXbB7RbxRqkHzJ53zxQFBgEoRYc7kITDbeRQ/edit#gid=0';
+            const spreadsheetId = getSpreadsheetIdFromUrl(spreadsheetUrl);
+
+            function getSpreadsheetIdFromUrl(url) {
+                const match = url.match(/\/d\/([a-zA-Z0-9-_]+)/);
+                return match ? match[1] : null;
+            }
+
+            function submitForm(form) {
+                google.script.run
+                    .withSuccessHandler(function (response) {
+                        console.log(response);
+                        form.reset();
+                    })
+                    .processForm(form, spreadsheetId);
+            }
+        </script>
         <h1>Contact Us</h1>
-    <form action="#" method="post">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="user_name" required>
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="user_email" required>
-      
-      <label for="message">Message:</label>
-      <textarea id="message" name="user_message" required></textarea>
-      
-      <input type="submit" value="Submit">
-    </form>
+        <script src="https://sheetdb.io/s/f/rer8ori01v4y0.js"></script>
+        <!--<form onsubmit="event.preventDefault(); google.script.run.withSuccessHandler(function(response) { console.log(response); form.reset(); }).processForm(this);">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name" required>
+          AKfycbwdLtGVYVdDCg3XmXYZMTq2IcadG7xEY5k1hAwD-fXJeZGzk9Ajqe0bjz49nk94N468SQ
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="user_email" required>
+          
+            <label for="message">Message:</label>
+            <textarea id="message" name="user_message" required></textarea>
+          
+            <input type="submit" value="Submit">
+          </form>-->
     </main>
     <footer class="footer-distributed">
 

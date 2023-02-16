@@ -684,10 +684,15 @@ footer {
   
  #contact_us main form {
 	margin: 0 auto;
-	padding: 50px;
-	background-color: white;
+	padding: 2em!important;
 	border-radius: 10px;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	width: 70%!important;
+
+  }
+  .form_eq7uit__form {
+	background: transparent!important;
+	padding: inherit!important;
   }
   @media (min-width:600px) {
 	#contact_us main form {
@@ -696,7 +701,7 @@ footer {
   }
   @media (max-width:600px) {
 	#contact_us main form {
-		width: 100%;
+		width: 100%!important;
 	  }
   }
  #contact_us main label {
