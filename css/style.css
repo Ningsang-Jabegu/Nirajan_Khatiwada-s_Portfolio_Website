@@ -688,7 +688,7 @@ footer {
 }
 .project {
 	height: 13em;
-	width: 13em;
+	width: 19em;
 
 }
 .project img {
@@ -696,6 +696,13 @@ footer {
 	width: 100%;
 	box-shadow:  3px 3px 7px #01161e4a;
 	border: 3px solid rgba(73, 72, 72, 0.486);
+}
+.project p {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	line-height: 2;
+	font-weight: 600;
+	text-align: center;
+	cursor: pointer;
 }
 /* Contact Us Page */
 #contact_us main {
