@@ -17,6 +17,7 @@ body {
 header {
 	margin: .5em;
 }
+
 .name_logo {
 	height: auto;
 	width: 6em;
@@ -104,27 +105,34 @@ nav .nav_item_container li:hover {
 .nav_item_container .dropdown:hover .dropdown-content {
 	display: block;
 }
-.nav_item_container .dropdown:hover .dropdown-content a{
+
+.nav_item_container .dropdown:hover .dropdown-content a {
 	padding: .8em;
 	width: 100%;
 	display: block;
 	line-height: 1.8em;
 }
-.nav_item_container .dropdown:hover .dropdown-content a:last-child{
+
+.nav_item_container .dropdown:hover .dropdown-content a:last-child {
 	border-radius: 0 0 .3em .3em;
 }
-.nav_item_container .dropdown:hover .dropdown-content a:hover{
+
+.nav_item_container .dropdown:hover .dropdown-content a:hover {
 	background: #f8f8f8;
 }
+
 @media (max-width:600px) {
 	#index main {
 		align-items: flex-end;
 	}
+
 	main .introduction_myself {
-		font-size: clamp(8pt,1.1vw,15pt );/**/
+		font-size: clamp(8pt, 1.1vw, 15pt);
+		/**/
 		padding: .3em;
 	}
 }
+
 main {
 	display: flex;
 	height: max-content;
@@ -155,7 +163,8 @@ main .my_profile_picture {
 
 main .introduction_myself {
 	font-family: Arial, sans-serif;
-	font-size: clamp(10pt,1.1vw,15pt );/**/
+	font-size: clamp(10pt, 1.1vw, 15pt);
+	/**/
 	text-align: justify;
 	padding: 20px;
 	max-width: 70%;
@@ -245,8 +254,9 @@ main .introduction_myself {
 
 #photos .photo_container .photo,
 #photos .photo_container .photo_unhide_0 {
-	height: clamp(220px,20vw,293px);/**/
-	width: clamp(220px,20vw,293px);
+	height: clamp(220px, 20vw, 293px);
+	/**/
+	width: clamp(220px, 20vw, 293px);
 
 }
 
@@ -501,25 +511,30 @@ footer {
 		width: 70%;
 	}
 }
+
 /*Posts Page*/
 .blogspot_iframe {
 	width: 100%;
 }
+
 @media (max-width:600px) {
 	.blogspot_iframe {
 		height: 480px;
 	}
 }
+
 @media (min-width:600px) {
 	.blogspot_iframe {
 		height: 575px;
 	}
 }
+
 /*Songs page*/
 #songs main {
 	display: block;
 	font-family: Arial, Helvetica, sans-serif;
 }
+
 #songs .songs_page_head {
 	display: flex;
 	flex-direction: column;
@@ -527,41 +542,48 @@ footer {
 	align-items: center;
 	margin: .8em auto;
 }
-#songs .songs_page_head .songs_profile_pic{
+
+#songs .songs_page_head .songs_profile_pic {
 	height: 200px;
 	width: 200px;
 	border-radius: 50%;
 	border: .1em solid grey;
 }
+
 #songs .songs_page_head h2,
-#songs .songs_page_head p{
+#songs .songs_page_head p {
 	line-height: 1.5;
 }
-#songs .songs_page_head nav{
+
+#songs .songs_page_head nav {
 	background: rgb(23, 185, 158);
 }
-#songs .songs_page_head nav ul a li{
+
+#songs .songs_page_head nav ul a li {
 	text-decoration: none;
 	list-style: none;
 	padding: .5em .8em;
 }
-#songs .songs_page_head nav ul{
+
+#songs .songs_page_head nav ul {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
 }
+
 @media (min-width:600px) {
-	#songs .songs_page_head nav ul{
+	#songs .songs_page_head nav ul {
 		margin: 0 3em;
 	}
 }
+
 #songs .youtube_videos {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1em;
 	justify-content: center;
-	margin: 2em auto;	
+	margin: 2em auto;
 }
 
 #songs .youtube_video {
@@ -575,23 +597,29 @@ footer {
 	border-radius: .4em;
 	transition: all 400ms ease-in-out;
 }
+
 .youtube_video_discription {
 	display: flex;
 	gap: .5em;
 }
+
 .youtube_video_discription .video_title {
 	margin-bottom: 8px;
-    font-family: "Roboto","Arial",sans-serif;
-    font-size: clamp(11pt, 1.3vw, 13pt);/**/
-    font-weight: 500;
+	font-family: "Roboto", "Arial", sans-serif;
+	font-size: clamp(11pt, 1.3vw, 13pt);
+	/**/
+	font-weight: 500;
 	color: #202020;
 }
+
 .youtube_video_discription {
 	position: relative;
 }
+
 .youtube_video_discription:hover {
 	cursor: pointer;
 }
+
 .yt_channel_name::before {
 	content: 'Mr. NK Rajan';
 	background: #272727c0;
@@ -604,9 +632,11 @@ footer {
 	border-radius: .3em;
 	font-size: 10pt;
 }
- .yt_channel_name:hover::before{
+
+.yt_channel_name:hover::before {
 	display: block;
 }
+
 #songs .youtube_videos iframe {
 	border-radius: .7em;
 	width: 320px;
@@ -616,26 +646,31 @@ footer {
 #songs .youtube_videos .video_view_time {
 	display: flex;
 	gap: .1em;
-	font-family: "Roboto","Arial",sans-serif;
-    font-size: clamp(9pt, 1.2vw, 11pt);/**/
-    font-weight: 500;
+	font-family: "Roboto", "Arial", sans-serif;
+	font-size: clamp(9pt, 1.2vw, 11pt);
+	/**/
+	font-weight: 500;
 	color: #4d4c4c;
 
 }
+
 .youtube_profile_pic {
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
 }
+
 @media (min-width:533px) {
 	#songs .youtube_videos iframe {
 		height: 202px;
 	}
 }
+
 .songs_nav_bar .selected {
 	background: #d1d1d1ad;
 	padding: .4em .8em;
 }
+
 .apple_musics {
 	display: flex;
 	flex-direction: column;
@@ -646,14 +681,17 @@ footer {
 	font-weight: 400;
 	padding: 1em;
 }
+
 .apple_musics h1 {
 	font-size: 13pt;
 	font-weight: 500;
 }
+
 .apple_musics p {
 	margin: .5em auto;
 	text-align: justify;
 }
+
 #ancor_btn {
 	padding: .5em 1em;
 	width: max-content;
@@ -662,23 +700,28 @@ footer {
 	background-color: #d4d4d4;
 	border-radius: .8em;
 }
+
 #ancor_btn:hover {
 	background-color: #c1c5c9d0;
 }
+
 .ancor_btn_logo {
-	vertical-align: middle; 
+	vertical-align: middle;
 	margin-right: 10px;
 }
+
 /*Project Page*/
 #projects main {
 	display: block;
 }
+
 .projects_title {
 	font-size: 20pt;
 	font-family: poppins;
 	font-weight: 500;
 	text-align: center;
 }
+
 .projects {
 	display: flex;
 	flex-wrap: wrap;
@@ -686,30 +729,37 @@ footer {
 	gap: 2.5em;
 	margin: 1.5em;
 }
+
 .project {
+	position: relative;
 	height: auto;
 	width: auto;
-	box-shadow:  3px 3px 7px #01161e4a;
+	box-shadow: 3px 3px 7px #01161e4a;
 	padding: .8em;
 	background-color: #ffffff;
 	border-radius: .6em;
 	transition: transform 300ms ease-in-out;
 }
+
 .project .project_img img {
 	display: block;
 	width: 100%;
 	height: 100%;
-	box-shadow:  3px 3px 7px #01161e4a;
-	border: 3px solid rgba(73, 72, 72, 0.486);
+	box-shadow: 3px 3px 7px #01161e4a;
+	border: 3px solid rgb(128, 128, 128);
 	cursor: pointer;
 }
+
 .project_img {
 	width: 19em;
 	height: 13em;
+	position: relative;
 }
+
 .project:hover {
 	transform: scale(1.1);
-  }
+}
+
 .project p {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	line-height: 2;
@@ -717,6 +767,47 @@ footer {
 	text-align: center;
 	cursor: pointer;
 }
+
+.btn-view-demo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #333;
+	z-index: 5;
+	color: #fff;
+	padding: 10px 15px;
+	border-radius: 5px;
+	text-decoration: none;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	opacity: 0;
+	transition: opacity 300ms;
+}
+.btn-view-demo:hover {
+	color: #a7c9d6;
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(86, 75, 96, 0.388);
+	opacity: 0;
+	z-index: 4;
+	transition: opacity 0.5s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: inherit;
+  }
+.project:hover .btn-view-demo {
+	opacity: 1;
+}
+.project:hover .overlay {
+	opacity: 1;
+}
+
 /* Contact Us Page */
 #contact_us main {
 	display: flex;
@@ -725,45 +816,51 @@ footer {
 	padding: 1em;
 	font-family: Arial, sans-serif;
 }
+
 #contact_us main h1 {
 	text-align: center;
 	padding: .5em 0;
-  }
-  
- #contact_us main form {
+}
+
+#contact_us main form {
 	margin: 0 auto;
-	padding: 2em!important;
+	padding: 2em !important;
 	border-radius: 10px;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-	width: 50%!important;
+	width: 50% !important;
 
-  }
-  .form_eq7uit__form {
-	background: transparent!important;
-	padding: inherit!important;
-  }
-  #form_eq7uit__form_input_3 {
-	height: 11em!important;
-  }
-  @media (min-width:600px) {
+}
+
+.form_eq7uit__form {
+	background: transparent !important;
+	padding: inherit !important;
+}
+
+#form_eq7uit__form_input_3 {
+	height: 11em !important;
+}
+
+@media (min-width:600px) {
 	#contact_us main form {
 		min-width: 500px;
-	  }
-  }
-  @media (max-width:600px) {
+	}
+}
+
+@media (max-width:600px) {
 	#contact_us main form {
-		width: 100%!important;
-	  }
-  }
- #contact_us main label {
+		width: 100% !important;
+	}
+}
+
+#contact_us main label {
 	display: block;
 	margin-bottom: 20px;
 	font-size: 18px;
-  }
-  
- #contact_us main input[type="text"],
- #contact_us main input[type="email"],
- #contact_us main textarea {
+}
+
+#contact_us main input[type="text"],
+#contact_us main input[type="email"],
+#contact_us main textarea {
 	width: 100%;
 	padding: 10px;
 	margin-bottom: 20px;
@@ -771,9 +868,9 @@ footer {
 	border-radius: 5px;
 	border: 1px solid #39393990;
 	box-shadow: 0 0 20px 0 #00000033, 0 5px 5px 0 #0000003d;
-  }
-  
- #contact_us main input[type="submit"] {
+}
+
+#contact_us main input[type="submit"] {
 	width: 100%;
 	padding: 10px;
 	background-color: #484897;
@@ -782,7 +879,8 @@ footer {
 	border-radius: 5px;
 	border: none;
 	cursor: pointer;
-  }
-  #contact_us main input[type="submit"]:hover {
+}
+
+#contact_us main input[type="submit"]:hover {
 	background-color: #343478;
-  }
+}
