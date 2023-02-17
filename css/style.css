@@ -687,16 +687,29 @@ footer {
 	margin: 1.5em;
 }
 .project {
-	height: 13em;
-	width: 19em;
-
+	height: auto;
+	width: auto;
+	box-shadow:  3px 3px 7px #01161e4a;
+	padding: .8em;
+	background-color: #ffffff;
+	border-radius: .6em;
+	transition: transform 300ms ease-in-out;
 }
-.project img {
-	height: 90%;
+.project .project_img img {
+	display: block;
 	width: 100%;
+	height: 100%;
 	box-shadow:  3px 3px 7px #01161e4a;
 	border: 3px solid rgba(73, 72, 72, 0.486);
+	cursor: pointer;
 }
+.project_img {
+	width: 19em;
+	height: 13em;
+}
+.project:hover {
+	transform: scale(1.1);
+  }
 .project p {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	line-height: 2;
