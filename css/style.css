@@ -245,8 +245,8 @@ main .introduction_myself {
 
 #photos .photo_container .photo,
 #photos .photo_container .photo_unhide_0 {
-	height: 293px;
-	width: 293px;
+	height: clamp(220px,20vw,293px);/**/
+	width: clamp(220px,20vw,293px);
 
 }
 
