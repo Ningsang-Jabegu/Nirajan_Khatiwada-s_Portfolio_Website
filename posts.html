@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Nirajan post, Khatiwada post, Nirajan Khatiwada post, Nirajan Khatiwada work post" />
+    <meta property="og:type" content="website, personal website, portfolio website" />
+    <meta property="og:title" content="Nirajan post, Nirajan Khatiwada post, Khatiwada Nirajan post, Khatiwada post" />
+    <meta property="og:description"
+        content="This is the posts page of Nirajan Khatiwada's portfolio website. You can view his blog post here.">
+    <meta name='robots' content='max-image-preview:large' />
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <title>पोस्टहरू - निराजन खतिवडा | Posts - Nirajan Khatiwada</title>
+    <link rel="icon" type="image/x-icon" href="/images/Fav_Icon/fav_icon.jpg">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    
+</head>
+
+<body id="posts">
+    <header>
+        <div class="name_logo">
+            <!--<span class="first_name">Nirajan </span>
+            <span class="last_name">Khatiwada</span>-->
+            <img src="/images/main_logo_name.png" class="name_logo">
+        </div>
+    </header>
+    <nav>
+        <ul class="nav_item_container">
+            <li><a href="/index.html">Home</a></li>
+            <li class="selected"><a href="#">Posts</a></li>
+            <li><a href="./songs.html">Songs</a></li>
+            <li><a href="./projects.html">Projects</a></li>
+            <li class="dropdown">
+                <i class="fa fas fa-bars"></i>
+                <div class="dropdown-content">
+                  <a href="/html_pages/contact_us.html">Contact us</a>
+                </div>
+              </li>
+        </ul>
+    </nav>
+    <main>
+        <!--<div class="under_construction">
+            <h1>Posts Page Under Construction</h1>
+            <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="500" height="500" fill="#f2f2f2"/>
+                <rect x="100" y="100" width="300" height="300" fill="#fff"/>
+                <rect x="120" y="120" width="260" height="260" fill="#ddd"/>
+                <rect x="140" y="140" width="200" height="200" fill="#bbb"/>
+                <rect x="160" y="160" width="140" height="140" fill="#999"/>
+                <rect x="180" y="180" width="80" height="80" fill="#777"/>
+                <rect x="200" y="200" width="20" height="20" fill="#555"/>
+                <rect x="250" y="250" width="20" height="20" fill="#333"/>
+                <rect x="300" y="300" width="20" height="20" fill="#111"/>
+                <rect x="350" y="350" width="20" height="20" fill="#000"/>
+                <text x="250" y="450" font-size="30" text-anchor="middle" fill="#333">Posts Page Under Construction</text>
+              </svg>
+        </div>-->
+        <iframe class="blogspot_iframe" src="https://nirajankhatiwada.blogspot.com/" frameborder="0"></iframe>
+    </main>
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <h3>Nirajan&nbsp;<span>Khatiwada</span></h3>
+
+            <p class="footer-links">
+                <a href="/index.html">Home</a>
+                ·
+                <a href="#">Posts</a>
+                ·
+                <a href="/html_pages/songs.html">Songs</a>
+                ·
+                <a href="/html_pages/projects.html">Projects</a>
+                ·
+                <a href="/html_pages/contact_us.html">Contact Us</a>
+            </p>
+
+            <p class="footer-company-name">Nirajan Khatiwada &copy; 2023 - <span id="this_year"></span></p>
+        </div>
+
+        <div class="footer-right">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Street Name</span> Kathmandu, Nepal</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p><a href="tel:+9779813293262">+977 98 13293262</a></p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:contact@test.com">contact@test.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-r_l-center">
+
+            <div class="footer-icons">
+
+                <a href="https://www.facebook.com/profile.php?id=100076365829245"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/Mr_NKrajan"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+
+            </div>
+
+        </div>
+        <script>
+            const footer = document.querySelector(".footer-distributed");
+            if (footer) {
+                const new_element = document.createElement("div");
+                const date = new Date();
+                const year = date.getFullYear();
+                document.querySelector("#this_year").innerHTML = year;
+                new_element.classList.add("web_coded");
+                new_element.innerHTML = ("<p>Coded by <a href='https://ningsangjabegu.com.np/'>Ningsang Jabegu</a></p>");
+                footer.appendChild(new_element);
+            }
+        </script>
+    </footer>
+</body>
+
+</html>
