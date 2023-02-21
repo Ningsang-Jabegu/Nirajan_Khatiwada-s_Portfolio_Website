@@ -266,10 +266,10 @@
 
         </div>
         <div class="spotify_musics">
-
+            <p>Yet not added !</p>
         </div>
         <div class="apple_musics">
-
+            <p>Yet not added !</p>
         </div>
     </main>
     <footer class="footer-distributed">
@@ -338,19 +338,21 @@
                     button.classList.add("selected");
                     const iframe_spotify = document.querySelector(".spotify_music");
                     if (button.classList.contains("song_nav_spotify")) {
-                        addIframe(spotify_song, "spotify_music", "https://open.spotify.com/embed/playlist/37i9dQZF1DX9sIqqvKsjG8?utm_source=generator");
+                        /*addIframe(spotify_song, "spotify_music", "https://open.spotify.com/embed/playlist/37i9dQZF1DX9sIqqvKsjG8?utm_source=generator");*/
                         songs_youtube_container.style.display = "none";
                         apple_song.style.display = "none";
+                        spotify_song.style.display = "flex";
 
                     } else if (button.classList.contains("song_nav_youtube")) {
                         songs_youtube_container.style.display = "flex";
-                        spotify_song.removeChild(iframe_spotify);
+                        spotify_song.style.display = "none";
+                        /*spotify_song.removeChild(iframe_spotify);*/
                         apple_song.style.display = "none";
                     } else if (button.classList.contains("song_nav_apple_music")) {
-                        window.open('https://music.apple.com/np/artist/sajjan-raj-vaidya/1206974063');
-                        apple_song.style.display = "block";
+                        apple_song.style.display = "flex";
                         songs_youtube_container.style.display = "none";
-                        spotify_song.removeChild(iframe_spotify);
+                        spotify_song.style.display = "none";
+                        /*spotify_song.removeChild(iframe_spotify);*/
                         /*alert("Hi I reached to the end of js");
                         const display_at = document.querySelector("apple_musics");
                         const btn_txt = "Listen on Apple Music";
