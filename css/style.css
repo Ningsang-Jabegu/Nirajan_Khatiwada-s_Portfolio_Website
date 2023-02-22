@@ -256,9 +256,11 @@ main .introduction_myself {
 
 @media (min-width:400px) {
 	.photo_container {
-		display: grid;
+		display: flex;
+		flex-wrap: wrap;
+		/*display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;*/
 		padding: 1.3em 1.3em 2.6em 1.3em;
 		margin: 0.8em;
 		border: 1px solid #ddd;
@@ -348,37 +350,48 @@ main .introduction_myself {
 	.photo_10 {
 		width: 47%;
 	}
+
 	.photo_11 {
 		width: 47%;
 	}
+
 	.photo_12 {
 		width: 100%;
 	}
+
 	.photo_13 {
 		width: 47%;
 	}
+
 	.photo_14 {
 		width: 47%;
 	}
+
 	.photo_15 {
 		width: 47%;
 	}
+
 	.photo_16 {
 		width: 47%;
 	}
+
 	.photo_17 {
 		width: 47%;
 	}
+
 	.photo_18 {
 		width: 47%;
 	}
+
 	.photo_19 {
 		width: 47%;
 	}
+
 	.photo_20 {
 		width: 47%;
 	}
 }
+
 @media (max-width:900px) and (min-width:735px) {
 	.photo_container {
 		display: flex;
@@ -397,7 +410,8 @@ main .introduction_myself {
 	.photo {
 		height: auto;
 	}
-/*/total width 95% --- 2em gap/
+
+	/*/total width 95% --- 2em gap/
 	total width 97.6% --- 1em gap*/
 
 	.photo_1 {
@@ -409,7 +423,7 @@ main .introduction_myself {
 	}
 
 	.photo_3 {
-		width:37%;
+		width: 37%;
 	}
 
 	.photo_4 {
@@ -439,42 +453,53 @@ main .introduction_myself {
 	.photo_10 {
 		width: 31.6%;
 	}
+
 	.photo_11 {
 		width: 31.6%;
 	}
+
 	.photo_12 {
 		width: 48.8%;
 	}
+
 	.photo_13 {
 		width: 48.8%;
 	}
+
 	.photo_14 {
 		width: 31.6%;
 	}
+
 	.photo_15 {
 		width: 31.6%;
 	}
+
 	.photo_16 {
 		width: 31.6%;
 	}
+
 	.photo_17 {
 		width: 31.6%;
 	}
+
 	.photo_18 {
 		width: 31.6%;
 	}
+
 	.photo_19 {
 		width: 31.6%;
 	}
+
 	.photo_20 {
 		width: 31.6%;
 	}
 }
-@media (min-width:900px) {
+
+@media (min-width:1480px) {
 	.photo_container {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-between;
+		justify-content: center;
 	}
 
 	.photo img,
@@ -489,7 +514,10 @@ main .introduction_myself {
 		height: 18em;
 		border: 2px solid rgba(0, 0, 0, 0);
 	}
-/*/	total width 96.6% --- 3em gap 24.15 each
+
+	/*/	total width 94.2% --- 
+	total width 94.4% --- 5em gap 18.88 each
+	total width 96.6% --- 3em gap 24.15 each
 	total width 97.5% --- 2em gap 48.75 each
 	total width 97.6% --- 1em gap
 	total width 100% --- no gap*/
@@ -503,7 +531,7 @@ main .introduction_myself {
 	}
 
 	.photo_3 {
-		width:28.3%;
+		width: 28.3%;
 	}
 
 	.photo_4 {
@@ -527,43 +555,169 @@ main .introduction_myself {
 	}
 
 	.photo_9 {
-		width: 15.9%;
+		width: 15.6%;
 	}
 
 	.photo_10 {
-		width: 15.9%;
+		width: 15.6%;
 	}
+
 	.photo_11 {
-		width: 15.9%;
+		width: 15.6%;
 	}
+
 	.photo_12 {
-		width: 15.9%;
+		width: 15.6%;
 	}
+
 	.photo_13 {
-		width: 15.9%;
+		width: 16.4%;
 	}
+
 	.photo_14 {
-		width: 31.6%;
+		width: 15.6%;
 	}
+
+	/*----------------*/
 	.photo_15 {
-		width: 31.6%;
+		width: 15.7%;
 	}
+
 	.photo_16 {
-		width: 31.6%;
+		width: 15.7%;
 	}
+
 	.photo_17 {
-		width: 31.6%;
+		width: 15.7%;
 	}
+
 	.photo_18 {
-		width: 31.6%;
+		width: 15.7%;
 	}
+
 	.photo_19 {
-		width: 31.6%;
+		width: 15.7%;
 	}
+
 	.photo_20 {
-		width: 31.6%;
+		width: 15.7%;
 	}
+
+	/*----------------*/
+
 }
+
+@media (min-width:900px)and(max-width:1480px) {
+	.photo_container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.photo img,
+	.photo_unhide_0 img {
+		max-width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 10px;
+	}
+
+	.photo {
+		height: 18em;
+		border: 2px solid rgba(0, 0, 0, 0);
+	}
+
+	/*/	total width 94.2% --- 
+	total width 94.4% --- 5em gap 18.88 each
+	total width 96.6% --- 3em gap 24.15 each
+	total width 97.5% --- 2em gap 48.75 each
+	total width 97.6% --- 1em gap
+	total width 100% --- no gap*/
+
+	.photo_1 {
+		width: 10%;
+	}
+
+	.photo_2 {
+		width: 10%;
+	}
+
+	.photo_3 {
+		width: 10%;
+	}
+
+	.photo_4 {
+		width: 10%;
+	}
+
+	.photo_5 {
+		width: 28.5%;
+	}
+
+	.photo_6 {
+		width: 19.8%;
+	}
+
+	.photo_7 {
+		width: 28.5%;
+	}
+
+	.photo_8 {
+		width: 19.8%;
+	}
+
+	.photo_9 {
+		width: 15.6%;
+	}
+
+	.photo_10 {
+		width: 15.6%;
+	}
+
+	.photo_11 {
+		width: 15.6%;
+	}
+
+	.photo_12 {
+		width: 15.6%;
+	}
+
+	.photo_13 {
+		width: 16.4%;
+	}
+
+	.photo_14 {
+		width: 15.6%;
+	}
+
+	/*----------------*/
+	.photo_15 {
+		width: 15.7%;
+	}
+
+	.photo_16 {
+		width: 15.7%;
+	}
+
+	.photo_17 {
+		width: 15.7%;
+	}
+
+	.photo_18 {
+		width: 15.7%;
+	}
+
+	.photo_19 {
+		width: 15.7%;
+	}
+
+	.photo_20 {
+		width: 15.7%;
+	}
+
+	/*----------------*/
+}
+
 @media (max-width:400px) {
 
 	#photos .photo_container .photo,
