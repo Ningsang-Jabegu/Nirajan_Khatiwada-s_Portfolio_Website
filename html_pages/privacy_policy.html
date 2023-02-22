@@ -7,12 +7,12 @@
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords"
-        content="Nirajan contact, Khatiwada contact, Nirajan Khatiwada contact, Nirajan Khatiwada work contact" />
+        content="Nirajan privacy policy, Khatiwada privacy policy, Nirajan Khatiwada privacy policy, Nirajan Khatiwada work privacy policy" />
     <meta property="og:type" content="website, personal website, portfolio website, contact to Nirajan Khatiwada" />
     <meta property="og:title"
-        content="Nirajan contact, Nirajan Khatiwada contact, Khatiwada Nirajan contact, Khatiwada contact" />
+        content="Nirajan contact, Nirajan Khatiwada privacy policy, Khatiwada Nirajan privacy policy, Khatiwada privacy policy" />
     <meta property="og:description"
-        content="This is the contact us page of Nirajan Khatiwada's portfolio website. You can contact to Nirajan Khatiwada from the information provided in this page.">
+        content="This is the privacy policy page of Nirajan Khatiwada's portfolio website. This page contain how user's data is fetched and stored with user's permission">
     <meta name='robots' content='max-image-preview:large' />
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <title>सम्पर्क गर्नुहोस - निराजन खतिवडा | Contact Us - Nirajan Khatiwada</title>
@@ -43,45 +43,7 @@
         </ul>
     </nav>
     <main>
-        <!--Google Script API-->
-        <script src="https://apis.google.com/js/api.js">
-            const form = document.getElementById('contact_us_form');
-            form.addEventListener('submit', (event) => {
-                event.preventDefault();
-                submitForm(form);
-            });
-
-            const spreadsheetUrl = 'https://docs.google.com/spreadsheets/d/18zp7CTeaXbB7RbxRqkHzJ53zxQFBgEoRYc7kITDbeRQ/edit#gid=0';
-            const spreadsheetId = getSpreadsheetIdFromUrl(spreadsheetUrl);
-
-            function getSpreadsheetIdFromUrl(url) {
-                const match = url.match(/\/d\/([a-zA-Z0-9-_]+)/);
-                return match ? match[1] : null;
-            }
-
-            function submitForm(form) {
-                google.script.run
-                    .withSuccessHandler(function (response) {
-                        console.log(response);
-                        form.reset();
-                    })
-                    .processForm(form, spreadsheetId);
-            }
-        </script>
-        <h1>Contact Us</h1>
-        <script src="../JS/contact.js"></script>
-        <!--<form onsubmit="event.preventDefault(); google.script.run.withSuccessHandler(function(response) { console.log(response); form.reset(); }).processForm(this);">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="user_name" required>
-          AKfycbwdLtGVYVdDCg3XmXYZMTq2IcadG7xEY5k1hAwD-fXJeZGzk9Ajqe0bjz49nk94N468SQ
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="user_email" required>
-          
-            <label for="message">Message:</label>
-            <textarea id="message" name="user_message" required></textarea>
-          
-            <input type="submit" value="Submit">
-          </form>-->
+        
     </main>
     <footer class="footer-distributed">
 
@@ -134,7 +96,7 @@
 
             </div>
             <p class="footer-company-name">
-                <a href="/html_pages/privacy_policy.html">Privacy Policy</a>
+                <a href="#">Privacy Policy</a>
                 .
                 <a href="/html_pages/terms_of_use.html">Terms and Conditions</a>
             </p>

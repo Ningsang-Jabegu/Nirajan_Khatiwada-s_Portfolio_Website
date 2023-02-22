@@ -252,7 +252,9 @@ main .introduction_myself {
 	cursor: pointer;
 }
 
-
+.photo img{
+	border-radius: 1em;
+}
 
 @media (min-width:400px) {
 	.photo_container {
@@ -392,11 +394,11 @@ main .introduction_myself {
 	}
 }
 
-@media (max-width:900px) and (min-width:735px) {
+@media (max-width:1000px) and (min-width:735px) {
 	.photo_container {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-between;
+		justify-content: center;
 	}
 
 	.photo img,
@@ -607,16 +609,15 @@ main .introduction_myself {
 
 }
 
-@media (min-width:900px)and(max-width:1480px) {
+@media (min-width:1000px) and (max-width:1480px) {
 	.photo_container {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 	}
 
-	.photo img,
-	.photo_unhide_0 img {
-		max-width: 100%;
+	.photo img {
+		width: 100%;
 		height: 100%;
 		object-fit: cover;
 		border-radius: 10px;
@@ -635,84 +636,84 @@ main .introduction_myself {
 	total width 100% --- no gap*/
 
 	.photo_1 {
-		width: 10%;
+		width: 25%;
 	}
 
 	.photo_2 {
-		width: 10%;
+		width: 25%;
 	}
 
 	.photo_3 {
-		width: 10%;
+		width: 46%;
 	}
 
 	.photo_4 {
-		width: 10%;
+		width: 49%;
 	}
 
 	.photo_5 {
-		width: 28.5%;
+		width: 49%;
 	}
 
 	.photo_6 {
-		width: 19.8%;
+		width: 34.6%;
 	}
 
 	.photo_7 {
-		width: 28.5%;
+		width: 63.4%;
 	}
 
 	.photo_8 {
-		width: 19.8%;
+		width: 34.6%;
 	}
 
 	.photo_9 {
-		width: 15.6%;
+		width: 19.8%;
 	}
 
 	.photo_10 {
-		width: 15.6%;
+		width: 19.8%;
 	}
 
 	.photo_11 {
-		width: 15.6%;
+		width: 19.8%;
 	}
 
 	.photo_12 {
-		width: 15.6%;
+		width: 22%;
 	}
 
 	.photo_13 {
-		width: 16.4%;
+		width: 23%;
 	}
 
 	.photo_14 {
-		width: 15.6%;
+		width: 28.5%;
 	}
 
-	/*----------------*/
+	
 	.photo_15 {
-		width: 15.7%;
+		width: 20.5%;
 	}
-
+/*----------------*/
 	.photo_16 {
-		width: 15.7%;
+		width: 23.5%;
 	}
 
 	.photo_17 {
-		width: 15.7%;
+		width: 23.5%;
 	}
 
 	.photo_18 {
-		width: 15.7%;
+		width: 23.5%;
 	}
 
 	.photo_19 {
-		width: 15.7%;
+		width: 23.5%;
 	}
 
 	.photo_20 {
-		width: 15.7%;
+		width: 25%;
 	}
 
 	/*----------------*/
@@ -767,8 +768,9 @@ footer {
 
 .footer-distributed .footer-r_l-center {
 	display: flex;
-	vertical-align: top;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
 
 .footer-distributed .footer-left {
