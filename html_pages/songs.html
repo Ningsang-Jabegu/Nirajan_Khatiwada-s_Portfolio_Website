@@ -19,7 +19,7 @@
     <link rel="icon" type="image/x-icon" href="/images/Fav_Icon/fav_icon.jpg">
     <script src="https://www.youtube.com/iframe_api"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-   
+
 </head>
 
 <body id="songs">
@@ -363,7 +363,7 @@
                         const btn_src = "https://music.apple.com/np/artist/sajjan-raj-vaidya/1206974063";
                         const btn_logo = `/images/Btn_Icon/apple_music.png`;
                         const alt = "Apple Music Icon";
-                        addButton(display_at, btn_txt, btn_src, btn_logo, alt);*/  
+                        addButton(display_at, btn_txt, btn_src, btn_logo, alt);*/
                     }
                     else {
                         alert("Nothing to show");
@@ -404,29 +404,6 @@
                 iframe.setAttribute("loading", "lazy");
                 parent.appendChild(iframe);
             }
-            /*Play on hover*/
-            const youtubeVideos = document.querySelectorAll('.youtube_video');
-
-            youtubeVideos.forEach(youtubeVideo => {
-                youtubeVideo.addEventListener('mouseover', () => {
-                    const iframe = youtubeVideo.querySelector('iframe');
-                    const currentSrc = iframe.src;
-                    timeoutId = setTimeout(() => {
-                        youtubeVideo.style.zIndex = '999';
-                        youtubeVideo.style.transform = 'scale(1.2)';
-                        iframe.src = currentSrc + '&autoplay=1';
-                    }, 1000);
-                });
-
-                youtubeVideo.addEventListener('mouseout', () => {
-                    clearTimeout(timeoutId);
-                    const iframe = youtubeVideo.querySelector('iframe');
-                    const currentSrc = iframe.src;
-                    iframe.src = currentSrc.replace('&autoplay=1', '');
-                    youtubeVideo.style.zIndex = '1';
-                    youtubeVideo.style.transform = 'scale(1)';
-                });
-            });
 
             const youtube_iframe = document.querySelector(".youtube_video iframe");
             const youtube_video_divs = document.querySelectorAll(".youtube_video");
@@ -486,8 +463,42 @@
                     .catch(error => {
                         console.error(error);
                     });
-            }
 
+            }
+            /*Play on hover*/
+            const youtubeVideos = document.querySelectorAll('.youtube_video');
+            youtubeVideos.forEach(youtubeVideo => {
+                youtubeVideo.addEventListener('mouseover', () => {
+                    const iframe = youtubeVideo.querySelector('iframe');
+                    const currentSrc = iframe.src;
+                    timeoutId = setTimeout(() => {
+                        youtubeVideo.style.zIndex = '999';
+                        youtubeVideo.style.transform = 'scale(1.2)';
+                        iframe.src = currentSrc + '&autoplay=1';
+                    }, 1000);
+                });
+                youtubeVideo.addEventListener('mouseout', () => {
+                    clearTimeout(timeoutId);
+                    const iframe = youtubeVideo.querySelector('iframe');
+                    const currentSrc = iframe.src;
+                    iframe.src = currentSrc.replace('&autoplay=1', '');
+                    youtubeVideo.style.zIndex = '1';
+                    youtubeVideo.style.transform = 'scale(1)';
+                });
+            });
+            youtube_iframe.addEventListener('click', () => {
+                goFullscreen();
+            })
+            function goFullscreen() {
+                let iframe = document.querySelector('iframe');
+                if (youtube_iframe.requestFullscreen) {
+                    youtube_iframe.requestFullscreen();
+                } else if (youtube_iframe.webkitRequestFullscreen) {
+                    youtube_iframe.webkitRequestFullscreen();
+                } else if (youtube_iframe.msRequestFullscreen) {
+                    youtube_iframe.msRequestFullscreen();
+                }
+            }
         </script>
         <script>
             const footer = document.querySelector(".footer-distributed");
