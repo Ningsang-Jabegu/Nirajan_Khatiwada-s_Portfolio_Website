@@ -889,7 +889,10 @@ footer {
 	margin-right: 3px;
 	margin-bottom: 5px;
 }
+.footer-company-name a:hover{
+	color: #d2d2d2;
 
+}
 .web_coded {
 	position: absolute;
 	bottom: 0;
@@ -1364,4 +1367,38 @@ footer {
 
 #contact_us main input[type="submit"]:hover {
 	background-color: #343478;
+}
+/*Privacy Policy page*/
+#privacy_policy main {
+	display: block;
+	padding: 1em;
+	font-family: poppins;
+	font-size: 10pt;
+}
+#privacy_policy main h1 {
+	display: block;
+	font-size: 25pt;
+	font-weight: 600;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#privacy_policy main h2 {
+	display: block;
+	font-size: 15pt;
+	font-weight: 600;
+	margin: .5em auto;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#privacy_policy main p {
+	display: block;
+	font-weight: 400;
+}
+#privacy_policy main p a{
+	color: #0c4b71;
+	text-decoration: underline;
+	font-weight: 600;
+}
+#privacy_policy main ul {
+	display: block;
+	font-weight: 400;
+	margin: 0 0 0 2em;
 }
