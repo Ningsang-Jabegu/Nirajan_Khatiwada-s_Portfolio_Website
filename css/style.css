@@ -1146,13 +1146,12 @@ footer {
 
 .spotify_musics,
 .apple_musics {
-	display: flex;
+	display: none;
 	justify-content: center;
 	padding: 1em;
 }
 
 .apple_musics {
-	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	line-height: 1.3em;
