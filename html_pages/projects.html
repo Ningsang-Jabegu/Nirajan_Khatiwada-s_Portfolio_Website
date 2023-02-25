@@ -50,9 +50,9 @@
                 <div class="overlay"></div>
                 <div class="project_img">
                     <img src="https://imgs.search.brave.com/-Cr2edi8L-fIR1L5N93U4HdgZJYVv3cdowwR-CnD0I8/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9tY2t1/cHMuY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDIxLzAyL3dl/YnNpdGUtc2NhbGVk/LmpwZw" alt="project1">
-                    <a href="/construction.html" class="btn-view-demo"><i class="fa-solid fa-person-digging"></i> View Demo</a>
+                    <a href="#" class="btn-view-demo"><i class="fa-solid fa-person-digging"></i> View Demo</a>
                 </div>
-                <p>Sample Project 1</p>
+                <p>Employee Management in c Programming</p>
             </div>
             <div class="project">
                 <div class="overlay"></div>
@@ -87,6 +87,16 @@
                 <p>Sample Project 5</p>
             </div>
         </div>
+        <script>
+            const runDemoButton = document.querySelector('.project_img a');
+            runDemoButton.addEventListener('click', async () => {
+                const response = await fetch('/JS/Employee_management.wasm');
+                const wasmBinary = await response.arrayBuffer();
+                const { instance } = await WebAssembly.instantiate(wasmBinary);
+                // Call a function in the wasm module to run the program
+                instance.exports.runEmployeeManagement();
+            });
+        </script>
     </main>
     <footer class="footer-distributed">
 
