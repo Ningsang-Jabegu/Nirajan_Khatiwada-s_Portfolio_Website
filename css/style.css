@@ -106,7 +106,7 @@ nav .nav_item_container li:hover {
 	display: block;
 }
 
-.nav_item_container .dropdown:hover .dropdown-content a {
+.nav_item_container .dropdown .dropdown-content a {
 	padding: .8em;
 	width: 100%;
 	display: block;
