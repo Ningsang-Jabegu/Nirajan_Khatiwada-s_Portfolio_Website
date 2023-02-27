@@ -21,65 +21,12 @@
 </head>
 
 <body id="index">
-    <script>NK_header();</script>
-    <!--<script>
-        const create_nav = document.createElement("nav");
-        const create_ul_nav = document.createElement("ul");
-        create_ul_nav.classList.add("nav_item_container");
-        create_nav.appendChild(create_ul_nav);
-        document.body.appendChild(create_nav);
-        const pages_name = [
-            "index", "posts", "songs", "projects", "contact_us" // This is pages id
-        ]
-        const page_display_name = [
-            "Home", "Posts", "Songs", "Projects", "Contact us" // This is pages display name in nav bar
-        ]
-        let create_ul_nav_href = [
-            "/index.html",
-            "/html_pages/posts.html",
-            "/html_pages/songs.html",
-            "/html_pages/projects.html",
-            "/html_pages/contact_us.html"
-        ]
-        const body_id = document.body.id;
-        switch (body_id) {
-            case (pages_name[0]):
-                create_ul_nav_href[0] = "#";
-                break;
-            case (pages_name[1]):
-                create_ul_nav_href[1] = "#";
-                break;
-            case (pages_name[2]):
-                create_ul_nav_href[2] = "#";
-                break;
-            case (pages_name[3]):
-                create_ul_nav_href[3] = "#";
-                break;
-            case (pages_name[4]):
-                create_ul_nav_href[4] = "#";
-                break;
-            default:
-                console.log("No navigation ul href to put into!");
-        }
-        for (let i = 0; i < create_ul_nav_href.length; i++) {
-            const create_ul_li_nav = document.createElement("li");
-            const create_ul_li_a_nav = document.createElement("a");
-            create_ul_li_a_nav.append(page_display_name[i]);
-            create_ul_li_a_nav.href = create_ul_nav_href[i];
-            create_ul_li_nav.append(create_ul_li_a_nav);
-            document.querySelector(".nav_item_container").appendChild(create_ul_li_nav);
-        }
+    <script>
+        NK_header();
+        NK_navBar();
+    </script>
 
-        const body_ul_nav = document.querySelector(".nav_item_container");
-        const ul_children = document.querySelector(".nav_item_container").children.length;
-        for (let i = 0; i < pages_name.length; i++) {
-            if (pages_name[i] == body_id) {
-                body_ul_nav.querySelectorAll("li")[i].classList.add("selected");
-                body_ul_nav.querySelectorAll("li")[pages_name.length - 1].classList.add("dropdown");
-            }
-        }
-    </script>-->
-    <nav>
+    <!--    <nav>
         <ul class="nav_item_container">
             <li class="selected"><a href="#">Home</a></li>
             <li><a href="/html_pages/posts.html">Posts</a></li>
@@ -92,7 +39,7 @@
                 </div>
             </li>
         </ul>
-    </nav>
+    </nav>-->
     <main>
         <div class="introduction_myself">
             <p>I am <span class="name_intro">Nirajan Khatiwada</span>, the founder of <span class="org_intro">नेपाली

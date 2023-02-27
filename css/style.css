@@ -1381,6 +1381,21 @@ footer {
 #contact_us main input[type="submit"]:hover {
 	background-color: #343478;
 }
+.contact_us_btn {
+	padding: .5em;
+	background: #0a4d77;
+	color: #f8f8f8;
+	margin: 0 auto;
+	align-items: center;
+	border: none;
+	border-radius: 1em;
+	margin-top: .8em;
+	display: block;
+	cursor: pointer;
+}
+.contact_us_btn:hover {
+	background: #0a4d77d4;
+} 
 /*Privacy Policy page*/
 #privacy_policy main,
 #terms_of_use main {
