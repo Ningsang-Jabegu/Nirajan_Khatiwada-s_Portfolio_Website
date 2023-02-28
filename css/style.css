@@ -739,7 +739,10 @@ main .introduction_myself {
 	transition: 200ms 200ms ease-out;
 }
 
-
+.see_more_less {
+	border: none;
+	background: transparent;
+}
 
 footer {
 	position: relative;
