@@ -803,7 +803,10 @@ footer {
 	text-decoration: none;
 	color: inherit;
 }
-
+.footer-distributed .footer-links a:hover,
+.footer-icons .fa:hover {
+	color: #f8f8f8a9;
+}
 .footer-distributed .footer-company-name {
 	color: #8f9296;
 	font-size: 14px;
@@ -900,7 +903,7 @@ footer {
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	font-size: 8pt;
+	font-size: 10pt;
 	font-weight: 500;
 	color: #848789;
 }
@@ -909,8 +912,11 @@ footer {
 	color: inherit;
 	text-decoration: none;
 	color: #0e7296;
+	font-weight: 600;
 }
-
+.web_coded p a:hover {
+	color: #d0d08c;
+}
 @media (max-width: 880px) {
 
 	.footer-distributed {
