@@ -1,5 +1,5 @@
 /* Function that creates logo header */
-function NK_header(src) {
+function NK_header(src="/images/main_logo_name.png") {
   const create_header = document.createElement("header");
   const create_div_header = document.createElement("div");
   create_div_header.classList.add("name_logo");
