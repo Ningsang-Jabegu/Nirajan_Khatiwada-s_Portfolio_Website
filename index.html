@@ -25,7 +25,30 @@
         NK_header();
         NK_navBar();
     </script>
-
+    <script>
+        create_main = document.createElement("main");
+        create_main.id= "homepage_main";
+        document.body.appendChild(create_main);
+        create_div_main = document.createElement("div");
+        create_div_main.classList.add("introduction_myself");
+        const create_div_p_main = document.createElement("p");
+        create_div_p_main.innerHTML = `I am <span class="name_intro">Nirajan Khatiwada</span>, the founder of <span class="org_intro">नेपाली
+                    हाँस्यचित्र संस्थान</span>.`;
+        create_div_main.appendChild(create_div_p_main);
+        const create_div_p1_main = document.createElement("p");
+        create_div_p1_main.innerHTML = `>I am pursuing a Bachelor of Science in Computer Science and Information Technology. My goal is to
+                digitalize happiness and bring my dream world to life through my graphic design skills. I have over 3
+                years experience in social media handling and IT sector and my passion is graphic design.`;
+        create_div_main.appendChild(create_div_p1_main);
+        const main_just_created = document.querySelector("#homepage_main");
+        main_just_created.appendChild(create_div_main);
+        create_div1_main = document.createElement("div");
+        create_div1_main.classList.add("my_profile_picture");
+        create_div1_img_main = document.createElement("img");
+        create_div1_img_main.src = "/images/profile.png";
+        create_div1_main.appendChild(create_div1_img_main);
+        main_just_created.appendChild(create_div1_main);
+    </script>
     <!--    <nav>
         <ul class="nav_item_container">
             <li class="selected"><a href="#">Home</a></li>
@@ -40,7 +63,7 @@
             </li>
         </ul>
     </nav>-->
-    <main>
+    <!--<main>
         <div class="introduction_myself">
             <p>I am <span class="name_intro">Nirajan Khatiwada</span>, the founder of <span class="org_intro">नेपाली
                     हाँस्यचित्र संस्थान</span>. </p>
@@ -48,7 +71,7 @@
                 digitalize happiness and bring my dream world to life through my graphic design skills. I have over 3
                 years experience in social media handling and IT sector and my passion is graphic design.</p>
 
-        </div>
+        </div>-->
         <div class="my_profile_picture">
             <img src="/images/profile.png">
         </div>
