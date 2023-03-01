@@ -316,10 +316,13 @@ function NK_footer() {
   const just_created_footer = document.querySelector(".footer-distributed");
   const create_div_footer = document.createElement("div");
   create_div_footer.classList.add("footer-left");
+  create_div_footer.setAttribute("arial-label","Quick pages navigation");
   const create_div_h3 = document.createElement("h3");
+  create_div_h3.setAttribute("arial-lable","My name as a logo for footer");
   create_div_h3.innerHTML = `Nirajan&nbsp;<span>Khatiwada</span>`;
   create_div_footer.appendChild(create_div_h3);
   const create_div_p_footer = document.createElement("p");
+  create_div_p_footer.setAttribute("arial-lable","all web pages link")
   create_div_p_footer.classList.add("footer-links");
   let footer_link_href = [
     "#",
@@ -349,11 +352,13 @@ function NK_footer() {
   create_div_footer.appendChild(create_div_p_footer);
   const create_div_p1_footer = document.createElement("p");
   create_div_p1_footer.classList.add("footer-company-name");
+  create_div_p1_footer.setAttribute("arial-lable","Footer copyright information box");
   create_div_p1_footer.innerHTML = `Nirajan Khatiwada &copy; 2023 - <span id="this_year"></span>`;
   create_div_footer.appendChild(create_div_p1_footer);
   just_created_footer.appendChild(create_div_footer);
   const create_div1_footer = document.createElement("div");
   create_div1_footer.classList.add("footer-right");
+  create_div1_footer.setAttribute("arial-lable","Footer Contact Section")
   just_created_footer.appendChild(create_div1_footer);
   const footer_right_side_icons = ["map-marker", "phone", "envelope"];
   const footer_right_side_icons_display_texts = [
@@ -361,15 +366,23 @@ function NK_footer() {
     `<a href="tel:+9779813293262">+977 98 13293262</a>`,
     `<a href="mailto:contact@test.com">contact@test.com</a>`,
   ];
+  const footer_contact_section_div_discription = [
+    "Address",
+    "Telephone",
+    "Email"
+  ];
   for (let i = 0; i < 3; i++) {
     const create_div1_div_footer = document.createElement("div");
+    create_div1_div_footer.setAttribute("arial-lable",footer_contact_section_div_discription[i]+" section");
     const create_div1_div_i_footer = document.createElement("i");
+    create_div1_div_i_footer.setAttribute("arial-lable",footer_contact_section_div_discription[i]+" icon");
     create_div1_div_i_footer.classList.add(
       "fa",
       `fa-${footer_right_side_icons[i]}`
     );
     create_div1_div_footer.appendChild(create_div1_div_i_footer);
     const create_div1_div_p_footer = document.createElement("p");
+    create_div1_div_p_footer.setAttribute("arial-lable","My "+footer_contact_section_div_discription[i]);
     create_div1_div_p_footer.innerHTML =
       footer_right_side_icons_display_texts[i];
     create_div1_div_footer.appendChild(create_div1_div_p_footer);
@@ -378,10 +391,12 @@ function NK_footer() {
   }
   const create_div2_footer = document.createElement("div");
   create_div2_footer.classList.add("footer-r_l-center");
+  create_div2_footer.setAttribute("arial-lable","Social Icons with links, Privacy Policy and Terms & Condition pages link container")
   const create_div2_div_footer = document.createElement("div");
   create_div2_div_footer.classList.add("footer-icons");
   create_div2_footer.appendChild(create_div2_div_footer);
   const create_div2_p_footer = document.createElement("p");
+  create_div2_p_footer.setAttribute("arial-lable","Links to Privacy Policy & Terms and Conditions pages")
   create_div2_p_footer.classList.add("footer-company-name", "privacy_terms");
   create_div2_footer.appendChild(create_div2_p_footer);
   just_created_footer.appendChild(create_div2_footer);
@@ -401,6 +416,8 @@ function NK_footer() {
     const create_div2_div_a_footer = document.createElement("a");
     create_div2_div_a_footer.href = footer_center_icon_a_href[i];
     const create_div2_div_a_i_footer = document.createElement("i");
+    create_div2_div_a_i_footer.setAttribute("role","icon");
+    create_div2_div_a_i_footer.setAttribute("arial-lable",`Icon that is linked to ${footer_center_icon_i_class[i]} page`)
     create_div2_div_a_i_footer.classList.add(
       "fa",
       `fa-${footer_center_icon_i_class[i]}`
