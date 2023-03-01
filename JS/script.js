@@ -171,6 +171,7 @@ function NK_homepagePhotoSection() {
     document.querySelector(".photo_container");
   for (let i = 0; i < homepage_images.length; i++) {
     const create_div_span_div = document.createElement("span");
+    create_div_span_div.setAttribute("arial-lable","Single image box");
     create_div_span_div.classList.add("photo", `photo_${i + 1}`);
     photo_contener_created_previously.appendChild(create_div_span_div);
     const create_div_span_img_div = document.createElement("img");
@@ -222,6 +223,7 @@ function NK_homepagePhotoSectionSeeMoreLess() {
       photo_count_0++; // increment photo_count by 1 with each iteration of the loop
       const child_0_create_img = document.createElement("img");
       const child_0_create_span = document.createElement("span");
+      child_0_create_span.setAttribute("arial-lable","Single image box");
       let child_0_in_second_last_position =
         parent.children[parent.children.length - 1];
       child_0_create_span.classList.add(
@@ -229,6 +231,18 @@ function NK_homepagePhotoSectionSeeMoreLess() {
         "photo",
         `photo_${photo_count_0}`
       );
+      const homepage_images1_alt_text = [
+        "दारी ग्याङको सातौं वार्षिकोत्सवको पोस्टर (Dari Gang's 7th Anniversary Poster)",
+        "जलेको म ढलेको सरकार पोस्टर (A burnt down government poster)",
+        "माधव नेपालको हास्य चित्र (Comedy picture of Madhav Nepal)",
+        "भोलि बिहान हामि उठदा नेपाल - हास्य चित्र (When I wake up tomorrow morning, Nepal - comic picture)",
+        "म्यान्स रूम रिलोडेड ११ औं वार्षिकोत्सव ब्यानर (Men's Room Reloded 11th Anniversary Banner)",
+        "म्यान्स रूम रिलोडेड ११ औं वार्षिकोत्सव पोस्टर (Men's Room Reloded 11th Anniversary Poster)",
+        "उदाउँदो सूर्यमा उडिरहेको हवाइजहाजको फोटोग्राफी (Photography of an airplane flying against the rising sun)",
+        "राति अर्ध चन्द्रमाको फोटोग्राफी (Half moon photography at night)",
+        "अँध्यारो कोठामा उज्यालो प्रकासतर्फ फर्केको मेरो फोटो (Photo of me facing the bright light in a dark room)",
+        "उज्यालो प्रकाश भएको कोठामा खिचिएको मेरो फोटो (Photo of me taken in a brightly lit room)"
+      ];
       child_0_create_span.id = "hide_unhide_img";
       child_0_create_span.title = "Hidden Images 0";
       child_0_create_img.src = source;
@@ -416,12 +430,13 @@ function NK_footer() {
   const footer = document.querySelector(".footer-distributed");
   if (footer) {
     const new_element = document.createElement("div");
+    new_element.setAttribute("arial-lable","The name of the website coder is displayed in this part of footer section.")
     const date = new Date();
     const year = date.getFullYear();
     document.querySelector("#this_year").innerHTML = year;
     new_element.classList.add("web_coded");
     new_element.innerHTML =
-      "<p>Coded by <a href='https://ningsangjabegu.com.np/'>Ningsang Jabegu</a></p>";
+      "<p>Coded by <a arial-lable='Link to web developer' role='link' href='https://ningsangjabegu.com.np/'>Ningsang Jabegu</a></p>";
     footer.appendChild(new_element);
   }
 }
@@ -431,6 +446,8 @@ function NK_BlogPostIframe() {
   create_main.id = "post_main";
   document.body.appendChild(create_main);
   const create_iframe_main = document.createElement("iframe");
+  create_iframe_main.setAttribute("role","button");
+  create_iframe_main.setAttribute("arial-lable","My article from blogspot website embedded into my site")
   create_iframe_main.classList.add("blogspot_iframe");
   create_iframe_main.setAttribute(
     "src",
