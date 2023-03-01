@@ -2,9 +2,12 @@
 function NK_header(src = "/images/main_logo_name.png") {
   const create_header = document.createElement("header");
   const create_div_header = document.createElement("div");
+  create_div_header.setAttribute("aria-label","Nirajan Khatiwada Logo Image");
+  create_div_header.setAttribute("role","banner");
   create_div_header.classList.add("name_logo");
   const create_img_header = document.createElement("img");
   create_img_header.setAttribute("src", src);
+  create_img_header.setAttribute("alt","Nirajan Khatiwada Text Image");
   create_img_header.classList.add("name_logo");
   create_div_header.appendChild(create_img_header);
   create_header.appendChild(create_div_header);
@@ -15,6 +18,7 @@ function NK_header(src = "/images/main_logo_name.png") {
 function NK_navBar() {
   const create_nav = document.createElement("nav");
   const create_ul_nav = document.createElement("ul");
+  create_ul_nav.setAttribute("arial-label","Navigation Bar Container");
   create_ul_nav.classList.add("nav_item_container");
   create_nav.appendChild(create_ul_nav);
   document.body.appendChild(create_nav);
@@ -61,6 +65,7 @@ function NK_navBar() {
   }
   for (let i = 0; i < create_ul_nav_href.length; i++) {
     const create_ul_li_nav = document.createElement("li");
+    create_ul_li_nav.setAttribute("arial-lable","Navigation Bar Element");
     const create_ul_li_a_nav = document.createElement("a");
     if (i == create_ul_nav_href.length - 1) {
       const create_ul_li_i = document.createElement("i");
@@ -84,9 +89,12 @@ function NK_navBar() {
   for (let i = 0; i < pages_name.length; i++) {
     if (pages_name[i] == body_id) {
       body_ul_nav.querySelectorAll("li")[i].classList.add("selected");
+      body_ul_nav.querySelectorAll("li")[i].setAttribute("arial-selected","true");
       body_ul_nav
         .querySelectorAll("li")
         [pages_name.length - 1].classList.add("dropdown");
+      const dropdown_nav = body_ul_nav.querySelector(".dropdown");
+      dropdown_nav.setAttribute("role","button");
     }
   }
 }
@@ -97,12 +105,15 @@ function NK_homepageMainIntroduction() {
   create_main.id = "homepage_main";
   document.body.appendChild(create_main);
   const create_div_main = document.createElement("div");
+  create_div_main.setAttribute("arial-lable","My Introduction Container");
   create_div_main.classList.add("introduction_myself");
   const create_div_p_main = document.createElement("p");
+  create_div_p_main.setAttribute("arial-lable","My Introduction First Paragraph");
   create_div_p_main.innerHTML = `I am <span class="name_intro">Nirajan Khatiwada</span>, the founder of <span class="org_intro">नेपाली
                     हाँस्यचित्र संस्थान</span>.`;
   create_div_main.appendChild(create_div_p_main);
   const create_div_p1_main = document.createElement("p");
+  create_div_p1_main.setAttribute("arial-lable","My Introduction Second Paragraph");
   create_div_p1_main.innerHTML = `>I am pursuing a Bachelor of Science in Computer Science and Information Technology. My goal is to
                 digitalize happiness and bring my dream world to life through my graphic design skills. I have over 3
                 years experience in social media handling and IT sector and my passion is graphic design.`;
@@ -110,8 +121,10 @@ function NK_homepageMainIntroduction() {
   const main_just_created = document.querySelector("#homepage_main");
   main_just_created.appendChild(create_div_main);
   const create_div1_main = document.createElement("div");
+  create_div1_main.setAttribute("arial-lable","Profile picture container")
   create_div1_main.classList.add("my_profile_picture");
   const create_div1_img_main = document.createElement("img");
+  create_div1_img_main.setAttribute("arial-lable","My Profile Picture - Nirajan Khatiwada");
   create_div1_img_main.src = "/images/profile.png";
   create_div1_main.appendChild(create_div1_img_main);
   main_just_created.appendChild(create_div1_main);
@@ -124,6 +137,7 @@ function NK_homepagePhotoSection() {
   document.body.appendChild(create_section);
   const just_created_div = document.querySelector("#photos");
   const create_h2_div = document.createElement("h2");
+  create_h2_div.setAttribute("arial-lable","Header for the images");
   create_h2_div.innerHTML = `Some Photos you might like`;
   just_created_div.appendChild(create_h2_div);
   const create_div_div = document.createElement("div");
@@ -141,6 +155,18 @@ function NK_homepagePhotoSection() {
     "/images/Homepage_Image/img_9.jpg",
     "/images/Homepage_Image/img_10.jpg",
   ];
+  const homepage_images_alt_text = [
+    "दारी ग्याङको सातौं वार्षिकोत्सवको पोस्टर (Dari Gang's 7th Anniversary Poster)",
+    "जलेको म ढलेको सरकार पोस्टर (A burnt down government poster)",
+    "माधव नेपालको हास्य चित्र (Comedy picture of Madhav Nepal)",
+    "भोलि बिहान हामि उठदा नेपाल - हास्य चित्र (When I wake up tomorrow morning, Nepal - comic picture)",
+    "म्यान्स रूम रिलोडेड ११ औं वार्षिकोत्सव ब्यानर (Men's Room Reloded 11th Anniversary Banner)",
+    "म्यान्स रूम रिलोडेड ११ औं वार्षिकोत्सव पोस्टर (Men's Room Reloded 11th Anniversary Poster)",
+    "उदाउँदो सूर्यमा उडिरहेको हवाइजहाजको फोटोग्राफी (Photography of an airplane flying against the rising sun)",
+    "राति अर्ध चन्द्रमाको फोटोग्राफी (Half moon photography at night)",
+    "अँध्यारो कोठामा उज्यालो प्रकासतर्फ फर्केको मेरो फोटो (Photo of me facing the bright light in a dark room)",
+    "उज्यालो प्रकाश भएको कोठामा खिचिएको मेरो फोटो (Photo of me taken in a brightly lit room)"
+  ];
   const photo_contener_created_previously =
     document.querySelector(".photo_container");
   for (let i = 0; i < homepage_images.length; i++) {
@@ -149,7 +175,8 @@ function NK_homepagePhotoSection() {
     photo_contener_created_previously.appendChild(create_div_span_div);
     const create_div_span_img_div = document.createElement("img");
     create_div_span_img_div.setAttribute("src", homepage_images[i]);
-    create_div_span_img_div.alt = `My photo No. ${i + 1}`;
+    create_div_span_img_div.setAttribute("title", homepage_images_alt_text[i]);
+    create_div_span_img_div.alt = homepage_images_alt_text[i];
     create_div_span_div.appendChild(create_div_span_img_div);
   }
   const create_div_div_section = document.createElement("div");
