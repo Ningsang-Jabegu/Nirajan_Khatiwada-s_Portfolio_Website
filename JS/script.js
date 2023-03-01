@@ -398,3 +398,18 @@ function NK_footer() {
     footer.appendChild(new_element);
   }
 }
+/* This function creates the iframe for bloggerspot (i.e. Blogger) */
+function NK_BlogPostIframe() {
+  const create_main = document.createElement("main");
+  create_main.id = "post_main";
+  document.body.appendChild(create_main);
+  const create_iframe_main = document.createElement("iframe");
+  create_iframe_main.classList.add("blogspot_iframe");
+  create_iframe_main.setAttribute(
+    "src",
+    "https://nirajankhatiwada.blogspot.com/"
+  );
+  create_iframe_main.setAttribute("frameborder", "0");
+  const just_created_main = document.querySelector("#post_main");
+  just_created_main.appendChild(create_iframe_main);
+}
