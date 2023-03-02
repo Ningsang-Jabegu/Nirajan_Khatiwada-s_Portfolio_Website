@@ -200,10 +200,10 @@ function NK_homepagePhotoSection() {
     create_button.classList.add("see_more_less");
     if (i == 0) {
       create_button.classList.add("see_less_0", "see_less");
-      create_button.innerHTML = "See Less";
+      create_button.innerHTML = "See Less photos";
     } else {
       create_button.classList.add("see_more_0", "see_more");
-      create_button.innerHTML = "See More";
+      create_button.innerHTML = "See More photos";
     }
     create_div_div_section.appendChild(create_button);
   }
@@ -212,6 +212,46 @@ function NK_homepagePhotoSection() {
 
 /* Function that holds leval 1 hiding photos */
 function NK_firstHidingPhoto() {
+  const create_div_span_title_section = [
+    "अँध्यारो कोठामा उज्यालोतर्फ फर्केर 'महारानी' उपन्यास पढ्दै गरेको मेरो फोटो(Photo of myself reading 'Maharani' novel in the dark room facing towards light)",
+    "पार्टी स्थलमा नीलो सूटमा सेतो शर्ट र रातो टाई  लगाएको म र  मेरो बुबा दौरा सुरवाल र कालो कोट लगाएको फोटो (Photo of me wearing blue suit with white shirt and red tie and my father wearing black coat with daura surwal in a party venue)",
+    "बादलले घाम ढाकेको नीलो आकाशको फोटोग्राफी (Photography of blue sky with clouds covering the sun)",
+    "मैले लेखेको कविता 'भानुभक्त' (Poem 'Bhanu Bhakta' written by me)",
+    "मेरो हातमा हात जोडेको र आँखा बन्द गरेर आरामदायी स्थितिमा भगवानको लागि प्रार्थना गरिरहेको फोटो (A photo of me praying to God in a relaxed position with hands folded and eyes closed)",
+    "चस्मा लगाएको र निधारमा रातो टिका लगाएको निलो सुटमा मेरो फोटो (A photo of me in a blue suit with spectacles and red tika in forehead)",
+    "रूखको छेउमा मेरो तस्वीर ताजा पल महसुस गर्दै (Picture of me next to a tree feeling the fresh moment)",
+    "दशैंमा मेरो परिवारका सदस्यहरूबाट टीका लगत्तै क्लिक गरिएको फोटो (Photo clicked right after tika by my family members on Dashain)",
+    "रुखको छेउमा उभिएको मेरो तस्बिर जमिनमा हेर्दै र रुखलाई एक हातले समातेको (A picture of me standing next to a tree looking down at the ground and holding the tree with one hand)",
+    "गोलाकार रैखिक हल्का खैरो पृष्ठभूमिमा दायाँ तर्फबाट लिइएको मेरो फोटो (Photo of me taken from the right side on a rounded linear light gray background)",
+  ];
+  for (let i = 0; i < create_div_span_title_section.length; i++) {
+    const create_div_span_section = document.createElement("span");
+    create_div_span_section.setAttribute(
+      "arial-lable",
+      "Previously hidden image box"
+    );
+    create_div_span_section.classList.add(
+      "photo_unhide_0",
+      "photo",
+      `photo_${i + 11}`
+    );
+    create_div_span_section.id = "hide_unhide_img";
+    const create_div_span_img_section = document.createElement("img");
+    create_div_span_img_section.src = `/images/Homepage_Image/img_${
+      i + 11
+    }.jpg`;
+    create_div_span_img_section.title = create_div_span_title_section[i];
+    create_div_span_section.appendChild(create_div_span_img_section);
+    const just_created_photo_container =
+      document.querySelector(".photo_container");
+    let insert_before_me = document.querySelector(".photo_container_hide_0");
+    just_created_photo_container.insertBefore(
+      create_div_span_section,
+      insert_before_me
+    );
+  }
+}
+function NK_secondHidingPhoto() {
   const create_div_span_title_section = [
     "अँध्यारो कोठामा उज्यालोतर्फ फर्केर 'महारानी' उपन्यास पढ्दै गरेको मेरो फोटो(Photo of myself reading 'Maharani' novel in the dark room facing towards light)",
     "पार्टी स्थलमा नीलो सूटमा सेतो शर्ट र रातो टाई  लगाएको म र  मेरो बुबा दौरा सुरवाल र कालो कोट लगाएको फोटो (Photo of me wearing blue suit with white shirt and red tie and my father wearing black coat with daura surwal in a party venue)",
@@ -273,7 +313,7 @@ function NK_homepagePhotoSectionSeeMoreLess() {
           "see_more_less",
           "see_less"
         );
-        see_less_0_span.innerHTML = "See Less";
+        see_less_0_span.innerHTML = "See Less Photos";
         parent_1.appendChild(see_less_0_span);
       }
     }
@@ -284,8 +324,18 @@ function NK_homepagePhotoSectionSeeMoreLess() {
       "see_more_less",
       "see_more"
     );
-    child_1_create_span.innerHTML = "See More (1)";
+    child_1_create_span.innerHTML = "See More Photos (1)";
     parent_1.appendChild(child_1_create_span);
+    const just_created_see_more_1 = document.querySelector(".see_more_1");
+    /*const see_more_less_photos_opt_container = document.createElement(".photo_container_hide_0");
+    const create_see_less_1 = document.createElement("button");
+    create_see_less_1.classList.add("see_more_less","see_less_1","see_less");
+    see_more_less_photos_opt_container.appendChild(create_see_less_1); */
+        just_created_see_more_1.addEventListener("click",function() {
+          NK_secondHidingPhoto();
+/*          child_0_l.style.display="none"; */
+
+        });
   });
 
   /*When the user clicks on see less text after see more test is clicked*/
