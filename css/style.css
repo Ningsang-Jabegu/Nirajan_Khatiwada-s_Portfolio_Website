@@ -1039,24 +1039,21 @@ footer {
 
 #songs .songs_page_head nav {
 	background: rgb(23, 185, 158);
-}
-
-#songs .songs_page_head nav ul a li {
-	text-decoration: none;
-	list-style: none;
 	display: flex;
 	align-items: center;
-}
-
-#songs .songs_page_head nav ul {
-	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	padding: 0 .7em;
 	width: 100%;
+}
+#songs .songs_nav_bar button {
+	border: transparent;
+	background: transparent;
+	align-items: center;
+	display: flex;
 }
 
 @media (min-width:600px) {
-	#songs .songs_page_head nav ul {
+	#songs .songs_page_head nav {
 		margin: 0 3em;
 	}
 }
