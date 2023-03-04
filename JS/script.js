@@ -2,11 +2,15 @@
 function createElement(element) {
   return document.createElement(element);
 }
+/* Fuction that create arial-lable */
+function arial_lable(element,lable) {
+  element.setAttribute("arial-lable",lable);
+}
 /* Function that creates logo header */
 function NK_header(src = "/images/main_logo_name.png") {
   const create_header = createElement("header");
   const create_div_header = document.createElement("div");
-  create_div_header.setAttribute("aria-label", "Nirajan Khatiwada Logo Image");
+  arial_lable(create_div_header,"Nirajan Khatiwada Logo Image");
   create_div_header.setAttribute("role", "banner");
   create_div_header.classList.add("name_logo");
   const create_img_header = createElement("img");
@@ -22,7 +26,7 @@ function NK_header(src = "/images/main_logo_name.png") {
 function NK_navBar() {
   const create_nav = createElement("nav");
   const create_ul_nav = createElement("ul");
-  create_ul_nav.setAttribute("arial-label", "Navigation Bar Container");
+  arial_lable(create_ul_nav,"Navigation Bar Container");
   create_ul_nav.classList.add("nav_item_container");
   create_nav.appendChild(create_ul_nav);
   document.body.appendChild(create_nav);
@@ -69,7 +73,7 @@ function NK_navBar() {
   }
   for (let i = 0; i < create_ul_nav_href.length; i++) {
     const create_ul_li_nav = createElement("li");
-    create_ul_li_nav.setAttribute("arial-lable", "Navigation Bar Element");
+    arial_lable(create_ul_li_nav,"Navigation Bar Element");
     const create_ul_li_a_nav = createElement("a");
     if (i == create_ul_nav_href.length - 1) {
       const create_ul_li_i = createElement("i");
@@ -111,7 +115,7 @@ function NK_homepageMainIntroduction() {
   create_main.id = "homepage_main";
   document.body.appendChild(create_main);
   const create_div_main = createElement("div");
-  create_div_main.setAttribute("arial-lable", "My Introduction Container");
+  arial_lable(create_div_main, "My Introduction Container");
   create_div_main.classList.add("introduction_myself");
   const create_div_p_main = createElement("p");
   create_div_p_main.setAttribute(
@@ -122,10 +126,7 @@ function NK_homepageMainIntroduction() {
                     हाँस्यचित्र संस्थान</span>.`;
   create_div_main.appendChild(create_div_p_main);
   const create_div_p1_main = createElement("p");
-  create_div_p1_main.setAttribute(
-    "arial-lable",
-    "My Introduction Second Paragraph"
-  );
+  arial_lable(create_div_p1_main,"My Introduction Second Paragraph");
   create_div_p1_main.innerHTML = `I am pursuing a Bachelor of Science in Computer Science and Information Technology. My goal is to
                 digitalize happiness and bring my dream world to life through my graphic design skills. I have over 3
                 years experience in social media handling and IT sector and my passion is graphic design.`;
@@ -133,13 +134,10 @@ function NK_homepageMainIntroduction() {
   const main_just_created = document.querySelector("#homepage_main");
   main_just_created.appendChild(create_div_main);
   const create_div1_main = createElement("div");
-  create_div1_main.setAttribute("arial-lable", "Profile picture container");
+  arial_lable(create_div1_main, "Profile picture container");
   create_div1_main.classList.add("my_profile_picture");
   const create_div1_img_main = createElement("img");
-  create_div1_img_main.setAttribute(
-    "arial-lable",
-    "My Profile Picture - Nirajan Khatiwada"
-  );
+  arial_lable(create_div1_img_main,"My Profile Picture - Nirajan Khatiwada")
   create_div1_img_main.src = "/images/profile.png";
   create_div1_main.appendChild(create_div1_img_main);
   main_just_created.appendChild(create_div1_main);
@@ -149,16 +147,16 @@ function NK_homepageMainIntroduction() {
 function NK_homepagePhotoSection() {
   const create_section = createElement("section");
   create_section.id = "photos";
-  create_section.setAttribute("arial-lable", "Homepage photos section");
+  arial_lable(create_section,"Homepage photos section");
   document.body.appendChild(create_section);
   const just_created_div = document.querySelector("#photos");
   const create_h2_div = createElement("h2");
-  create_h2_div.setAttribute("arial-lable", "Header for the images");
+  arial_lable(create_h2_div,"Header for the images");
   create_h2_div.innerHTML = `Some Photos you might like`;
   just_created_div.appendChild(create_h2_div);
   const create_div_div = createElement("div");
   create_div_div.classList.add("photo_container");
-  create_div_div.setAttribute("arial-lable", "all Photos container");
+  arial_lable(create_div_div, "all Photos container");
   just_created_div.appendChild(create_div_div);
   const homepage_images = [
     "/images/Homepage_Image/img_1.jpg",
@@ -188,7 +186,7 @@ function NK_homepagePhotoSection() {
     document.querySelector(".photo_container");
   for (let i = 0; i < homepage_images.length; i++) {
     const create_div_span_div = createElement("span");
-    create_div_span_div.setAttribute("arial-lable", "Single image box");
+    arial_lable(create_div_span_div, "Single image box");
     create_div_span_div.classList.add("photo", `photo_${i + 1}`);
     photo_contener_created_previously.appendChild(create_div_span_div);
     const create_div_span_img_div = createElement("img");
@@ -230,10 +228,7 @@ function NK_firstHidingPhoto() {
   ];
   for (let i = 0; i < create_div_span_title_section.length; i++) {
     const create_div_span_section = createElement("span");
-    create_div_span_section.setAttribute(
-      "arial-lable",
-      "Previously hidden image box"
-    );
+    arial_lable(create_div_span_section,"Previously hidden image box")
     create_div_span_section.classList.add(
       "photo_unhide_0",
       "photo",
@@ -270,10 +265,7 @@ function NK_secondHidingPhoto() {
   ];
   for (let i = 0; i < create_div_span_title_section.length; i++) {
     const create_div_span_section = createElement("span");
-    create_div_span_section.setAttribute(
-      "arial-lable",
-      "Previously hidden image box"
-    );
+    arial_lable(create_div_span_section,"Previously hidden image box")
     create_div_span_section.classList.add(
       "photo_unhide_0",
       "photo",
@@ -376,13 +368,13 @@ function NK_footer() {
   const just_created_footer = document.querySelector(".footer-distributed");
   const create_div_footer = createElement("div");
   create_div_footer.classList.add("footer-left");
-  create_div_footer.setAttribute("arial-label", "Quick pages navigation");
+  arial_lable(create_div_footer,"Quick pages navigation");
   const create_div_h3 = createElement("h3");
-  create_div_h3.setAttribute("arial-lable", "My name as a logo for footer");
+  arial_lable(create_div_h3,"My name as a logo for footer");
   create_div_h3.innerHTML = `Nirajan&nbsp;<span>Khatiwada</span>`;
   create_div_footer.appendChild(create_div_h3);
   const create_div_p_footer = createElement("p");
-  create_div_p_footer.setAttribute("arial-lable", "all web pages link");
+  arial_lable(create_div_p_footer,"all web pages link");
   create_div_p_footer.classList.add("footer-links");
   let footer_link_href = [
     "#",
@@ -421,7 +413,7 @@ function NK_footer() {
   just_created_footer.appendChild(create_div_footer);
   const create_div1_footer = createElement("div");
   create_div1_footer.classList.add("footer-right");
-  create_div1_footer.setAttribute("arial-lable", "Footer Contact Section");
+  arial_lable(create_div1_footer,"Footer Contact Section");
   just_created_footer.appendChild(create_div1_footer);
   const footer_right_side_icons = ["map-marker", "phone", "envelope"];
   const footer_right_side_icons_display_texts = [
@@ -463,18 +455,12 @@ function NK_footer() {
   }
   const create_div2_footer = createElement("div");
   create_div2_footer.classList.add("footer-r_l-center");
-  create_div2_footer.setAttribute(
-    "arial-lable",
-    "Social Icons with links, Privacy Policy and Terms & Condition pages link container"
-  );
+  arial_lable(create_div2_footer,"Link to new page (social media)");
   const create_div2_div_footer = createElement("div");
   create_div2_div_footer.classList.add("footer-icons");
   create_div2_footer.appendChild(create_div2_div_footer);
   const create_div2_p_footer = createElement("p");
-  create_div2_p_footer.setAttribute(
-    "arial-lable",
-    "Links to Privacy Policy & Terms and Conditions pages"
-  );
+  arial_lable(create_div2_p_footer,"Links to Privacy Policy & Terms and Conditions pages");
   create_div2_p_footer.classList.add("footer-company-name", "privacy_terms");
   create_div2_footer.appendChild(create_div2_p_footer);
   just_created_footer.appendChild(create_div2_footer);
@@ -495,10 +481,7 @@ function NK_footer() {
     create_div2_div_a_footer.href = footer_center_icon_a_href[i];
     const create_div2_div_a_i_footer = createElement("i");
     create_div2_div_a_i_footer.setAttribute("role", "icon");
-    create_div2_div_a_i_footer.setAttribute(
-      "arial-lable",
-      `Icon that is linked to ${footer_center_icon_i_class[i]} page`
-    );
+    arial_lable(create_div2_div_a_i_footer,`Icon that is linked to ${footer_center_icon_i_class[i]} page`);
     create_div2_div_a_i_footer.classList.add(
       "fa",
       `fa-${footer_center_icon_i_class[i]}`
@@ -528,10 +511,7 @@ function NK_footer() {
   const footer = document.querySelector(".footer-distributed");
   if (footer) {
     const new_element = createElement("div");
-    new_element.setAttribute(
-      "arial-lable",
-      "The name of the website coder is displayed in this part of footer section."
-    );
+    arial_lable(new_element,"The name of the website coder is displayed in this part of footer section.")
     const date = new Date();
     const year = date.getFullYear();
     document.querySelector("#this_year").innerHTML = year;
@@ -548,10 +528,7 @@ function NK_BlogPostIframe() {
   document.body.appendChild(create_main);
   const create_iframe_main = createElement("iframe");
   create_iframe_main.setAttribute("role", "button");
-  create_iframe_main.setAttribute(
-    "arial-lable",
-    "My article from blogspot website embedded into my site"
-  );
+  arial_lable(create_iframe_main,"My article from blogspot website embedded into my site");
   create_iframe_main.classList.add("blogspot_iframe");
   create_iframe_main.setAttribute(
     "src",
