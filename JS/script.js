@@ -6,13 +6,24 @@ function createElement(element) {
 function arial_lable(element,lable) {
   element.setAttribute("arial-lable",lable);
 }
+/* Fuction that add or remove class */
+function class_list(variable_name, add_or_remove, name_of_class) {
+  let class_list = variable_name.classList;
+  if (add_or_remove === 'add') {
+      class_list.add(name_of_class);
+  } else if (add_or_remove === 'remove') {
+      class_list.remove(name_of_class);
+  } else {
+      console.error(`Invalid value for add_or_remove: ${add_or_remove_without_quote}. Use either "add" or "remove"`);
+  }
+}
 /* Function that creates logo header */
 function NK_header(src = "/images/main_logo_name.png") {
   const create_header = createElement("header");
-  const create_div_header = document.createElement("div");
+  const create_div_header = createElement("div");
   arial_lable(create_div_header,"Nirajan Khatiwada Logo Image");
   create_div_header.setAttribute("role", "banner");
-  create_div_header.classList.add("name_logo");
+  class_list(create_div_header,"add","name_logo");
   const create_img_header = createElement("img");
   create_img_header.setAttribute("src", src);
   create_img_header.setAttribute("alt", "Nirajan Khatiwada Text Image");
