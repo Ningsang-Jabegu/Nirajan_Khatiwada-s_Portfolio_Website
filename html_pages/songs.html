@@ -29,12 +29,30 @@
         NK_navBar();
     </script>
     <script>
-        const create_main = document.createElement("main");
-        const create_section_main = document.createElement("section");
+        
+    </script>
+    <script>
+        const create_main = createElement("main");
+        const create_section_main = createElement("section");
         create_section_main.setAttribute("arial-lable", "Header of the songs.");
+        const create_section_img_main = createElement("img");
+        create_section_img_main.classList.add("songs_profile_pic");
+        create_section_img_main.src = "https://yt3.googleusercontent.com/ytc/AL5GRJWIDAbQYiYjCAyVlQvZVxuJiOd9_IR0Cf_ydL0t=s176-c-k-c0x00ffffff-no-rj";
+        create_section_img_main.setAttribute("arial-lable", "my youtube profile picture (shree chhar)");
         create_section_main.setAttribute("role", "bannar");
         create_section_main.classList.add("songs_page_head");
+        create_section_main.appendChild(create_section_img_main);
         create_main.appendChild(create_section_main);
+        const create_section_h1_main = createElement("h1");
+        create_section_h1_main.innerHTML = `Shree Chaar`;
+        create_section_main.appendChild(create_section_h1_main);
+        const create_section_h2_main = dcreateElement("h2");
+        create_section_h2_main.innerHTML = `Choose to listen SHREE CHAAR on`;
+        create_section_main.appendChild(create_section_h2_main);
+        const create_section_nav_main = createElement("nav");
+        create_section_nav_main.setAttribute("arial-lable", "Navigation bar for the youtube videos, spotify music, apple music");
+        create_section_nav_main.classList.add("songs_nav_bar");
+        create_section_main.appendChild(create_section_nav_main);
         document.body.appendChild(create_main);
         const just_created_main = document.querySelector("#songs main")
         const create_div_main_lable = [
@@ -54,22 +72,11 @@
             just_created_main.appendChild(create_div_main);
         }
         const just_created_header_main = just_created_main.querySelector(".songs_page_head");
-        const create_section_img_main = document.createElement("img");
-        create_section_img_main.classList.add(".songs_profile_pic");
-        create_section_img_main.src("https://yt3.googleusercontent.com/ytc/AL5GRJWIDAbQYiYjCAyVlQvZVxuJiOd9_IR0Cf_ydL0t=s176-c-k-c0x00ffffff-no-rj");
-        create_section_img_main.setAttribute("arial-lable", "my youtube profile picture (shree chhar)");
-        just_created_main.appendChild(create_section_img_main);
-        const create_section_h1_main = document.createElement("h1");
-        create_section_h1_main.innerHTML = `Shree Chaar`;
-        just_created_main.appendChild(create_section_h1_main);
-        const create_section_h2_main = document.createEmement("h2");
-        create_section_h2_main.innerHTML = `Choose to listen SHREE CHAAR on`;
-        just_created_main.appendChild(create_section_h2_main);
-        const create_section_nav_main = document.createElement("nav");
-        create_section_nav_main.setAttribute("arial-lable", "Navigation bar for the youtube videos, spotify music, apple music");
-        create_section_nav_main.classList.add("songs_nav_bar");
+
+
+        
         const songs_nav_bar_class = [
-            "selected song_nav_youtube",
+            "song_nav_youtube",/*"selected "*/
             "song_nav_spotify",
             "song_nav_apple_music"
         ];
@@ -84,27 +91,30 @@
             "apple music"
         ];
         const button_img_src = [
-                "youtube",
-                "spotify",
-                "apple_music"
-            ];
-        
-        for(let i=0; i<songs_nav_bar_class.length; i++) {
-            const create_section_nav_button_main = document.createElement("button");
+            "youtube",
+            "spotify",
+            "apple_music"
+        ];
+
+        for (let i = 0; i < songs_nav_bar_class.length; i++) {
+            const create_section_nav_button_main = createElement("button");
             create_section_nav_button_main.classList.add(songs_nav_bar_class[i]);
-            const create_section_nav_button_img_main =document.createElement("img");
+            const create_section_nav_button_img_main = createElement("img");
             create_section_nav_button_img_main.classList.add(songs_nav_bar_img_class[i]);
-            create_section_nav_button_img_main.src("/images/Nav_Icon/"+button_img_src[i]+"_icon.png");
+            create_section_nav_button_img_main.src = "/images/Nav_Icon/" + button_img_src[i] + "_icon.png";
             create_section_nav_button_main.appendChild(create_section_nav_button_img_main);
             create_section_nav_main.appendChild(create_section_nav_button_main);
-            console.log(create_section_nav_main);/************************************************/
+            const songs_page_head = document.querySelector(".songs_page_head");
+            songs_page_head.appendChild(create_section_nav_main);
+            console.log(create_section_nav_main);
+            /************************************************/
         }
         const just_created_div_youtubeVideos = just_created_main.querySelector(create_div_main_classList[0]);
         const just_created_div_spotifyMusics = just_created_main.querySelector(create_div_main_classList[1]);
         const just_created_div_appleMusics = just_created_main.querySelector(create_div_main_classList[2]);
 
     </script>
-    <main>
+    <!--<main>
         <section class="songs_page_head">
             <img src="https://yt3.googleusercontent.com/ytc/AL5GRJWIDAbQYiYjCAyVlQvZVxuJiOd9_IR0Cf_ydL0t=s176-c-k-c0x00ffffff-no-rj"
                 class="songs_profile_pic">
@@ -316,7 +326,7 @@
         <div class="apple_musics">
             <p>yet not available !</p>
         </div>
-    </main>
+    </main>-->
     <script>
         const songs_navigation = document.querySelector(".songs_nav_bar");
         const songs_youtube_container = document.querySelector(".youtube_videos");
