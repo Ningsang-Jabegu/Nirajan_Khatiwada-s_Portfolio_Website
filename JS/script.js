@@ -25,16 +25,24 @@ function class_list(variable_name, add_or_remove, name_of_class) {
     );
   }
 }
+/* Function that creates src of image */
+function image(variable_name, src) {
+  variable_name.src = src;
+}
+/*Function that sets attribute */
+function setAttribute(variable_name, type, value) {
+  variable_name.setAttribute(type, value);
+}
 /* Function that creates logo header */
 function NK_header(src = "/images/main_logo_name.png") {
   const create_header = createElement("header");
   const create_div_header = createElement("div");
   arial_lable(create_div_header, "Nirajan Khatiwada Logo Image");
-  create_div_header.setAttribute("role", "banner");
+  setAttribute(create_div_header, "role", "banner");
   class_list(create_div_header, "add", "name_logo");
   const create_img_header = createElement("img");
-  create_img_header.setAttribute("src", src);
-  create_img_header.setAttribute("alt", "Nirajan Khatiwada Text Image");
+  image(create_img_header, src);
+  setAttribute(create_img_header, "alt", "Nirajan Khatiwada Text Image");
   class_list(create_img_header, "add", "name_logo");
   create_div_header.appendChild(create_img_header);
   create_header.appendChild(create_div_header);
@@ -96,7 +104,7 @@ function NK_navBar() {
     const create_ul_li_a_nav = createElement("a");
     if (i == create_ul_nav_href.length - 1) {
       const create_ul_li_i = createElement("i");
-      create_ul_li_i.classList.add("fa", "fas", "fa-bars");
+      class_list(create_ul_li_i, "add", "fa fas fa-bars");
       create_ul_li_nav.append(create_ul_li_i);
       const create_ul_li_div = createElement("div");
       class_list(create_ul_li_div, "add", "dropdown-content");
@@ -117,12 +125,11 @@ function NK_navBar() {
     if (pages_name[i] == body_id) {
       const ul_all = body_ul_nav.querySelectorAll("li");
       class_list(ul_all[i], "add", "selected");
-      ul_all[i].setAttribute("arial-selected", "true");
-      body_ul_nav
-        .querySelectorAll("li")
-        [pages_name.length - 1].classList.add("dropdown");
+      setAttribute(ul_all[i], "arial-selected", "true");
+      const all_li_inside_ul = body_ul_nav.querySelectorAll("li")[pages_name.length - 1];
+      class_list(all_li_inside_ul,"add","dropdown");
       const dropdown_nav = body_ul_nav.querySelector(".dropdown");
-      dropdown_nav.setAttribute("role", "button");
+      setAttribute(dropdown_nav,"role", "button");
     }
   }
 }
@@ -136,10 +143,7 @@ function NK_homepageMainIntroduction() {
   arial_lable(create_div_main, "My Introduction Container");
   class_list(create_div_main, "add", "introduction_myself");
   const create_div_p_main = createElement("p");
-  create_div_p_main.setAttribute(
-    "arial-lable",
-    "My Introduction First Paragraph"
-  );
+  arial_lable(create_div_p_main,"arial-lable","My Introduction First Paragraph");
   create_div_p_main.innerHTML = `I am <span class="name_intro">Nirajan Khatiwada</span>, the founder of <span class="org_intro" hreflang="ne">नेपाली
                     हाँस्यचित्र संस्थान</span>.`;
   create_div_main.appendChild(create_div_p_main);
@@ -156,7 +160,7 @@ function NK_homepageMainIntroduction() {
   class_list(create_div1_main, "add", "my_profile_picture");
   const create_div1_img_main = createElement("img");
   arial_lable(create_div1_img_main, "My Profile Picture - Nirajan Khatiwada");
-  create_div1_img_main.src = "/images/profile.png";
+  image(create_div1_img_main,"/images/profile.png");
   create_div1_main.appendChild(create_div1_img_main);
   main_just_created.appendChild(create_div1_main);
 }
@@ -209,9 +213,9 @@ function NK_homepagePhotoSection() {
 
     photo_contener_created_previously.appendChild(create_div_span_div);
     const create_div_span_img_div = createElement("img");
-    create_div_span_img_div.setAttribute("src", homepage_images[i]);
-    create_div_span_img_div.setAttribute("title", homepage_images_alt_text[i]);
-    create_div_span_img_div.alt = homepage_images_alt_text[i];
+    image(create_div_span_img_div,homepage_images[i]);
+    setAttribute(create_div_span_img_div,"title",homepage_images_alt_text[i]);
+    setAttribute(create_div_span_img_div,"alt",homepage_images_alt_text[i]);
     create_div_span_div.appendChild(create_div_span_img_div);
   }
   const create_div_div_section = createElement("div");
@@ -253,12 +257,10 @@ function NK_firstHidingPhoto() {
       "add",
       `photo_unhide_0 photo photo_${i + 11}`
     );
-    create_div_span_section.id = "hide_unhide_img";
+    setAttribute(create_div_span_section,"id","hide_unhide_img");
     const create_div_span_img_section = createElement("img");
-    create_div_span_img_section.src = `/images/Homepage_Image/img_${
-      i + 11
-    }.jpg`;
-    create_div_span_img_section.title = create_div_span_title_section[i];
+    image(create_div_span_img_section,`/images/Homepage_Image/img_${i + 11}.jpg`);
+    setAttribute(create_div_span_img_section,"title",create_div_span_title_section[i]);
     create_div_span_section.appendChild(create_div_span_img_section);
     const just_created_photo_container =
       document.querySelector(".photo_container");
@@ -290,12 +292,10 @@ function NK_secondHidingPhoto() {
       "add",
       `photo_unhide_0 photo photo_${i + 11}`
     );
-    create_div_span_section.id = "hide_unhide_img";
+    setAttribute(create_div_span_section,"id","hide_unhide_img");
     const create_div_span_img_section = createElement("img");
-    create_div_span_img_section.src = `/images/Homepage_Image/img_${
-      i + 11
-    }.jpg`;
-    create_div_span_img_section.title = create_div_span_title_section[i];
+    image(create_div_span_img_section,`/images/Homepage_Image/img_${i + 11}.jpg`);
+    setAttribute(create_div_span_img_section,"title",create_div_span_title_section[i]);
     create_div_span_section.appendChild(create_div_span_img_section);
     const just_created_photo_container =
       document.querySelector(".photo_container");
@@ -373,11 +373,11 @@ function NK_homepagePhotoSectionSeeMoreLess() {
 /* Function that creates footer for a page */
 function NK_footer() {
   const create_footer = createElement("footer");
-  create_footer.classList.add("footer-distributed");
+  class_list(create_footer,"add","footer-distributed");
   document.body.appendChild(create_footer);
   const just_created_footer = document.querySelector(".footer-distributed");
   const create_div_footer = createElement("div");
-  create_div_footer.classList.add("footer-left");
+  class_list(create_div_footer,"add","footer-left");
   arial_lable(create_div_footer, "Quick pages navigation");
   const create_div_h3 = createElement("h3");
   arial_lable(create_div_h3, "My name as a logo for footer");
@@ -444,10 +444,17 @@ function NK_footer() {
       create_div1_div_i_footer,
       footer_contact_section_div_discription[i] + " icon"
     );
-    class_list(create_div1_div_i_footer,"add",`fa fa-${footer_right_side_icons[i]}`)
+    class_list(
+      create_div1_div_i_footer,
+      "add",
+      `fa fa-${footer_right_side_icons[i]}`
+    );
     create_div1_div_footer.appendChild(create_div1_div_i_footer);
     const create_div1_div_p_footer = createElement("p");
-    arial_lable(create_div1_div_p_footer,"My " + footer_contact_section_div_discription[i]);
+    arial_lable(
+      create_div1_div_p_footer,
+      "My " + footer_contact_section_div_discription[i]
+    );
     create_div1_div_p_footer.innerHTML =
       footer_right_side_icons_display_texts[i];
     create_div1_div_footer.appendChild(create_div1_div_p_footer);
@@ -455,17 +462,17 @@ function NK_footer() {
     just_created_div1_footer.appendChild(create_div1_div_footer);
   }
   const create_div2_footer = createElement("div");
-  class_list(create_div2_footer,"add","footer-r_l-center");
+  class_list(create_div2_footer, "add", "footer-r_l-center");
   arial_lable(create_div2_footer, "Link to new page (social media)");
   const create_div2_div_footer = createElement("div");
-  class_list(create_div2_div_footer,"add","footer-icons");
+  class_list(create_div2_div_footer, "add", "footer-icons");
   create_div2_footer.appendChild(create_div2_div_footer);
   const create_div2_p_footer = createElement("p");
   arial_lable(
     create_div2_p_footer,
     "Links to Privacy Policy & Terms and Conditions pages"
   );
-  class_list(create_div2_p_footer,"add","footer-company-name privacy_terms");
+  class_list(create_div2_p_footer, "add", "footer-company-name privacy_terms");
   create_div2_footer.appendChild(create_div2_p_footer);
   just_created_footer.appendChild(create_div2_footer);
   const footer_center_icon_a_href = [
@@ -489,7 +496,11 @@ function NK_footer() {
       create_div2_div_a_i_footer,
       `Icon that is linked to ${footer_center_icon_i_class[i]} page`
     );
-    class_list(create_div2_div_a_i_footer,"add",`fa fa-${footer_center_icon_i_class[i]}`);
+    class_list(
+      create_div2_div_a_i_footer,
+      "add",
+      `fa fa-${footer_center_icon_i_class[i]}`
+    );
     create_div2_div_a_footer.appendChild(create_div2_div_a_i_footer);
     const just_created_div2_div_footer =
       document.querySelector(".footer-icons");
@@ -522,7 +533,7 @@ function NK_footer() {
     const date = new Date();
     const year = date.getFullYear();
     document.querySelector("#this_year").innerHTML = year;
-    class_list(new_element,"add","web_coded");
+    class_list(new_element, "add", "web_coded");
     new_element.innerHTML =
       "<p>Coded by <a arial-lable='Link to web developer' role='link' href='https://ningsangjabegu.com.np/'>Ningsang Jabegu</a></p>";
     footer.appendChild(new_element);
@@ -531,20 +542,17 @@ function NK_footer() {
 /* This function creates the iframe for bloggerspot (i.e. Blogger) */
 function NK_BlogPostIframe() {
   const create_main = createElement("main");
-  create_main.id = "post_main";
+  setAttribute(create_main,"id","post_main");
   document.body.appendChild(create_main);
   const create_iframe_main = createElement("iframe");
-  create_iframe_main.setAttribute("role", "button");
+  setAttribute(create_iframe_main,"role","button");
   arial_lable(
     create_iframe_main,
     "My article from blogspot website embedded into my site"
   );
-  class_list(create_iframe_main,"add","blogspot_iframe");
-  create_iframe_main.setAttribute(
-    "src",
-    "https://nirajankhatiwada.blogspot.com/"
-  );
-  create_iframe_main.setAttribute("frameborder", "0");
+  class_list(create_iframe_main, "add", "blogspot_iframe");
+  setAttribute(create_iframe_main,"src","https://nirajankhatiwada.blogspot.com/");
+  setAttribute(create_iframe_main,"frameborder", "0");
   const just_created_main = document.querySelector("#post_main");
   just_created_main.appendChild(create_iframe_main);
 }

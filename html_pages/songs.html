@@ -28,21 +28,29 @@
         NK_header();
         NK_navBar();
     </script>
-    <!--<script>
+    <script>
+        function inherit_clild(parent,child) {
+            parent.appendChild(child);
+        }
+        function inherit(parent,child) {
+            parent.append(child);
+        }
+    </script>
+    <script>
         const create_main = createElement("main");
         const create_section_main = createElement("section");
         arial_lable(create_section_main, "Header of the songs.");
         const create_section_img_main = createElement("img");
         class_list(create_section_img_main,"add","songs_profile_pic");
-        create_section_img_main.src = "https://yt3.googleusercontent.com/ytc/AL5GRJWIDAbQYiYjCAyVlQvZVxuJiOd9_IR0Cf_ydL0t=s176-c-k-c0x00ffffff-no-rj";
+        image(create_section_img_main,"https://yt3.googleusercontent.com/ytc/AL5GRJWIDAbQYiYjCAyVlQvZVxuJiOd9_IR0Cf_ydL0t=s176-c-k-c0x00ffffff-no-rj");
         arial_lable(create_section_img_main, "my youtube profile picture (shree chhar)");
-        create_section_main.setAttribute("role", "bannar");
+        setAttribute(create_section_main,"role","bannar");
         class_list(create_section_main,"add","songs_page_head");
-        create_section_main.appendChild(create_section_img_main);
-        create_main.appendChild(create_section_main);
+        inherit_clild(create_section_main,create_section_img_main);
+        inherit_clild(create_main,create_section_main);
         const create_section_h1_main = createElement("h1");
         create_section_h1_main.innerHTML = `Shree Chaar`;
-        create_section_main.appendChild(create_section_h1_main);
+        inherit_clild(create_section_main,create_section_h1_main);
         const create_section_h2_main = createElement("h2");
         create_section_h2_main.innerHTML = `Choose to listen SHREE CHAAR on`;
         create_section_main.appendChild(create_section_h2_main);
@@ -64,8 +72,8 @@
         ];
         for (let i = 0; i < create_div_main_lable.length; i++) {
             const create_div_main = document.createElement("div");
-            create_div_main.classList.add(create_div_main_classList[i]);
-            create_div_main.setAttribute("role", "button");
+            class_list(create_div_main,"add",create_div_main_classList[i]);
+            setAttribute(create_div_main,"role","button");
             just_created_main.appendChild(create_div_main);
         }
         const just_created_header_main = just_created_main.querySelector(".songs_page_head");
@@ -95,9 +103,9 @@
 
         for (let i = 0; i < songs_nav_bar_class.length; i++) {
             const create_section_nav_button_main = createElement("button");
-            create_section_nav_button_main.classList.add(songs_nav_bar_class[i]);
+            class_list(create_section_nav_button_main,"add",songs_nav_bar_class[i]);
             const create_section_nav_button_img_main = createElement("img");
-            create_section_nav_button_img_main.classList.add(songs_nav_bar_img_class[i]);
+            class_list(create_section_nav_button_img_main,"add",songs_nav_bar_img_class[i]);
             create_section_nav_button_img_main.src = "/images/Nav_Icon/" + button_img_src[i] + "_icon.png";
             create_section_nav_button_main.appendChild(create_section_nav_button_img_main);
             create_section_nav_main.appendChild(create_section_nav_button_main);
@@ -110,7 +118,7 @@
         const just_created_div_spotifyMusics = just_created_main.querySelector(create_div_main_classList[1]);
         const just_created_div_appleMusics = just_created_main.querySelector(create_div_main_classList[2]);
 
-    </script>-->
+    </script>
     <main>
         <section class="songs_page_head">
             <img src="https://yt3.googleusercontent.com/ytc/AL5GRJWIDAbQYiYjCAyVlQvZVxuJiOd9_IR0Cf_ydL0t=s176-c-k-c0x00ffffff-no-rj"
@@ -410,8 +418,8 @@
                     video_title_element.innerHTML = videoTitle;
                     video_view_element.innerHTML = channel_name;
                     video_profile_pic_img.src = channelProfilePictureUrl;
-                    video_title_element.setAttribute("title", past_as_title_for_title_txt);
-                    video_profile_pic_img.setAttribute("title", channel_name);
+                    setAttribute(video_title_element,"title",past_as_title_for_title_txt);
+                    setAttribute(video_profile_pic_img,"title",channel_name);
                     /*This is for time upload formation*/
                     const uploadedTime_copy = uploadedTime;
                     const uploadDate = new Date(uploadedTime_copy);
