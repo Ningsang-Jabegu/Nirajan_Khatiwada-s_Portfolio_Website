@@ -3,8 +3,8 @@ function createElement(element) {
   return document.createElement(element);
 }
 /* Fuction that create arial-lable */
-function arial_lable(element, lable) {
-  element.setAttribute("arial-lable", lable);
+function aria_lable(element, lable) {
+  element.setAttribute("aria-lable", lable);
 }
 /* Fuction that add or remove class */
 function class_list(variable_name, add_or_remove, name_of_class) {
@@ -48,7 +48,7 @@ function addIntoBody(child) {
 function NK_header(src = "/images/main_logo_name.png") {
   const create_header = createElement("header");
   const create_div_header = createElement("div");
-  arial_lable(create_div_header, "Nirajan Khatiwada Logo Image");
+  aria_lable(create_div_header, "Nirajan Khatiwada Logo Image");
   setAttribute(create_div_header, "role", "banner");
   class_list(create_div_header, "add", "name_logo");
   const create_img_header = createElement("img");
@@ -64,7 +64,7 @@ function NK_header(src = "/images/main_logo_name.png") {
 function NK_navBar() {
   const create_nav = createElement("nav");
   const create_ul_nav = createElement("ul");
-  arial_lable(create_ul_nav, "Navigation Bar Container");
+  aria_lable(create_ul_nav, "Navigation Bar Container");
   class_list(create_ul_nav, "add", "nav_item_container");
   __child(create_nav, create_ul_nav);
   addIntoBody(create_nav);
@@ -111,7 +111,7 @@ function NK_navBar() {
   }
   for (let i = 0; i < create_ul_nav_href.length; i++) {
     const create_ul_li_nav = createElement("li");
-    arial_lable(create_ul_li_nav, "Navigation Bar Element");
+    aria_lable(create_ul_li_nav, "Navigation Bar Element");
     const create_ul_li_a_nav = createElement("a");
     if (i == create_ul_nav_href.length - 1) {
       const create_ul_li_i = createElement("i");
@@ -152,10 +152,10 @@ function NK_homepageMainIntroduction() {
   setAttribute(create_main, "id", "homepage_main");
   document.body.appendChild(create_main);
   const create_div_main = createElement("div");
-  arial_lable(create_div_main, "My Introduction Container");
+  aria_lable(create_div_main, "My Introduction Container");
   class_list(create_div_main, "add", "introduction_myself");
   const create_div_p_main = createElement("p");
-  arial_lable(
+  aria_lable(
     create_div_p_main,
     "arial-lable",
     "My Introduction First Paragraph"
@@ -164,7 +164,7 @@ function NK_homepageMainIntroduction() {
                     हाँस्यचित्र संस्थान</span>.`;
   __child(create_div_main, create_div_p_main);
   const create_div_p1_main = createElement("p");
-  arial_lable(create_div_p1_main, "My Introduction Second Paragraph");
+  aria_lable(create_div_p1_main, "My Introduction Second Paragraph");
   create_div_p1_main.innerHTML = `I am pursuing a Bachelor of Science in Computer Science and Information Technology. My goal is to
                 digitalize happiness and bring my dream world to life through my graphic design skills. I have over 3
                 years experience in social media handling and IT sector and my passion is graphic design.`;
@@ -172,10 +172,10 @@ function NK_homepageMainIntroduction() {
   const main_just_created = document.querySelector("#homepage_main");
   __child(main_just_created, create_div_main);
   const create_div1_main = createElement("div");
-  arial_lable(create_div1_main, "Profile picture container");
+  aria_lable(create_div1_main, "Profile picture container");
   class_list(create_div1_main, "add", "my_profile_picture");
   const create_div1_img_main = createElement("img");
-  arial_lable(create_div1_img_main, "My Profile Picture - Nirajan Khatiwada");
+  aria_lable(create_div1_img_main, "My Profile Picture - Nirajan Khatiwada");
   image(create_div1_img_main, "/images/profile.png");
   __child(create_div1_main, create_div1_img_main);
   __child(main_just_created, create_div1_main);
@@ -185,16 +185,16 @@ function NK_homepageMainIntroduction() {
 function NK_homepagePhotoSection() {
   const create_section = createElement("section");
   setAttribute(create_section, "id", "photos");
-  arial_lable(create_section, "Homepage photos section");
+  aria_lable(create_section, "Homepage photos section");
   document.body.appendChild(create_section);
   const just_created_div = document.querySelector("#photos");
   const create_h2_div = createElement("h2");
-  arial_lable(create_h2_div, "Header for the images");
+  aria_lable(create_h2_div, "Header for the images");
   create_h2_div.innerHTML = `Some Photos you might like`;
   __child(just_created_div, create_h2_div);
   const create_div_div = createElement("div");
   class_list(create_div_div, "add", "photo_container");
-  arial_lable(create_div_div, "all Photos container");
+  aria_lable(create_div_div, "all Photos container");
   __child(just_created_div, create_div_div);
   const homepage_images = [
     "/images/Homepage_Image/img_1.jpg",
@@ -224,7 +224,7 @@ function NK_homepagePhotoSection() {
     document.querySelector(".photo_container");
   for (let i = 0; i < homepage_images.length; i++) {
     const create_div_span_div = createElement("span");
-    arial_lable(create_div_span_div, "Single image box");
+    aria_lable(create_div_span_div, "Single image box");
     class_list(create_div_span_div, "add", `photo photo_${i + 1}`); //here space in class makes them two seperate class
     __child(photo_contener_created_previously, create_div_span_div);
     const create_div_span_img_div = createElement("img");
@@ -266,7 +266,7 @@ function NK_firstHidingPhoto() {
   ];
   for (let i = 0; i < create_div_span_title_section.length; i++) {
     const create_div_span_section = createElement("span");
-    arial_lable(create_div_span_section, "Previously hidden image box");
+    aria_lable(create_div_span_section, "Previously hidden image box");
     class_list(
       create_div_span_section,
       "add",
@@ -308,7 +308,7 @@ function NK_secondHidingPhoto() {
   ];
   for (let i = 0; i < create_div_span_title_section.length; i++) {
     const create_div_span_section = createElement("span");
-    arial_lable(create_div_span_section, "Previously hidden image box");
+    aria_lable(create_div_span_section, "Previously hidden image box");
     class_list(
       create_div_span_section,
       "add",
@@ -407,13 +407,13 @@ function NK_footer() {
   const just_created_footer = document.querySelector(".footer-distributed");
   const create_div_footer = createElement("div");
   class_list(create_div_footer, "add", "footer-left");
-  arial_lable(create_div_footer, "Quick pages navigation");
+  aria_lable(create_div_footer, "Quick pages navigation");
   const create_div_h3 = createElement("h3");
-  arial_lable(create_div_h3, "My name as a logo for footer");
+  aria_lable(create_div_h3, "My name as a logo for footer");
   create_div_h3.innerHTML = `Nirajan&nbsp;<span>Khatiwada</span>`;
   __child(create_div_footer, create_div_h3);
   const create_div_p_footer = createElement("p");
-  arial_lable(create_div_p_footer, "all web pages link");
+  aria_lable(create_div_p_footer, "all web pages link");
   class_list(create_div_p_footer, "add", "footer-links");
   let footer_link_href = [
     "#",
@@ -443,13 +443,13 @@ function NK_footer() {
   __child(create_div_footer,create_div_p_footer);
   const create_div_p1_footer = createElement("p");
   class_list(create_div_p1_footer, "add", "footer-company-name");
-  arial_lable(create_div_p1_footer, "Footer copyright information box");
+  aria_lable(create_div_p1_footer, "Footer copyright information box");
   create_div_p1_footer.innerHTML = `Nirajan Khatiwada &copy; 2023 - <span id="this_year"></span>`;
   __child(create_div_footer,create_div_p1_footer);
   __child(just_created_footer,create_div_footer);
   const create_div1_footer = createElement("div");
   class_list(create_div1_footer, "add", "footer-right");
-  arial_lable(create_div1_footer, "Footer Contact Section");
+  aria_lable(create_div1_footer, "Footer Contact Section");
   __child(just_created_footer,create_div1_footer);
   const footer_right_side_icons = ["map-marker", "phone", "envelope"];
   const footer_right_side_icons_display_texts = [
@@ -464,12 +464,12 @@ function NK_footer() {
   ];
   for (let i = 0; i < 3; i++) {
     const create_div1_div_footer = createElement("div");
-    arial_lable(
+    aria_lable(
       create_div1_div_footer,
       footer_contact_section_div_discription[i] + " section"
     );
     const create_div1_div_i_footer = createElement("i");
-    arial_lable(
+    aria_lable(
       create_div1_div_i_footer,
       footer_contact_section_div_discription[i] + " icon"
     );
@@ -480,7 +480,7 @@ function NK_footer() {
     );
     create_div1_div_footer.appendChild(create_div1_div_i_footer);
     const create_div1_div_p_footer = createElement("p");
-    arial_lable(
+    aria_lable(
       create_div1_div_p_footer,
       "My " + footer_contact_section_div_discription[i]
     );
@@ -492,12 +492,12 @@ function NK_footer() {
   }
   const create_div2_footer = createElement("div");
   class_list(create_div2_footer, "add", "footer-r_l-center");
-  arial_lable(create_div2_footer, "Link to new page (social media)");
+  aria_lable(create_div2_footer, "Link to new page (social media)");
   const create_div2_div_footer = createElement("div");
   class_list(create_div2_div_footer, "add", "footer-icons");
   __child(create_div2_footer,create_div2_div_footer);
   const create_div2_p_footer = createElement("p");
-  arial_lable(
+  aria_lable(
     create_div2_p_footer,
     "Links to Privacy Policy & Terms and Conditions pages"
   );
@@ -521,7 +521,7 @@ function NK_footer() {
     create_div2_div_a_footer.href = footer_center_icon_a_href[i];
     const create_div2_div_a_i_footer = createElement("i");
     create_div2_div_a_i_footer.setAttribute("role", "icon");
-    arial_lable(
+    aria_lable(
       create_div2_div_a_i_footer,
       `Icon that is linked to ${footer_center_icon_i_class[i]} page`
     );
@@ -555,7 +555,7 @@ function NK_footer() {
   const footer = document.querySelector(".footer-distributed");
   if (footer) {
     const new_element = createElement("div");
-    arial_lable(
+    aria_lable(
       new_element,
       "The name of the website coder is displayed in this part of footer section."
     );
@@ -575,7 +575,7 @@ function NK_BlogPostIframe() {
   document.body.appendChild(create_main);
   const create_iframe_main = createElement("iframe");
   setAttribute(create_iframe_main, "role", "button");
-  arial_lable(
+  aria_lable(
     create_iframe_main,
     "My article from blogspot website embedded into my site"
   );
