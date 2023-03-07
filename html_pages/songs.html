@@ -54,7 +54,7 @@
         class_list(create_section_nav_main,"add","songs_nav_bar");
         __child(create_section_main,create_section_nav_main);
         addIntoBody(create_main);
-        const just_created_main = document.querySelector("#songs main")
+        const just_created_main = search_css("#songs main");
         const create_div_main_lable = [
             "In this section you will find the Youtube Videos of mine (Rap)",
             "In this section you will find the Spotify music of mine (Nirajan Khatiwada)",
@@ -71,10 +71,7 @@
             setAttribute(create_div_main,"role","button");
             __child(just_created_main,create_div_main);
         }
-        const just_created_header_main = just_created_main.querySelector(".songs_page_head");
-
-
-
+        const just_created_header_main = search_css_l(just_created_main,".songs_page_head");
         const songs_nav_bar_class = [
             "song_nav_youtube",/*"selected "*/
             "song_nav_spotify",
@@ -104,13 +101,13 @@
             image(create_section_nav_button_img_main,"/images/Nav_Icon/" + button_img_src[i] + "_icon.png");
             __child(create_section_nav_button_main,create_section_nav_button_img_main);
             __child(create_section_nav_main,create_section_nav_button_main);
-            const songs_page_head = document.querySelector(".songs_page_head");
+            const songs_page_head = search_css(".songs_page_head");
             __child(songs_page_head,create_section_nav_main);
             /************************************************/
         }
-        const just_created_div_youtubeVideos = just_created_main.querySelector(create_div_main_classList[0]);
-        const just_created_div_spotifyMusics = just_created_main.querySelector(create_div_main_classList[1]);
-        const just_created_div_appleMusics = just_created_main.querySelector(create_div_main_classList[2]);
+        const just_created_div_youtubeVideos = search_css_l(just_created_main,"."+create_div_main_classList[0]);
+        const just_created_div_spotifyMusics = search_css_l(just_created_main,"."+create_div_main_classList[1]);
+        const just_created_div_appleMusics = search_css_l(just_created_main,"."+create_div_main_classList[2]);
 
     </script>
     <main>
@@ -389,7 +386,7 @@
         const youtube_video_divs = document.querySelectorAll(".youtube_video");
         for (let i = 0; i < youtube_video_divs.length; i++) {
             const youtube_video_div = youtube_video_divs[i];
-            const youtube_video_div_iframe = youtube_video_div.querySelector("iframe");
+            const youtube_video_div_iframe = search_css_l(youtube_video_div,"iframe");
             const video_src = youtube_video_div_iframe.src;
             const video_id = video_src.split("/").pop().split("?")[0];
             const API_KEY = "AIzaSyA2Cu0XHp8z3fYpVFe6hYqffj8xr0ibhCE";
@@ -452,7 +449,7 @@
             const minScreenWidth = 700;
             if (window.innerWidth >= minScreenWidth) {
                 youtubeVideo.addEventListener('mouseover', () => {
-                    const iframe = youtubeVideo.querySelector('iframe');
+                    const iframe = search_css_l(youtubeVideo,'iframe');
                     const currentSrc = iframe.src;
                     timeoutId = setTimeout(() => {
                         youtubeVideo.style.zIndex = '999';
