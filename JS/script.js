@@ -44,6 +44,10 @@ function _child(parent, child) {
 function addIntoBody(child) {
   document.body.appendChild(child);
 }
+/*Funtion to write inner html*/
+function write_html(element,txt) {
+  element.innerHTML=txt
+}
 /* Function that creates logo header */
 function NK_header(src = "/images/main_logo_name.png") {
   const create_header = createElement("header");
@@ -150,7 +154,7 @@ function NK_navBar() {
 function NK_homepageMainIntroduction() {
   create_main = createElement("main");
   setAttribute(create_main, "id", "homepage_main");
-  document.body.appendChild(create_main);
+  addIntoBody(create_main);
   const create_div_main = createElement("div");
   aria_lable(create_div_main, "My Introduction Container");
   class_list(create_div_main, "add", "introduction_myself");
@@ -165,9 +169,9 @@ function NK_homepageMainIntroduction() {
   __child(create_div_main, create_div_p_main);
   const create_div_p1_main = createElement("p");
   aria_lable(create_div_p1_main, "My Introduction Second Paragraph");
-  create_div_p1_main.innerHTML = `I am pursuing a Bachelor of Science in Computer Science and Information Technology. My goal is to
-                digitalize happiness and bring my dream world to life through my graphic design skills. I have over 3
-                years experience in social media handling and IT sector and my passion is graphic design.`;
+  write_html(create_div_p1_main,`I am pursuing a Bachelor of Science in Computer Science and Information Technology. My goal is to
+  digitalize happiness and bring my dream world to life through my graphic design skills. I have over 3
+  years experience in social media handling and IT sector and my passion is graphic design.`);
   __child(create_div_main, create_div_p1_main);
   const main_just_created = document.querySelector("#homepage_main");
   __child(main_just_created, create_div_main);
@@ -190,7 +194,7 @@ function NK_homepagePhotoSection() {
   const just_created_div = document.querySelector("#photos");
   const create_h2_div = createElement("h2");
   aria_lable(create_h2_div, "Header for the images");
-  create_h2_div.innerHTML = `Some Photos you might like`;
+  write_html(create_h2_div,`Some Photos you might like`);
   __child(just_created_div, create_h2_div);
   const create_div_div = createElement("div");
   class_list(create_div_div, "add", "photo_container");
@@ -240,10 +244,10 @@ function NK_homepagePhotoSection() {
     class_list(create_button, "add", "see_more_less");
     if (i == 0) {
       class_list(create_button, "add", "see_less_0 see_less");
-      create_button.innerHTML = "See Less photos";
+      write_html(create_button,"See Less photos");
     } else {
       class_list(create_button, "add", "see_more_0 see_more");
-      create_button.innerHTML = "See More photos";
+      write_html(create_button,"See More photos");
     }
     __child(create_div_div_section, create_button);
   }
@@ -360,7 +364,7 @@ function NK_homepagePhotoSectionSeeMoreLess() {
     child_0_l.style.display = "block";
     const child_1_create_span = createElement("span");
     class_list(child_1_create_span, "add", "see_more_1 see_more_less see_more");
-    child_1_create_span.innerHTML = "See More Photos (1)";
+    write_html(child_1_create_span,"See More Photos (1)");
     __child(parent_1, child_1_create_span);
     const just_created_see_more_1 = document.querySelector(".see_more_1");
     /*const see_more_less_photos_opt_container = document.createElement(".photo_container_hide_0");
@@ -410,7 +414,7 @@ function NK_footer() {
   aria_lable(create_div_footer, "Quick pages navigation");
   const create_div_h3 = createElement("h3");
   aria_lable(create_div_h3, "My name as a logo for footer");
-  create_div_h3.innerHTML = `Nirajan&nbsp;<span>Khatiwada</span>`;
+  write_html(create_div_h3,`Nirajan&nbsp;<span>Khatiwada</span>`);
   __child(create_div_footer, create_div_h3);
   const create_div_p_footer = createElement("p");
   aria_lable(create_div_p_footer, "all web pages link");
@@ -444,7 +448,7 @@ function NK_footer() {
   const create_div_p1_footer = createElement("p");
   class_list(create_div_p1_footer, "add", "footer-company-name");
   aria_lable(create_div_p1_footer, "Footer copyright information box");
-  create_div_p1_footer.innerHTML = `Nirajan Khatiwada &copy; 2023 - <span id="this_year"></span>`;
+  write_html(create_div_p1_footer,`Nirajan Khatiwada &copy; 2023 - <span id="this_year"></span>`);
   __child(create_div_footer,create_div_p1_footer);
   __child(just_created_footer,create_div_footer);
   const create_div1_footer = createElement("div");
@@ -484,8 +488,7 @@ function NK_footer() {
       create_div1_div_p_footer,
       "My " + footer_contact_section_div_discription[i]
     );
-    create_div1_div_p_footer.innerHTML =
-      footer_right_side_icons_display_texts[i];
+    write_html(create_div1_div_p_footer,footer_right_side_icons_display_texts[i]);
       __child(create_div1_div_footer,create_div1_div_p_footer);
     const just_created_div1_footer = document.querySelector(".footer-right");
     __child(just_created_div1_footer,create_div1_div_footer);
@@ -546,8 +549,7 @@ function NK_footer() {
   for (let i = 0; i < footer_privacy_terms_href.length; i++) {
     const create_div2_p_a_footer = createElement("a");
     create_div2_p_a_footer.href = footer_privacy_terms_href[i];
-    create_div2_p_a_footer.innerHTML =
-      footer_privacy_terms_display_text[i] + "&nbsp;";
+    write_html(create_div2_p_a_footer,footer_privacy_terms_display_text[i] + "&nbsp;");
     const just_created_div2_p_footer = document.querySelector(".privacy_terms");
     __child(just_created_div2_p_footer,create_div2_p_a_footer);
   }
@@ -563,8 +565,7 @@ function NK_footer() {
     const year = date.getFullYear();
     document.querySelector("#this_year").innerHTML = year;
     class_list(new_element, "add", "web_coded");
-    new_element.innerHTML =
-      "<p>Coded by <a arial-lable='Link to web developer' role='link' href='https://ningsangjabegu.com.np/'>Ningsang Jabegu</a></p>";
+    write_html(new_element, "<p>Coded by <a arial-lable='Link to web developer' role='link' href='https://ningsangjabegu.com.np/'>Ningsang Jabegu</a></p>");
     __child(footer,new_element);
   }
 }
