@@ -29,30 +29,30 @@
         NK_navBar();
     </script>
     <script>
-        
+
     </script>
     <script>
         const create_main = createElement("main");
         const create_section_main = createElement("section");
         aria_lable(create_section_main, "Header of the songs.");
         const create_section_img_main = createElement("img");
-        class_list(create_section_img_main,"add","songs_profile_pic");
-        image(create_section_img_main,"https://yt3.googleusercontent.com/ytc/AL5GRJWIDAbQYiYjCAyVlQvZVxuJiOd9_IR0Cf_ydL0t=s176-c-k-c0x00ffffff-no-rj");
+        class_list(create_section_img_main, "add", "songs_profile_pic");
+        image(create_section_img_main, "https://yt3.googleusercontent.com/ytc/AL5GRJWIDAbQYiYjCAyVlQvZVxuJiOd9_IR0Cf_ydL0t=s176-c-k-c0x00ffffff-no-rj");
         aria_lable(create_section_img_main, "my youtube profile picture (shree chhar)");
-        setAttribute(create_section_main,"role","bannar");
-        class_list(create_section_main,"add","songs_page_head");
-        __child(create_section_main,create_section_img_main);
-        __child(create_main,create_section_main);
+        setAttribute(create_section_main, "role", "bannar");
+        class_list(create_section_main, "add", "songs_page_head");
+        __child(create_section_main, create_section_img_main);
+        __child(create_main, create_section_main);
         const create_section_h1_main = createElement("h1");
-        write_html(create_section_h1_main,`Shree Chaar`);
-        __child(create_section_main,create_section_h1_main);
+        write_html(create_section_h1_main, `Shree Chaar`);
+        __child(create_section_main, create_section_h1_main);
         const create_section_h2_main = createElement("h2");
-        write_html(create_section_h2_main,`Choose to listen SHREE CHAAR on`);
-        __child(create_section_main,create_section_h2_main);
+        write_html(create_section_h2_main, `Choose to listen SHREE CHAAR on`);
+        __child(create_section_main, create_section_h2_main);
         const create_section_nav_main = createElement("nav");
         aria_lable(create_section_nav_main, "Navigation bar for the youtube videos, spotify music, apple music");
-        class_list(create_section_nav_main,"add","songs_nav_bar");
-        __child(create_section_main,create_section_nav_main);
+        class_list(create_section_nav_main, "add", "songs_nav_bar");
+        __child(create_section_main, create_section_nav_main);
         addIntoBody(create_main);
         const just_created_main = search_css("#songs main");
         const create_div_main_lable = [
@@ -67,11 +67,11 @@
         ];
         for (let i = 0; i < create_div_main_lable.length; i++) {
             const create_div_main = createElement("div");
-            class_list(create_div_main,"add",create_div_main_classList[i]);
-            setAttribute(create_div_main,"role","button");
-            __child(just_created_main,create_div_main);
+            class_list(create_div_main, "add", create_div_main_classList[i]);
+            setAttribute(create_div_main, "role", "button");
+            __child(just_created_main, create_div_main);
         }
-        const just_created_header_main = search_css_l(just_created_main,".songs_page_head");
+        const just_created_header_main = search_css_l(just_created_main, ".songs_page_head");
         const songs_nav_bar_class = [
             "song_nav_youtube",/*"selected "*/
             "song_nav_spotify",
@@ -95,19 +95,19 @@
 
         for (let i = 0; i < songs_nav_bar_class.length; i++) {
             const create_section_nav_button_main = createElement("button");
-            class_list(create_section_nav_button_main,"add",songs_nav_bar_class[i]);
+            class_list(create_section_nav_button_main, "add", songs_nav_bar_class[i]);
             const create_section_nav_button_img_main = createElement("img");
-            class_list(create_section_nav_button_img_main,"add",songs_nav_bar_img_class[i]);
-            image(create_section_nav_button_img_main,"/images/Nav_Icon/" + button_img_src[i] + "_icon.png");
-            __child(create_section_nav_button_main,create_section_nav_button_img_main);
-            __child(create_section_nav_main,create_section_nav_button_main);
+            class_list(create_section_nav_button_img_main, "add", songs_nav_bar_img_class[i]);
+            image(create_section_nav_button_img_main, "/images/Nav_Icon/" + button_img_src[i] + "_icon.png");
+            __child(create_section_nav_button_main, create_section_nav_button_img_main);
+            __child(create_section_nav_main, create_section_nav_button_main);
             const songs_page_head = search_css(".songs_page_head");
-            __child(songs_page_head,create_section_nav_main);
+            __child(songs_page_head, create_section_nav_main);
             /************************************************/
         }
-        const just_created_div_youtubeVideos = search_css_l(just_created_main,"."+create_div_main_classList[0]);
-        const just_created_div_spotifyMusics = search_css_l(just_created_main,"."+create_div_main_classList[1]);
-        const just_created_div_appleMusics = search_css_l(just_created_main,"."+create_div_main_classList[2]);
+        const just_created_div_youtubeVideos = search_css_l(just_created_main, "." + create_div_main_classList[0]);
+        const just_created_div_spotifyMusics = search_css_l(just_created_main, "." + create_div_main_classList[1]);
+        const just_created_div_appleMusics = search_css_l(just_created_main, "." + create_div_main_classList[2]);
 
     </script>
     <main>
@@ -333,8 +333,8 @@
         nav_buttons.forEach(button => {
             button.addEventListener('click', () => {
                 songs_youtube_container.style.display = "none";
-                nav_buttons.forEach(b => class_list(b,"remove","selected"));
-                class_list(button,"add","selected");
+                nav_buttons.forEach(b => class_list(b, "remove", "selected"));
+                class_list(button, "add", "selected");
                 const iframe_spotify = document.querySelector(".spotify_music");
                 if (button.classList.contains("song_nav_spotify")) {
                     /*addIframe(spotify_song, "spotify_music", "https://open.spotify.com/embed/playlist/37i9dQZF1DX9sIqqvKsjG8?utm_source=generator");*/
@@ -379,14 +379,14 @@
             iframe.setAttribute("allowfullscreen", "");
             iframe.setAttribute("allow", "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture");
             iframe.setAttribute("loading", "lazy");
-            __child(parent,iframe);
+            __child(parent, iframe);
         }
 
         const youtube_iframe = document.querySelector(".youtube_video iframe");
         const youtube_video_divs = document.querySelectorAll(".youtube_video");
         for (let i = 0; i < youtube_video_divs.length; i++) {
             const youtube_video_div = youtube_video_divs[i];
-            const youtube_video_div_iframe = search_css_l(youtube_video_div,"iframe");
+            const youtube_video_div_iframe = search_css_l(youtube_video_div, "iframe");
             const video_src = youtube_video_div_iframe.src;
             const video_id = video_src.split("/").pop().split("?")[0];
             const API_KEY = "AIzaSyA2Cu0XHp8z3fYpVFe6hYqffj8xr0ibhCE";
@@ -406,11 +406,11 @@
                     const copy_video_title = document.querySelector(".youtube_video iframe");
                     const past_as_title_for_title_txt = copy_video_title.title;
                     const channelProfilePictureUrl = copy_profile_pic.src;
-                    write_html(video_title_element,videoTitle);
-                    write_html(video_view_element,channel_name);
-                    image(video_profile_pic_img,channelProfilePictureUrl);
-                    setAttribute(video_title_element,"title",past_as_title_for_title_txt);
-                    setAttribute(video_profile_pic_img,"title",channel_name);
+                    write_html(video_title_element, videoTitle);
+                    write_html(video_view_element, channel_name);
+                    image(video_profile_pic_img, channelProfilePictureUrl);
+                    setAttribute(video_title_element, "title", past_as_title_for_title_txt);
+                    setAttribute(video_profile_pic_img, "title", channel_name);
                     /*This is for time upload formation*/
                     const uploadedTime_copy = uploadedTime;
                     const uploadDate = new Date(uploadedTime_copy);
@@ -434,7 +434,7 @@
                     } else {
                         timeAgo = `${diffYears} years ago`;
                     }
-                    write_html(video_uplode_time_element,"<b> . </b>" + timeAgo);
+                    write_html(video_uplode_time_element, "<b> . </b>" + timeAgo);
 
                 })
                 .catch(error => {
@@ -449,7 +449,7 @@
             const minScreenWidth = 700;
             if (window.innerWidth >= minScreenWidth) {
                 youtubeVideo.addEventListener('mouseover', () => {
-                    const iframe = search_css_l(youtubeVideo,'iframe');
+                    const iframe = search_css_l(youtubeVideo, 'iframe');
                     const currentSrc = iframe.src;
                     timeoutId = setTimeout(() => {
                         youtubeVideo.style.zIndex = '999';
