@@ -12,28 +12,263 @@
     <meta property="og:description"
         content="This is the landing page of Nirajan Khatiwada's portfolio website. You can view his work clicking on different buttons available in landing page.">
     <meta name='robots' content='max-image-preview:large' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <title>निराजन खतिवडा | Nirajan Khatiwada</title>
     <link rel="icon" type="image/x-icon" href="images/Fav_Icon/fav_icon.jpg">
-    <script src="/JS/script.js"></script>
+    <script type="module" src="/JS/script.js"></script>
+    <script type="module" src="/JS/functions.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
 </head>
+<style>
+    /* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* Set font and background colors */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-image: linear-gradient(to bottom, #fbfbf9, #a59dce);
+  transition: background 300ms;
+}
+.txt-normal{
+    font-size: clamp(9pt,3vw,12pt);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Dark mode */
+body.dark-mode {
+    background: black;
+    transition: background 300ms;
+  color: #fff;
+}
+
+/* Header and navigation styles */
+header {
+    
+}
+.name_logo{
+  margin:.2em 0;
+}
+.name_logo svg{
+  height: auto;
+  width: 5em;
+}
+body.dark-mode nav{
+  background-color: #1e1e1f;
+  border: 1px solid #4b4b4dcc;
+}
+nav{
+    padding: 10px;
+    background-color: #3a92c2d7;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #3a92c2d7;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+button#theme-toggle{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size:14pt;
+}
+/* Home section styles */
+#home {
+    height: clamp(27vh,100%,45vh);
+    border-radius: .5em;
+  margin:.8em;
+  box-shadow: 0px 0px 10px #03263459;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, #e4cec37d, #b5c89082);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  padding: .5em;
+}
+body.dark-mode #home {
+  color: white;
+   background-image: linear-gradient(to bottom, #313130, #5a5a5a);
+  border: 1px solid #828286cc;
+  box-shadow: 0px 0px 10px #e6e4e45c;
+}
+#home img {
+    height: auto;
+    width: clamp(9em, 92%,15em);
+}
+.overlay {
+    position: inherit;
+    opacity: 1;
+    display: block;
+    text-align: center;
+    background-color: transparent;
+    height: auto;
+    width: auto;
+}
+
+.overlay h1 {
+    font-size: clamp(5pt,5vw,30pt);
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3a9009;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 2em;
+}
+body.dark-mode .cta-button{
+    background-color: #c2693a;
+
+}
+.cta-button:hover {
+    background-color: #555;
+}
+/*Work section styles*/
+#work {
+    height: clamp(27vh,100%,45vh);
+    border-radius: .5em;
+  margin:.8em;
+  box-shadow: 0px 0px 10px #03263459;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, #e4cec37d, #b5c89082);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  padding: .5em;
+}
+/* About section styles */
+#about {
+    padding: 50px;
+}
+
+/* Projects section styles */
+#projects {
+    padding: 50px;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Contact section styles */
+#contact {
+    padding: 50px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+</style>
 <body id="index">
-    <script>
-        NK_header();
-        NK_navBar();
-        NK_homepageMainIntroduction();
-        NK_homepagePhotoSection();
-        NK_homepagePhotoSectionSeeMoreLess();
-        NK_footer();
-    </script>
-    <script>
-        
-        
-            
-    </script>
+
+    <header>
+        <div aria-lable="Nirajan Khatiwada Logo Image" role="banner" class="name_logo"> <svg fill="#000000" version="1.0" xmlns="http://www.w3.org/2000/svg"  width="300.000000pt" height="94.000000pt" viewBox="0 0 300.000000 94.000000"  preserveAspectRatio="xMidYMid meet">  <g transform="translate(0.000000,94.000000) scale(0.100000,-0.100000)" stroke="none"> <path d="M130 903 c0 -5 14 -16 30 -25 l30 -17 0 -119 c0 -122 -6 -142 -42 -142 -10 0 -18 -4 -18 -10 0 -6 30 -10 70 -10 70 0 93 12 45 24 -31 8 -37 30 -33 139 l3 88 114 -125 c63 -69 120 -126 125 -126 7 0 11 50 11 147 0 144 1 148 23 158 38 17 24 25 -43 25 -37 0 -65 -4 -65 -10 0 -5 9 -10 20 -10 31 0 41 -33 38 -134 l-3 -95 -115 125 c-108 116 -117 124 -152 124 -21 0 -38 -3 -38 -7z"/> <path d="M562 888 c4 -30 43 -33 43 -3 0 13 -8 21 -23 23 -20 3 -23 0 -20 -20z"/> <path d="M1102 888 c2 -15 10 -23 23 -23 30 0 27 39 -3 43 -20 3 -23 0 -20 -20z"/> <path d="M550 789 c-23 -10 -24 -11 -7 -23 13 -11 17 -28 17 -86 0 -63 -2 -72 -20 -77 -11 -3 -17 -9 -14 -14 7 -12 114 -11 114 1 0 6 -7 10 -15 10 -20 0 -27 35 -23 124 3 82 1 86 -52 65z"/> <path d="M685 793 c-32 -8 -39 -20 -16 -28 19 -6 21 -14 21 -82 0 -66 -2 -75 -20 -80 -41 -11 -18 -23 45 -23 62 0 91 15 43 22 -21 3 -23 9 -25 73 -3 140 1 130 -48 118z"/> <path d="M757 782 c-23 -25 -21 -35 2 -23 14 8 22 7 31 -4 16 -19 26 -19 34 1 15 38 -38 58 -67 26z"/> <path d="M882 784 c-27 -19 -31 -67 -4 -62 10 2 17 13 17 26 1 23 19 42 42 42 19 0 43 -30 43 -53 0 -18 -11 -26 -50 -40 -77 -27 -101 -65 -64 -101 19 -20 47 -20 84 -1 25 13 29 13 34 0 7 -18 37 -20 54 -3 16 16 15 29 0 25 -9 -1 -14 22 -18 81 -4 59 -9 86 -20 92 -23 15 -93 12 -118 -6z m82 -161 c-25 -18 -61 -16 -68 3 -8 21 9 42 48 58 30 12 31 12 34 -18 2 -20 -2 -34 -14 -43z"/> <path d="M1105 793 c-32 -8 -39 -20 -16 -28 19 -6 21 -14 21 -93 0 -74 -4 -94 -25 -129 -32 -58 -8 -58 34 -1 30 41 31 45 31 150 0 113 0 112 -45 101z"/> <path d="M1229 779 c-24 -24 -21 -54 6 -54 15 0 19 6 18 22 -3 29 29 48 57 33 13 -7 20 -21 20 -40 0 -25 -5 -30 -50 -45 -30 -10 -57 -27 -67 -41 -14 -22 -14 -26 1 -49 19 -30 60 -33 95 -9 22 16 24 16 33 0 11 -19 39 -21 56 -4 17 17 15 29 -5 26 -16 -3 -18 7 -21 77 -2 43 -8 85 -14 92 -18 22 -105 16 -129 -8z m90 -155 c-18 -22 -63 -14 -67 13 -3 17 6 27 35 42 l38 19 3 -30 c2 -16 -2 -36 -9 -44z"/> <path d="M1453 793 c-26 -5 -30 -21 -8 -29 11 -5 15 -24 15 -81 0 -66 -2 -75 -20 -80 -36 -10 -10 -23 46 -23 53 0 73 13 34 23 -18 5 -20 14 -20 76 0 76 10 91 62 91 37 0 48 -19 48 -81 0 -66 -7 -89 -26 -89 -8 0 -14 -4 -14 -10 0 -12 107 -13 114 -1 3 5 -3 11 -14 14 -18 5 -20 14 -20 79 0 89 -15 118 -64 118 -18 0 -41 -7 -52 -15 -25 -19 -34 -19 -34 0 0 15 -6 16 -47 8z"/> <path d="M814 328 c-2 -4 6 -8 18 -10 22 -3 23 -7 26 -130 l3 -128 -26 0 c-14 0 -25 -4 -25 -10 0 -6 30 -10 70 -10 40 0 70 4 70 10 0 6 -9 10 -20 10 -11 0 -20 6 -21 13 0 6 -2 30 -4 52 -2 22 -2 73 2 114 5 61 9 74 24 78 11 3 19 8 19 12 0 8 -131 8 -136 -1z"/> <path d="M994 328 c-2 -4 5 -9 16 -13 11 -3 20 -10 20 -15 0 -5 -26 -31 -57 -60 l-58 -51 78 -74 79 -75 89 0 c82 0 111 9 74 24 -11 4 -15 21 -15 65 0 49 4 62 19 71 54 28 81 2 81 -78 0 -40 -4 -53 -22 -65 -22 -15 -20 -16 37 -16 57 0 59 1 38 16 -20 13 -23 24 -23 84 0 62 -2 70 -25 85 -26 17 -58 12 -87 -14 -17 -14 -18 -11 -18 56 l0 70 -36 -11 c-34 -10 -35 -12 -18 -24 17 -11 19 -24 16 -127 -3 -102 -5 -115 -22 -119 -27 -7 -63 15 -139 85 l-67 62 61 52 c34 28 71 55 83 58 12 4 22 10 22 14 0 9 -121 9 -126 0z"/> <path d="M1790 330 c-18 -11 -4 -42 17 -38 10 2 19 10 21 19 4 19 -19 31 -38 19z"/> <path d="M2550 325 c-34 -11 -34 -12 -12 -24 16 -8 22 -21 22 -45 0 -34 0 -34 -30 -23 -59 22 -125 -36 -123 -109 2 -70 70 -106 128 -68 23 15 25 15 25 0 0 -17 11 -19 50 -6 15 5 18 8 9 9 -26 2 -31 27 -28 153 1 65 0 120 -2 122 -2 2 -20 -2 -39 -9z m-6 -127 c19 -27 21 -99 4 -116 -7 -7 -27 -12 -45 -12 -26 0 -36 6 -49 31 -19 37 -12 93 14 108 28 17 60 12 76 -11z"/> <path d="M1638 250 c-31 -31 -35 -42 -13 -34 13 5 15 -7 15 -74 0 -51 4 -83 13 -90 6 -5 57 -10 112 -10 93 -1 99 0 78 15 -21 14 -23 24 -23 95 l0 80 -27 -7 c-37 -9 -41 -15 -20 -26 26 -15 25 -124 -2 -138 -10 -6 -21 -7 -25 -4 -4 4 -19 7 -34 8 -27 0 -27 1 -30 78 l-3 79 31 -7 c23 -5 30 -3 30 9 0 12 -7 14 -30 10 -27 -6 -30 -4 -30 20 0 32 -7 31 -42 -4z"/> <path d="M1453 230 c-26 -11 -44 -42 -34 -58 12 -19 41 -3 38 21 -2 26 35 36 59 16 28 -23 12 -49 -46 -72 -42 -17 -56 -28 -58 -45 -7 -48 49 -69 95 -37 19 13 22 13 27 0 7 -19 40 -19 56 0 10 13 9 15 -9 15 -20 0 -21 5 -21 75 0 72 -1 76 -26 85 -30 12 -51 12 -81 0z m77 -115 c0 -29 -39 -59 -64 -49 -28 11 -19 44 17 59 44 19 47 19 47 -10z"/> <path d="M1865 232 c-2 -3 2 -10 9 -18 8 -7 29 -52 48 -99 18 -47 36 -85 40 -85 4 0 10 9 13 21 4 11 16 42 27 67 l21 46 24 -67 c14 -37 28 -67 32 -67 3 0 21 39 40 88 18 48 41 93 49 100 17 13 16 14 -28 14 -44 0 -45 -1 -26 -15 18 -13 18 -15 0 -70 -10 -32 -21 -54 -25 -50 -4 5 -17 32 -28 61 -18 45 -19 53 -6 58 28 11 15 19 -30 19 -48 0 -54 -5 -30 -25 19 -16 19 -36 -4 -85 l-18 -40 -17 39 c-26 61 -30 87 -16 96 7 5 -4 9 -29 12 -23 2 -44 2 -46 0z"/> <path d="M2238 229 c-29 -11 -46 -45 -30 -61 14 -14 37 3 37 27 0 16 7 20 30 20 26 0 30 -4 33 -30 2 -28 -1 -31 -44 -45 -59 -19 -80 -47 -58 -78 17 -25 53 -29 84 -9 17 10 22 9 29 -2 6 -9 18 -12 35 -7 28 7 36 26 11 26 -12 0 -15 14 -15 69 0 61 -3 72 -22 85 -25 18 -50 19 -90 5z m72 -119 c0 -35 -32 -54 -62 -38 -26 13 -22 26 15 48 43 26 47 25 47 -10z"/> <path d="M2690 227 c-31 -16 -43 -71 -13 -65 12 2 18 12 18 28 0 29 36 40 61 20 19 -16 18 -60 -1 -60 -36 0 -95 -33 -101 -56 -12 -48 46 -72 93 -39 19 13 22 13 27 0 7 -19 40 -19 55 -1 9 11 7 15 -9 19 -18 5 -20 13 -20 76 0 68 -1 72 -26 81 -33 13 -54 12 -84 -3z m80 -115 c0 -31 -36 -57 -65 -46 -27 11 -17 44 18 59 44 20 47 19 47 -13z"/> </g> </svg> </div>
+              <nav>
+                  <ul>
+                      <li><a href="#home">Home</a></li>
+                      <li><a href="#about">About</a></li>
+                      <li><a href="#projects">Projects</a></li>
+                      <li><a href="#contact">Contact</a></li>
+                  </ul>
+                  <button id="theme-toggle"><i class="fa-sharp fa-solid fa-cloud-sun" style="color: #343333;"></i></button>
+              </nav>
+          </header>
+          <section id="home">
+              <div class="overlay">
+                  <h1>Welcome to My Portfolio</h1>
+                  <p class="txt-normal">Hi, I'm Nirajan Khatiwada, a passionate graphic designer.</p><br>
+                  <a href="#contact" class="cta-button">Download CV</a>
+              </div>
+              <div>
+                <img aria-lable="My Profile Picture - Nirajan Khatiwada" src="/images/profile.png">
+              </div>
+          </section>
+          <section id="work">
+            <div class="overlay">
+                <h1>What I'm Doing</h1>
+                <p class="txt-normal">Hi, I'm Nirajan Khatiwada, a passionate graphic designer.</p><br>
+                <a href="#contact" class="cta-button">Hire Me</a>
+            </div>
+        </section>
+          <!-- Rest of the sections -->
+      
+          <footer>
+              <p>&copy; 2023 Nirajan Khatiwada. All rights reserved.</p>
+          </footer>
+
+
+
+
+
+
+
+
+
+    <!-- <script type="module">
+        import * as NK from "/JS/script.js";
+        NK.NK_header();
+        NK.NK_navBar();
+        NK.NK_homepageMainIntroduction();
+        NK.NK_homepagePhotoSection();
+        NK.NK_homepagePhotoSectionSeeMoreLess();
+        NK.NK_footer();
+    </script> -->
+    
+    
     <!--    <nav>
         <ul class="nav_item_container">
             <li class="selected"><a href="#">Home</a></li>
@@ -152,5 +387,33 @@
         </script>
     </footer>-->
 </body>
+<script>
+    // Event listener for the theme toggle button
+const themeToggle = document.getElementById("theme-toggle");
+let toggle = 0;
+const themeIcon = document.querySelector("#theme-toggle i");
+const nameLogo = document.querySelector(".name_logo svg");
 
+themeToggle.addEventListener("click", toggleTheme);
+// Function to toggle between light mode and dark mode
+function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle("dark-mode");
+  if(toggle == 0){
+    themeIcon.classList.remove('fa-cloud-sun');
+    themeIcon.classList.add('fa-sun');
+    themeIcon.classList.add('fa-sharp');
+    themeIcon.style.color = '#f3f3f3';
+    nameLogo.style.fill = '#f3f3f3';
+    toggle ++;
+  } else {
+    themeIcon.classList.remove('fa-sun');
+    themeIcon.classList.remove('fa-sharp');
+    themeIcon.classList.add('fa-cloud-sun');
+    themeIcon.style.color = '#343333';
+    nameLogo.style.fill = '#343333';
+    toggle --;
+  }
+}
+</script>
 </html>
