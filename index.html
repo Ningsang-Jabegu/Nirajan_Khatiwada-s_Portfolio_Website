@@ -105,6 +105,7 @@
         margin: .8em;
         box-shadow: 0px 0px 10px #03263459;
         display: flex;
+        gap: 1em;
         align-items: center;
         justify-content: center;
         background-image: linear-gradient(to bottom, #e4cec37d, #b5c89082);
@@ -159,7 +160,9 @@
     .cta-button:hover {
         background-color: #555;
     }
-
+    .dark-mode  .cta-button:hover {
+        background-color: #9b9a9a;
+    }
     /*Work section styles*/
     #work {
         height: clamp(27vh, 100%, 45vh);
@@ -170,33 +173,76 @@
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
-        padding: .5em;
+        padding: 1.2em;
     }
 
-    #work .overlay {
+    #work h1 {
         text-align: left;
     }
-
+    #work .overlay {
+        position: relative;
+    }
     #work .overlay h1 {
         font-size: 15pt;
     }
-
-    .service-list {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
+    #work .overlay h1::before{
+        content: "";
+        height: .15em;
+        width: 2em;
+        top: 1.2em;
+        border-radius: 2em;
+        background-color: rgb(0, 0, 0);
+        position: absolute;
     }
-
+    .dark-mode #work .overlay h1::before {
+        background-color: #ffdb70;
+    }
+    .service-icon-box ion-icon {
+        color: #11344c;
+       font-size: 25pt;
+    }
+    body.dark-mode .service-icon-box ion-icon {
+        color: #ffdb70;
+    }
+    .service-list {
+       display: flex;
+       justify-content: space-around;
+       flex-wrap: wrap;
+        gap: 1.3em;
+        margin: 1.3em 0;
+    }
+    body.dark-mode .service-item {
+        background: linear-gradient(to bottom right, #6a676ad9 0%, #1d1d1e9e 50%), url("./images/Background_Image/pattern-1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: normal;
+    }
     .service-item {
+        max-width: 20em;
         list-style: none;
         position: relative;
-        background: var(--border-gradient-onyx);
+        display: flex;
+        gap: .9em;
+        background-image:linear-gradient(to bottom right, #9ea8bdcc 0%, hsl(106.89deg 15.09% 79.22%) 50%), url("./images/Background_Image/pattern-1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: multiply;
         padding: 20px;
         border-radius: 14px;
-        box-shadow: var(--shadow-2);
+        box-shadow: 0 0 10px hsla(0, 1%, 15%, 0.379);
         z-index: 1;
     }
-
+    .service-item .service-content-box {
+        text-align: left;
+    }
+    @media (max-width: 780px){
+        .service-item {
+            max-width: 100%;
+            min-width: 100%;
+            text-align: left;
+        }
+        
+    }
     /* About section styles */
     #about {
         padding: 50px;
@@ -339,6 +385,28 @@
                         <h4 class="h4 service-item-title">Photography</h4>
                         <p class="service-item-text">
                             I make high-quality photos of any category at a professional level.
+                        </p>
+                    </div>
+                </li>
+                <li class="service-item">
+                    <div class="service-icon-box">
+                        <ion-icon name="qr-code-outline"></ion-icon>
+                    </div>
+                    <div class="service-content-box">
+                        <h4 class="h4 service-item-title">Machine Learning</h4>
+                        <p class="service-item-text">
+                            I am working on machine learning module and intrested in Artificial Intilligence.
+                        </p>
+                    </div>
+                </li>
+                <li class="service-item">
+                    <div class="service-icon-box">
+                        <ion-icon name="finger-print-outline"></ion-icon>
+                    </div>
+                    <div class="service-content-box">
+                        <h4 class="h4 service-item-title">Artificial Intelligence</h4>
+                        <p class="service-item-text">
+                            I am working on machine learning module and intrested in Artificial Intilligence.
                         </p>
                     </div>
                 </li>
