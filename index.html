@@ -160,9 +160,11 @@
     .cta-button:hover {
         background-color: #555;
     }
-    .dark-mode  .cta-button:hover {
+
+    .dark-mode .cta-button:hover {
         background-color: #9b9a9a;
     }
+
     /*Work section styles*/
     #work {
         height: clamp(27vh, 100%, 45vh);
@@ -179,13 +181,16 @@
     #work h1 {
         text-align: left;
     }
+
     #work .overlay {
         position: relative;
     }
+
     #work .overlay h1 {
         font-size: 15pt;
     }
-    #work .overlay h1::before{
+
+    #work .overlay h1::before,.work-client::before {
         content: "";
         height: .15em;
         width: 2em;
@@ -194,36 +199,45 @@
         background-color: rgb(0, 0, 0);
         position: absolute;
     }
+    .work-client {
+        position: relative;
+    }
+
     .dark-mode #work .overlay h1::before {
         background-color: #ffdb70;
     }
+
     .service-icon-box ion-icon {
         color: #11344c;
-       font-size: 25pt;
+        font-size: 25pt;
     }
+
     body.dark-mode .service-icon-box ion-icon {
         color: #ffdb70;
     }
+
     .service-list {
-       display: flex;
-       justify-content: space-around;
-       flex-wrap: wrap;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
         gap: 1.3em;
         margin: 1.3em 0;
     }
+
     body.dark-mode .service-item {
         background: linear-gradient(to bottom right, #6a676ad9 0%, #1d1d1e9e 50%), url("./images/Background_Image/pattern-1.png");
         background-size: cover;
         background-repeat: no-repeat;
         background-blend-mode: normal;
     }
+
     .service-item {
         max-width: 20em;
         list-style: none;
         position: relative;
         display: flex;
         gap: .9em;
-        background-image:linear-gradient(to bottom right, #9ea8bdcc 0%, hsl(106.89deg 15.09% 79.22%) 50%), url("./images/Background_Image/pattern-1.png");
+        background-image: linear-gradient(to bottom right, #9ea8bdcc 0%, hsl(106.89deg 15.09% 79.22%) 50%), url("./images/Background_Image/pattern-1.png");
         background-size: cover;
         background-repeat: no-repeat;
         background-blend-mode: multiply;
@@ -232,16 +246,33 @@
         box-shadow: 0 0 10px hsla(0, 1%, 15%, 0.379);
         z-index: 1;
     }
-    .service-item .service-content-box {
+
+    .service-item .service-content-box,
+    .testimonial-item .service-content-box {
         text-align: left;
     }
-    @media (max-width: 780px){
-        .service-item {
+
+    @media (max-width: 780px) {
+        .service-item,
+        .testimonial-item {
             max-width: 100%;
             min-width: 100%;
             text-align: left;
         }
-        
+
+    }
+    /*Testimonial styles*/
+    .clients {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3em;
+        margin: 0 0 2em 0;
+    }
+    .clients img {
+        height: 7em;
+        width: 7em;
+        border-radius: 50%;
     }
     /* About section styles */
     #about {
@@ -360,7 +391,7 @@
     </section>
     <section id="work">
         <div class="overlay">
-            <h1>What I'm Doing</h1>
+            <h1 class="">What I'm Doing</h1>
             <ul class="service-list">
                 <li class="service-item">
                     <div class="service-icon-box">
@@ -410,7 +441,18 @@
                         </p>
                     </div>
                 </li>
-            </ul>
+            </ul><br>
+            <h1 class="work-client">Clients</h1>
+                <div class="clients">
+                    <img src="https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/330978614_748423483171147_2252121154416429101_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_ohc=YChu95EKwngAX8HFnIz&_nc_ht=scontent.fktm8-1.fna&oh=00_AfCTI920jT2jgukxv7Rx6JUkb1Fk_15YSAgIR-8K4lIxRA&oe=64961BD8" alt="client 1">
+                    <img src="https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/318621879_203167222238804_2866713009096845759_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_ohc=qsks02ggkwoAX-WDWPh&_nc_ht=scontent.fktm8-1.fna&oh=00_AfDFyxYxTsQfjDMCHMzQDARuOAGw-3W-vF4iQVcGkIsW7A&oe=6495FC69" alt="client 2">
+                    <img src="https://www.collegenp.com/uploads/2018/02/Amrit-Science-Campus.jpg" alt="client 3">
+                    <img src="https://portal.tu.edu.np/medias/IOAASlogo_2022_03_30_11_09_25.png" alt="client 4">
+                    <img src="https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/270391749_4562265330554015_821337544198733445_n.png?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=lGem3YKXikEAX_19oP-&_nc_ht=scontent.fktm8-1.fna&oh=00_AfCWVh8206pCFR0cL8Ycjyrv4KHLwWVAK0i_yd4405J6Ig&oe=649684EB" alt="client 5">
+                    <img src="https://osac.org.np/img/osaclogo.png" alt="client 6">
+                </div><br>
+                <h1 class="work-client">My Works</h1>
+                <div></div>
             <a href="#contact" class="cta-button">Hire Me</a>
         </div>
     </section>
@@ -588,4 +630,5 @@
 </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </html>
