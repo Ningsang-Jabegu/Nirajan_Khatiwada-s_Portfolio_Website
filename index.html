@@ -190,7 +190,8 @@
         font-size: 15pt;
     }
 
-    #work .overlay h1::before,.work-client::before {
+    #work .overlay h1::before,
+    .work-client::before {
         content: "";
         height: .15em;
         width: 2em;
@@ -199,6 +200,7 @@
         background-color: rgb(0, 0, 0);
         position: absolute;
     }
+
     .work-client {
         position: relative;
     }
@@ -253,6 +255,7 @@
     }
 
     @media (max-width: 780px) {
+
         .service-item,
         .testimonial-item {
             max-width: 100%;
@@ -261,7 +264,8 @@
         }
 
     }
-    /*Testimonial styles*/
+
+    /*clients styles*/
     .clients {
         display: flex;
         justify-content: center;
@@ -269,11 +273,51 @@
         gap: 3em;
         margin: 0 0 2em 0;
     }
+
     .clients img {
         height: 7em;
         width: 7em;
         border-radius: 50%;
     }
+    /*Graphic Design styles*/
+    .work-graphicDesign {
+    margin-bottom: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+    justify-content: center;
+    gap: 1em;
+    width: 100%;
+}
+
+.gD-col {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1em;
+}
+
+.image-item {
+    position: relative;
+    flex: 1;
+    background-image: linear-gradient(to bottom right, #9ea8bdcc 0%, hsl(106.89deg 32.72% 40.7% / 56%) 50%), url(./images/Background_Image/pattern-3.png);
+    border-radius: 0.8em;
+    border: 2px solid gray;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+}
+.dark-mode .image-item {
+    background-image: linear-gradient(to bottom right, #280c05eb 0%, hsl(20.73deg 40.78% 22.71% / 74%) 50%), url(./images/Background_Image/pattern-3.png);
+    border: 2px solid rgb(212, 212, 212);
+}
+.image-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.8em;
+    object-fit: contain;
+    box-shadow: 1px 1px 10px hsl(0deg 1% 15% / 79%);
+}
+
     /* About section styles */
     #about {
         padding: 50px;
@@ -443,16 +487,107 @@
                 </li>
             </ul><br>
             <h1 class="work-client">Clients</h1>
-                <div class="clients">
-                    <img src="https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/330978614_748423483171147_2252121154416429101_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_ohc=YChu95EKwngAX8HFnIz&_nc_ht=scontent.fktm8-1.fna&oh=00_AfCTI920jT2jgukxv7Rx6JUkb1Fk_15YSAgIR-8K4lIxRA&oe=64961BD8" alt="client 1">
-                    <img src="https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/318621879_203167222238804_2866713009096845759_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_ohc=qsks02ggkwoAX-WDWPh&_nc_ht=scontent.fktm8-1.fna&oh=00_AfDFyxYxTsQfjDMCHMzQDARuOAGw-3W-vF4iQVcGkIsW7A&oe=6495FC69" alt="client 2">
-                    <img src="https://www.collegenp.com/uploads/2018/02/Amrit-Science-Campus.jpg" alt="client 3">
-                    <img src="https://portal.tu.edu.np/medias/IOAASlogo_2022_03_30_11_09_25.png" alt="client 4">
-                    <img src="https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/270391749_4562265330554015_821337544198733445_n.png?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=lGem3YKXikEAX_19oP-&_nc_ht=scontent.fktm8-1.fna&oh=00_AfCWVh8206pCFR0cL8Ycjyrv4KHLwWVAK0i_yd4405J6Ig&oe=649684EB" alt="client 5">
-                    <img src="https://osac.org.np/img/osaclogo.png" alt="client 6">
-                </div><br>
-                <h1 class="work-client">My Works</h1>
-                <div></div>
+            <div class="clients">
+                <img src="https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/330978614_748423483171147_2252121154416429101_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_ohc=YChu95EKwngAX8HFnIz&_nc_ht=scontent.fktm8-1.fna&oh=00_AfCTI920jT2jgukxv7Rx6JUkb1Fk_15YSAgIR-8K4lIxRA&oe=64961BD8"
+                    alt="client 1">
+                <img src="https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/318621879_203167222238804_2866713009096845759_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_ohc=qsks02ggkwoAX-WDWPh&_nc_ht=scontent.fktm8-1.fna&oh=00_AfDFyxYxTsQfjDMCHMzQDARuOAGw-3W-vF4iQVcGkIsW7A&oe=6495FC69"
+                    alt="client 2">
+                <img src="https://www.collegenp.com/uploads/2018/02/Amrit-Science-Campus.jpg" alt="client 3">
+                <img src="https://portal.tu.edu.np/medias/IOAASlogo_2022_03_30_11_09_25.png" alt="client 4">
+                <img src="https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/270391749_4562265330554015_821337544198733445_n.png?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=lGem3YKXikEAX_19oP-&_nc_ht=scontent.fktm8-1.fna&oh=00_AfCWVh8206pCFR0cL8Ycjyrv4KHLwWVAK0i_yd4405J6Ig&oe=649684EB"
+                    alt="client 5">
+                <img src="https://osac.org.np/img/osaclogo.png" alt="client 6">
+            </div><br>
+            <h1 class="work-client">My Works </h1>
+            <div class="work-graphicDesign">
+                <div class="gD-col">
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_1.jpg" alt="Dari Gang">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_2.jpg" alt="Jaleko ma">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_3.jpg" alt="Madav Nepal Troll">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_4.jpg" alt="Banner">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_5.jpg" alt="Banner">
+                    </div>
+                </div>
+                <div class="gD-col">
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_6.jpg" alt="Men's Room Reloded">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_7.jpg" alt="Rising sun">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_8.jpg" alt="Moon">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_9.jpg" alt="Myself facing towards the light">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_10.jpg" alt="Myself">
+                    </div>
+                </div>
+                <div class="gD-col">
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_11.jpg" alt="Dari Gang">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_12.jpg" alt="Jaleko ma">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_13.jpg" alt="Madav Nepal Troll">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_14.jpg" alt="Banner">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_15.jpg" alt="Banner">
+                    </div>
+                </div>
+                <div class="gD-col">
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_16.jpg" alt="Men's Room Reloded">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_17.jpg" alt="Rising sun">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_18.jpg" alt="Moon">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_19.jpg" alt="Myself facing towards the light">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_20.jpg" alt="Myself">
+                    </div>
+                </div>
+                <div class="gD-col">
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_16.jpg" alt="Men's Room Reloded">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_17.jpg" alt="Rising sun">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_18.jpg" alt="Moon">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_19.jpg" alt="Myself facing towards the light">
+                    </div>
+                    <div class="image-item">
+                        <img src="./images/Homepage_Image/img_20.jpg" alt="Myself">
+                    </div>
+                </div>
+                <!-- Add more image columns as needed -->
+            </div>
+            
             <a href="#contact" class="cta-button">Hire Me</a>
         </div>
     </section>
