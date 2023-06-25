@@ -217,11 +217,17 @@ main .introduction_myself {
 
 .photo_container_hide_0 {
 	display: block;
+	font-size: 15pt !important;
+    /* position: absolute;
+    bottom: -5.5em;
+    margin-bottom: 1.5em; */
+
 }
 
 .see_more_0 {
 	font-family: Arial;
-	font-size: 10pt;
+	font-size: 15pt;
+	margin-bottom: -1.5em;
 	cursor: pointer;
 
 }
@@ -237,7 +243,7 @@ main .introduction_myself {
 	bottom: 1.3em;
 	left: 1.3em;
 	font-family: Arial;
-	font-size: 10pt;
+	/* font-size: 10pt; */
 
 
 	display: none;
@@ -250,6 +256,8 @@ main .introduction_myself {
 .see_more_less {
 	font-weight: 600;
 	cursor: pointer;
+	font-size: 15pt;
+	margin-bottom: -1.5em;
 }
 
 .photo img{
@@ -263,15 +271,15 @@ main .introduction_myself {
 		/*display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;*/
-		padding: 1.3em 1.3em 2.6em 1.3em;
+		/* padding: 1.3em 1.3em 2.6em 1.3em; */
 		margin: 0.8em;
-		border: 1px solid #ddd;
+		/* border: 1px solid #ddd; */
 		border-radius: 10px;
 		gap: 1em;
-		box-shadow: 0px 0px 10px #03263459;
+		/* box-shadow: 0px 0px 10px #03263459; */
 		border-radius: 10px;
 		position: relative;
-		background-image: linear-gradient(to right, #e5e2e2, #ebe9ea, #f2f0f1, #f8f8f8, #ffffff);
+		/* background-image: linear-gradient(to right, #e5e2e2, #ebe9ea, #f2f0f1, #f8f8f8, #ffffff); */
 	}
 }
 
@@ -284,13 +292,13 @@ main .introduction_myself {
 		height: max-content;
 		padding: 1.3em 1.3em 2.6em 1.3em;
 		margin: 0.8em;
-		border: 1px solid #ddd;
+		/* border: 1px solid #ddd; */
 		border-radius: 10px;
 		gap: 1.3em;
-		box-shadow: 0px 0px 10px #03263459;
+		/* box-shadow: 0px 0px 10px #03263459; */
 		border-radius: 10px;
 		position: relative;
-		background-image: linear-gradient(to right, #e5e2e2, #ebe9ea, #f2f0f1, #f8f8f8, #ffffff);
+		/* background-image: linear-gradient(to right, #e5e2e2, #ebe9ea, #f2f0f1, #f8f8f8, #ffffff); */
 	}
 }
 
@@ -614,6 +622,7 @@ main .introduction_myself {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		margin-bottom: 2em;
 	}
 
 	.photo img {
