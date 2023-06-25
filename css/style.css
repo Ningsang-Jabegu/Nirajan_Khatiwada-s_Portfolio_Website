@@ -760,6 +760,7 @@ footer {
 
 .footer-distributed {
 	background-color: #33383b;
+	/* background-image:linear-gradient(to bottom right, #9ea8bdcc 0%, hsl(106.89deg 15.09% 79.22%) 50%),url('/images/Background_Image/pattern-4.png') ; */
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
